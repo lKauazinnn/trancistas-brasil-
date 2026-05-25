@@ -1,6 +1,5 @@
 import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
-import CenteredQuote from '../ui/CenteredQuote'
 import SectionLabel from '../ui/SectionLabel'
 import VideoPlayer from '../ui/VideoPlayer'
 import TickerBand from '../ui/TickerBand'
@@ -138,11 +137,6 @@ export default function AprendizadoAncestral() {
         </div>
       </ParallaxSection>
 
-      <CenteredQuote
-        quote="Minha avó dizia que quando ela trança um cabelo, ela está rezando."
-        author="Kamyla Santos"
-        role="Trancista — Piauí"
-      />
     </section>
   )
 }

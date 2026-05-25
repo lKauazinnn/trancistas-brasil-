@@ -3,8 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import AfroPattern from '../ui/AfroPattern'
 import FloatingComb from '../ui/FloatingComb'
 import AdinkraFloat from '../ui/AdinkraFloat'
-import CulturaParticles from '../ui/CulturaParticles'
-
+ 
 const EASE = [0.16, 1, 0.3, 1]
 
 export default function HeroSection() {
@@ -273,7 +272,6 @@ export default function HeroSection() {
       {/* ── Elementos decorativos ── */}
       <AfroPattern variant="kuba" color="#C0522A" opacity={0.025} />
       <AdinkraFloat count={5} color="var(--ouro)" zIndex={0} />
-      <CulturaParticles count={8} zIndex={0} />
 
       <div
         className="hidden lg:block"

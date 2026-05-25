@@ -7,7 +7,6 @@ import StarDivider from '../ui/StarDivider'
 import BeadDivider from '../ui/BeadDivider'
 import AfroPattern from '../ui/AfroPattern'
 import TiltCard from '../ui/TiltCard'
-import CulturaParticles from '../ui/CulturaParticles'
 import { CREDITS } from '../../data/content'
 
 const FUTURE_PILLARS = [
@@ -24,7 +23,6 @@ export default function FuturoEncerramento() {
 
       <div className="section-padding max-w-7xl mx-auto" style={{ position: 'relative' }}>
         <AfroPattern variant="adinkra" color="#D4A030" opacity={0.055} />
-        <CulturaParticles count={10} zIndex={0} />
         {/* Header */}
         <ScrollReveal variant="fade-up">
           <SectionLabel number={5} text="Futuro & Encerramento" />
