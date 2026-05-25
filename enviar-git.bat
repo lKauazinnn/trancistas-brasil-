@@ -23,7 +23,11 @@ REM Realiza o commit
 REM Define o repositório remoto (ajuste se necessário)
  git remote add origin https://github.com/lKauazinnn/trancistas-brasil-.git 2>nul
 
-REM Envia para o branch main
- git push -u origin main
+
+REM Detecta o branch atual (master/main)
+for /f "delims=*" %%b in ('git rev-parse --abbrev-ref HEAD') do set CURRENT_BRANCH=%%b
+
+REM Envia para o branch correto
+git push -u origin %CURRENT_BRANCH%
 
 pause
