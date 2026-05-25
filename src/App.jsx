@@ -11,7 +11,6 @@ import FuturoEncerramento from './components/sections/FuturoEncerramento'
 import ReadingProgress from './components/ui/ReadingProgress'
 import SectionNav from './components/ui/SectionNav'
 import KenteStripe from './components/ui/KenteStripe'
-import CustomCursor from './components/ui/CustomCursor'
 import BraidGuia from './components/ui/BraidGuia'
 
 // Default: dark theme. Only go light if explicitly saved as 'light'.
@@ -26,7 +25,6 @@ export default function App() {
   return (
     <div style={{ overflowX: 'hidden' }}>
       <BraidGuia />
-      <CustomCursor />
       <ReadingProgress />
       <SectionNav />
       <Navbar />

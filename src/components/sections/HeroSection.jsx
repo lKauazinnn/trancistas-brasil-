@@ -247,27 +247,22 @@ export default function HeroSection() {
 
         {/* Direita — fotos interativas (desktop) */}
         <div className="hidden lg:block" style={{ position: 'relative' }}>
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              zIndex: 5,
-              pointerEvents: 'none',
-              background: 'linear-gradient(to right, var(--bg-primary) 0%, transparent 22%)',
-            }}
-          />
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              zIndex: 5,
-              pointerEvents: 'none',
-              background: 'linear-gradient(to bottom, var(--bg-primary) 0%, transparent 14%, transparent 80%, var(--bg-primary) 100%)',
-            }}
-          />
-          <div style={{ position: 'absolute', inset: 0, padding: '2rem 2rem 2rem 0' }}>
+          {/* InteractiveFaces primeiro, gradients por cima para o blend */}
+          <div style={{ position: 'absolute', inset: 0, zIndex: 1, padding: '2rem 2rem 2rem 0' }}>
             <InteractiveFaces />
           </div>
+          <div
+            style={{
+              position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none',
+              background: 'linear-gradient(to right, var(--bg-primary) 0%, transparent 28%)',
+            }}
+          />
+          <div
+            style={{
+              position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none',
+              background: 'linear-gradient(to bottom, var(--bg-primary) 0%, transparent 18%, transparent 75%, var(--bg-primary) 100%)',
+            }}
+          />
         </div>
       </div>
 

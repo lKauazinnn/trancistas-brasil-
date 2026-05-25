@@ -131,7 +131,7 @@ export default function InteractiveFaces() {
               alt=""
               style={{
                 width: '100%', height: '100%', objectFit: 'cover', display: 'block',
-                filter: 'sepia(18%) contrast(1.06) brightness(0.96) saturate(0.88)',
+                filter: 'sepia(12%) contrast(1.05) brightness(1.08) saturate(0.92)',
               }}
               draggable={false}
               loading="lazy"
