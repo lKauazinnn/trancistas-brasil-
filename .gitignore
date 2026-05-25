@@ -5,3 +5,8 @@ dist
 .DS_Store
 *.local
 .claude/
+# Arquivos de mídia grandes — hospede no Vercel/CDN separadamente
+public/media/videos/
+*.mov
+*.mp4
+*.avi
