@@ -1,20 +1,28 @@
 import { motion, useScroll, useSpring } from 'framer-motion'
 
-// Two sinusoidal strands crossing every 100 units — creates a braided appearance
-// ViewBox: 0 0 60 1000, scaled with preserveAspectRatio="none"
+// Three interleaved sinusoidal strands — viewBox 0 0 60 1000
+// Strand A & B cross at every 100 units; C is the center thread
 const STRAND_A =
-  'M 15 0 C 15 25 45 55 45 100 C 45 145 15 175 15 200 ' +
-  'C 15 225 45 255 45 300 C 45 345 15 375 15 400 ' +
-  'C 15 425 45 455 45 500 C 45 545 15 575 15 600 ' +
-  'C 15 625 45 655 45 700 C 45 745 15 775 15 800 ' +
-  'C 15 825 45 855 45 900 C 45 945 15 975 15 1000'
+  'M 12 0 C 12 22 48 52 48 100 C 48 148 12 178 12 200 ' +
+  'C 12 222 48 252 48 300 C 48 348 12 378 12 400 ' +
+  'C 12 422 48 452 48 500 C 48 548 12 578 12 600 ' +
+  'C 12 622 48 652 48 700 C 48 748 12 778 12 800 ' +
+  'C 12 822 48 852 48 900 C 48 948 12 978 12 1000'
 
 const STRAND_B =
-  'M 45 0 C 45 25 15 55 15 100 C 15 145 45 175 45 200 ' +
-  'C 45 225 15 255 15 300 C 15 345 45 375 45 400 ' +
-  'C 45 425 15 455 15 500 C 15 545 45 575 45 600 ' +
-  'C 45 625 15 655 15 700 C 15 745 45 775 45 800 ' +
-  'C 45 825 15 855 15 900 C 15 945 45 975 45 1000'
+  'M 48 0 C 48 22 12 52 12 100 C 12 148 48 178 48 200 ' +
+  'C 48 222 12 252 12 300 C 12 348 48 378 48 400 ' +
+  'C 48 422 12 452 12 500 C 12 548 48 578 48 600 ' +
+  'C 48 622 12 652 12 700 C 12 748 48 778 48 800 ' +
+  'C 48 822 12 852 12 900 C 12 948 48 978 48 1000'
+
+// Center thread — smaller amplitude, slightly offset phase
+const STRAND_C =
+  'M 30 0 C 30 15 38 45 30 100 C 22 155 30 185 30 200 ' +
+  'C 30 215 38 245 30 300 C 22 355 30 385 30 400 ' +
+  'C 30 415 38 445 30 500 C 22 555 30 585 30 600 ' +
+  'C 30 615 38 645 30 700 C 22 755 30 785 30 800 ' +
+  'C 30 815 38 845 30 900 C 22 955 30 985 30 1000'
 
 export default function BraidGuia() {
   const { scrollYProgress } = useScroll()
@@ -28,34 +36,71 @@ export default function BraidGuia() {
         position: 'fixed',
         left: 0,
         top: 0,
-        width: '48px',
+        width: '56px',
         height: '100vh',
         zIndex: 3,
         pointerEvents: 'none',
-        opacity: 0.3,
+        opacity: 0.42,
+        // Soft fade at top and bottom of viewport
+        maskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
       }}
     >
       <svg
-        width="48"
+        width="56"
         height="100%"
         viewBox="0 0 60 1000"
         preserveAspectRatio="none"
         style={{ display: 'block' }}
       >
+        <defs>
+          {/* Vertical gradient across the full viewBox height */}
+          <linearGradient id="braid-ouro" x1="0" y1="0" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stopColor="#D4A843" stopOpacity="0.4" />
+            <stop offset="20%"  stopColor="#E8C060" stopOpacity="1"   />
+            <stop offset="50%"  stopColor="#D4A030" stopOpacity="1"   />
+            <stop offset="80%"  stopColor="#E8C060" stopOpacity="1"   />
+            <stop offset="100%" stopColor="#D4A843" stopOpacity="0.4" />
+          </linearGradient>
+          <linearGradient id="braid-terra" x1="0" y1="0" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stopColor="#C0522A" stopOpacity="0.3" />
+            <stop offset="25%"  stopColor="#D86545" stopOpacity="0.9" />
+            <stop offset="75%"  stopColor="#C0522A" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#C0522A" stopOpacity="0.3" />
+          </linearGradient>
+          <linearGradient id="braid-center" x1="0" y1="0" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stopColor="#D4A843" stopOpacity="0.2" />
+            <stop offset="50%"  stopColor="#D4A843" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#D4A843" stopOpacity="0.2" />
+          </linearGradient>
+        </defs>
+
         {/* Back strand — terracota */}
         <motion.path
           d={STRAND_B}
-          stroke="var(--terracota)"
+          stroke="url(#braid-terra)"
           strokeWidth="2"
           fill="none"
           strokeLinecap="round"
           vectorEffect="non-scaling-stroke"
           style={{ pathLength }}
         />
-        {/* Front strand — ouro */}
+
+        {/* Center thread — thin ouro */}
+        <motion.path
+          d={STRAND_C}
+          stroke="url(#braid-center)"
+          strokeWidth="1"
+          fill="none"
+          strokeLinecap="round"
+          vectorEffect="non-scaling-stroke"
+          style={{ pathLength }}
+        />
+
+        {/* Front strand — ouro envelhecido */}
         <motion.path
           d={STRAND_A}
-          stroke="var(--ouro)"
+          stroke="url(#braid-ouro)"
           strokeWidth="2.5"
           fill="none"
           strokeLinecap="round"

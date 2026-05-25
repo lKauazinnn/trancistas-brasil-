@@ -6,7 +6,7 @@ import FloatingComb from '../ui/FloatingComb'
 import AdinkraFloat from '../ui/AdinkraFloat'
 import CulturaParticles from '../ui/CulturaParticles'
 
-const EASE_OUT = [0.16, 1, 0.3, 1]
+const EASE = [0.16, 1, 0.3, 1]
 
 export default function HeroSection() {
   const [loaded, setLoaded] = useState(false)
@@ -16,7 +16,7 @@ export default function HeroSection() {
     target: sectionRef,
     offset: ['start start', 'end start'],
   })
-  const photoY = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
+  const photoY = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 80)
@@ -36,13 +36,13 @@ export default function HeroSection() {
         overflow: 'hidden',
       }}
     >
-      {/* ── Full-bleed background photo ── */}
+      {/* ── Full-bleed background photo com parallax ── */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
         <motion.div
           style={{
             position: 'absolute',
             inset: 0,
-            scale: 1.1,
+            scale: 1.12,
             y: photoY,
           }}
         >
@@ -50,29 +50,29 @@ export default function HeroSection() {
             src="/media/photos/IMG_0558.jpg"
             alt=""
             aria-hidden
+            draggable={false}
             style={{
               width: '100%',
               height: '100%',
               objectFit: 'cover',
               objectPosition: 'center top',
-              opacity: 0.38,
-              filter: 'sepia(12%) contrast(1.06) brightness(0.92) saturate(0.82)',
+              opacity: 0.32,
+              filter: 'sepia(10%) contrast(1.08) brightness(0.88) saturate(0.72)',
             }}
-            draggable={false}
           />
         </motion.div>
-        {/* Gradient: fades out toward bottom so content is readable */}
+        {/* Vinheta: escurece bordas, desfaz embaixo para o bg */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 30%, var(--bg-primary) 86%)',
+              'linear-gradient(to bottom, rgba(5,5,9,0.52) 0%, transparent 30%, var(--bg-primary) 90%)',
           }}
         />
       </div>
 
-      {/* ── Editorial top bar ── */}
+      {/* ── Barra editorial topo ── */}
       <div
         style={{
           position: 'relative',
@@ -89,7 +89,7 @@ export default function HeroSection() {
           style={{
             fontFamily: "'Syne', sans-serif",
             fontSize: '0.58rem',
-            letterSpacing: '0.25em',
+            letterSpacing: '0.28em',
             textTransform: 'uppercase',
             color: 'var(--text-muted)',
           }}
@@ -110,7 +110,7 @@ export default function HeroSection() {
             style={{
               fontFamily: "'Syne', sans-serif",
               fontSize: '0.58rem',
-              letterSpacing: '0.25em',
+              letterSpacing: '0.28em',
               textTransform: 'uppercase',
               color: 'var(--text-muted)',
             }}
@@ -120,7 +120,69 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* ── Content grid ── */}
+      {/* ── Título TRANCISTAS — centrado, cor sólida, massivo ── */}
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 2,
+          textAlign: 'center',
+          padding: 'clamp(3rem, 6vw, 5rem) 1.5rem 1rem',
+        }}
+      >
+        {/* Eyebrow */}
+        <motion.p
+          style={{
+            fontFamily: "'Syne', sans-serif",
+            fontSize: '0.6rem',
+            letterSpacing: '0.3em',
+            textTransform: 'uppercase',
+            color: 'var(--text-muted)',
+            marginBottom: '1.4rem',
+          }}
+          initial={{ opacity: 0, y: 8 }}
+          animate={loaded ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.05 }}
+        >
+          Cultura&nbsp;&nbsp;·&nbsp;&nbsp;Arte&nbsp;&nbsp;·&nbsp;&nbsp;Resistência&nbsp;&nbsp;·&nbsp;&nbsp;Identidade
+        </motion.p>
+
+        {/* TRANCISTAS — uma palavra, cor única, sem gradiente */}
+        <div style={{ overflow: 'hidden' }}>
+          <motion.h1
+            style={{
+              fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
+              fontWeight: 800,
+              fontSize: 'clamp(3.2rem, 14vw, 18rem)',
+              lineHeight: 0.88,
+              letterSpacing: '-0.03em',
+              textTransform: 'uppercase',
+              color: 'var(--ouro)',
+              textAlign: 'center',
+            }}
+            initial={{ y: '108%' }}
+            animate={loaded ? { y: 0 } : {}}
+            transition={{ duration: 1.05, ease: EASE, delay: 0.1 }}
+          >
+            TRANCISTAS
+          </motion.h1>
+        </div>
+
+        {/* Linha decorativa centrada */}
+        <motion.div
+          style={{
+            width: '56px',
+            height: '1px',
+            background: 'var(--terracota)',
+            margin: '1.8rem auto 0',
+            transformOrigin: 'center',
+          }}
+          initial={{ scaleX: 0 }}
+          animate={loaded ? { scaleX: 1 } : {}}
+          transition={{ duration: 0.7, ease: EASE, delay: 0.42 }}
+        />
+      </div>
+
+      {/* ── Grid: lide esquerda / faces direita ── */}
       <div
         style={{
           flex: 1,
@@ -131,82 +193,22 @@ export default function HeroSection() {
         }}
         className="lg:grid lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_560px]"
       >
-        {/* Left — editorial typography */}
+        {/* Esquerda — texto editorial */}
         <div
           className="flex flex-col justify-end px-6 md:px-12 lg:px-20"
-          style={{ paddingTop: '7rem', paddingBottom: '3rem' }}
+          style={{ paddingTop: '1.5rem', paddingBottom: '3rem' }}
         >
-          {/* Giant split headline */}
-          <div style={{ marginBottom: '2rem' }}>
-            {/* TRAN — wood-grain terracota */}
-            <div style={{ overflow: 'hidden' }}>
-              <motion.span
-                className="wood-text"
-                style={{
-                  display: 'block',
-                  fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
-                  fontWeight: 800,
-                  fontSize: 'clamp(4rem, 15vw, 12rem)',
-                  lineHeight: 0.87,
-                  letterSpacing: '-0.02em',
-                  textTransform: 'uppercase',
-                }}
-                initial={{ y: '108%' }}
-                animate={loaded ? { y: 0 } : {}}
-                transition={{ duration: 0.95, ease: EASE_OUT, delay: 0.05 }}
-              >
-                TRAN
-              </motion.span>
-            </div>
-
-            {/* CISTAS — ouro outline / ghost */}
-            <div style={{ overflow: 'hidden' }}>
-              <motion.span
-                style={{
-                  display: 'block',
-                  fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
-                  fontWeight: 800,
-                  fontSize: 'clamp(4rem, 15vw, 12rem)',
-                  lineHeight: 0.87,
-                  letterSpacing: '-0.02em',
-                  textTransform: 'uppercase',
-                  WebkitTextStroke: '1.5px var(--ouro)',
-                  color: 'transparent',
-                }}
-                initial={{ y: '108%' }}
-                animate={loaded ? { y: 0 } : {}}
-                transition={{ duration: 0.95, ease: EASE_OUT, delay: 0.13 }}
-              >
-                CISTAS
-              </motion.span>
-            </div>
-          </div>
-
-          {/* Animated divider */}
-          <motion.div
-            style={{
-              height: '1px',
-              background: 'var(--border)',
-              marginBottom: '1.5rem',
-              maxWidth: '520px',
-              transformOrigin: 'left center',
-            }}
-            initial={{ scaleX: 0 }}
-            animate={loaded ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.9, ease: EASE_OUT, delay: 0.38 }}
-          />
-
           {/* Lide */}
           <motion.div
             style={{ maxWidth: '520px', marginBottom: '2rem' }}
             initial={{ opacity: 0, y: 16 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.48 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
           >
             <p
               style={{
                 fontFamily: "'Barlow', sans-serif",
-                fontSize: 'clamp(0.92rem, 1.6vw, 1.08rem)',
+                fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
                 lineHeight: 1.72,
                 color: 'var(--text-primary)',
                 marginBottom: '0.75rem',
@@ -219,7 +221,7 @@ export default function HeroSection() {
             <p
               style={{
                 fontFamily: "'Barlow', sans-serif",
-                fontSize: 'clamp(0.8rem, 1.3vw, 0.92rem)',
+                fontSize: 'clamp(0.8rem, 1.2vw, 0.92rem)',
                 lineHeight: 1.72,
                 color: 'var(--text-muted)',
               }}
@@ -229,27 +231,33 @@ export default function HeroSection() {
             </p>
           </motion.div>
 
-          {/* Meta row */}
+          {/* Meta */}
           <motion.div
             className="flex items-center gap-6 flex-wrap"
             style={{ marginBottom: '2.5rem' }}
             initial={{ opacity: 0 }}
             animate={loaded ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.62 }}
           >
-            <div>
-              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '3px' }}>Categorias</p>
-              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.78rem', color: 'var(--text-primary)' }}>Cultura · Mercado · Saúde</p>
-            </div>
-            <div style={{ width: '1px', height: '28px', background: 'var(--border)' }} />
-            <div>
-              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '3px' }}>Leitura</p>
-              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.78rem', color: 'var(--text-primary)' }}>~12 minutos</p>
-            </div>
+            {[
+              { label: 'Categorias', value: 'Cultura · Mercado · Saúde' },
+              { label: 'Leitura',    value: '~12 minutos' },
+            ].map((item, i) => (
+              <div key={i}>
+                <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '3px' }}>
+                  {item.label}
+                </p>
+                <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.8rem', color: 'var(--text-primary)' }}>
+                  {item.value}
+                </p>
+              </div>
+            ))}
             <div style={{ width: '1px', height: '28px', background: 'var(--border)' }} />
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--terracota)', animation: 'pulseRing 1.8s ease-out infinite' }} />
-              <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', color: 'var(--text-muted)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Ao vivo</span>
+              <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', color: 'var(--text-muted)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+                Ao vivo
+              </span>
             </div>
           </motion.div>
 
@@ -259,7 +267,7 @@ export default function HeroSection() {
             style={{ color: 'var(--text-muted)' }}
             initial={{ opacity: 0 }}
             animate={loaded ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.75 }}
+            transition={{ duration: 0.5, delay: 0.76 }}
           >
             <div
               style={{
@@ -295,27 +303,24 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Right — Interactive faces (desktop only) */}
+        {/* Direita — fotos interativas (desktop) */}
         <div className="hidden lg:block" style={{ position: 'relative' }}>
-          {/* Left gradient so faces blend into the left column */}
           <div
             style={{
               position: 'absolute',
               inset: 0,
               zIndex: 5,
               pointerEvents: 'none',
-              background: 'linear-gradient(to right, var(--bg-primary) 0%, transparent 20%)',
+              background: 'linear-gradient(to right, var(--bg-primary) 0%, transparent 22%)',
             }}
           />
-          {/* Top/bottom gradient */}
           <div
             style={{
               position: 'absolute',
               inset: 0,
               zIndex: 5,
               pointerEvents: 'none',
-              background:
-                'linear-gradient(to bottom, var(--bg-primary) 0%, transparent 12%, transparent 80%, var(--bg-primary) 100%)',
+              background: 'linear-gradient(to bottom, var(--bg-primary) 0%, transparent 14%, transparent 80%, var(--bg-primary) 100%)',
             }}
           />
           <div style={{ position: 'absolute', inset: 0, padding: '2rem 2rem 2rem 0' }}>
@@ -324,7 +329,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* ── Bottom marquee strip ── */}
+      {/* ── Marquee inferior ── */}
       <div
         style={{
           position: 'relative',
@@ -338,46 +343,46 @@ export default function HeroSection() {
           style={{
             display: 'flex',
             width: 'max-content',
-            animation: 'ticker 24s linear infinite',
+            animation: 'ticker 26s linear infinite',
           }}
         >
           {[0, 1, 2, 3].map(i => (
             <span
               key={i}
               style={{
-                fontFamily: "'Syne', 'Space Grotesk', sans-serif",
-                fontSize: '0.56rem',
-                letterSpacing: '0.28em',
+                fontFamily: "'Syne', sans-serif",
+                fontSize: '0.55rem',
+                letterSpacing: '0.3em',
                 textTransform: 'uppercase',
                 color: 'var(--text-muted)',
                 padding: '0 3rem',
                 whiteSpace: 'nowrap',
               }}
             >
-              Arte&nbsp;&nbsp;·&nbsp;&nbsp;Resistência&nbsp;&nbsp;·&nbsp;&nbsp;Identidade&nbsp;&nbsp;·&nbsp;&nbsp;Ancestralidade&nbsp;&nbsp;·&nbsp;&nbsp;Cultura&nbsp;&nbsp;·&nbsp;&nbsp;Mercado
+              Arte&nbsp;&nbsp;·&nbsp;&nbsp;Resistência&nbsp;&nbsp;·&nbsp;&nbsp;Identidade&nbsp;&nbsp;·&nbsp;&nbsp;Ancestralidade&nbsp;&nbsp;·&nbsp;&nbsp;Cultura&nbsp;&nbsp;·&nbsp;&nbsp;Mercado&nbsp;&nbsp;·&nbsp;&nbsp;Beleza
             </span>
           ))}
         </div>
       </div>
 
-      {/* ── Decorative elements ── */}
-      <AfroPattern variant="kuba" color="#C0522A" opacity={0.03} />
-      <AdinkraFloat count={6} color="var(--ouro)" zIndex={0} />
-      <CulturaParticles count={10} zIndex={0} />
+      {/* ── Elementos decorativos ── */}
+      <AfroPattern variant="kuba" color="#C0522A" opacity={0.025} />
+      <AdinkraFloat count={5} color="var(--ouro)" zIndex={0} />
+      <CulturaParticles count={8} zIndex={0} />
 
       <div
         className="hidden lg:block"
         style={{
           position: 'absolute',
           bottom: '5.5rem',
-          left: '18%',
+          left: '17%',
           zIndex: 1,
           pointerEvents: 'none',
-          opacity: 0.2,
+          opacity: 0.14,
           transform: 'rotate(-18deg)',
         }}
       >
-        <FloatingComb size={68} />
+        <FloatingComb size={64} />
       </div>
     </section>
   )

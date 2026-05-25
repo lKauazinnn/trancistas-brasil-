@@ -23,15 +23,18 @@
 }
 
 .dark {
-  --bg-primary:   #050509;
-  --bg-secondary: #0a0a10;
+  --bg-primary:   #05050A;
+  --bg-secondary: #0B0B13;
   --bg-surface:   #111118;
   --bg-deep:      #080810;
-  --text-primary: #FAFAF5;
-  --text-muted:   #8C8C8A;
+  --text-primary: #F5F0E8;
+  --text-muted:   #8A8480;
   --text-dim:     #444440;
   --border:       rgba(255,255,255,0.08);
 
+  /* Ouro mais rico e saturado no escuro */
+  --ouro:      #D4A843;
+  --terracota: #C85A30;
   --verde:     #3D8A65;
   --vermelho:  #C84040;
 }
