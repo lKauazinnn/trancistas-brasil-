@@ -36,6 +36,42 @@ export default function HeroSection() {
         overflow: 'hidden',
       }}
     >
+      {/* ── Full-bleed background photo ── */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        <motion.div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            scale: 1.1,
+            y: photoY,
+          }}
+        >
+          <img
+            src="/media/photos/IMG_0558.jpg"
+            alt=""
+            aria-hidden
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center top',
+              opacity: 0.38,
+              filter: 'sepia(12%) contrast(1.06) brightness(0.92) saturate(0.82)',
+            }}
+            draggable={false}
+          />
+        </motion.div>
+        {/* Gradient: fades out toward bottom so content is readable */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 30%, var(--bg-primary) 86%)',
+          }}
+        />
+      </div>
+
       {/* ── Editorial top bar ── */}
       <div
         style={{
@@ -47,32 +83,62 @@ export default function HeroSection() {
           justifyContent: 'space-between',
           padding: '0.75rem 1.5rem',
         }}
-        className="md:px-12 lg:px-16"
+        className="md:px-12 lg:px-20"
       >
-        <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.58rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+        <span
+          style={{
+            fontFamily: "'Syne', sans-serif",
+            fontSize: '0.58rem',
+            letterSpacing: '0.25em',
+            textTransform: 'uppercase',
+            color: 'var(--text-muted)',
+          }}
+        >
           Reportagem Especial
         </span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--terracota)', animation: 'pulseRing 1.8s ease-out infinite' }} />
-          <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.58rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+          <div
+            style={{
+              width: '6px',
+              height: '6px',
+              borderRadius: '50%',
+              background: 'var(--terracota)',
+              animation: 'pulseRing 1.8s ease-out infinite',
+            }}
+          />
+          <span
+            style={{
+              fontFamily: "'Syne', sans-serif",
+              fontSize: '0.58rem',
+              letterSpacing: '0.25em',
+              textTransform: 'uppercase',
+              color: 'var(--text-muted)',
+            }}
+          >
             PI · 2025
           </span>
         </div>
       </div>
 
-      {/* ── Main content grid ── */}
+      {/* ── Content grid ── */}
       <div
-        style={{ flex: 1, position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1fr' }}
+        style={{
+          flex: 1,
+          position: 'relative',
+          zIndex: 1,
+          display: 'grid',
+          gridTemplateColumns: '1fr',
+        }}
         className="lg:grid lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_560px]"
       >
         {/* Left — editorial typography */}
         <div
-          className="flex flex-col justify-end px-6 md:px-12 lg:px-16"
-          style={{ paddingTop: '5rem', paddingBottom: '3rem' }}
+          className="flex flex-col justify-end px-6 md:px-12 lg:px-20"
+          style={{ paddingTop: '7rem', paddingBottom: '3rem' }}
         >
-          {/* Giant headline */}
+          {/* Giant split headline */}
           <div style={{ marginBottom: '2rem' }}>
-            {/* TRAN — wood-grain solid */}
+            {/* TRAN — wood-grain terracota */}
             <div style={{ overflow: 'hidden' }}>
               <motion.span
                 className="wood-text"
@@ -80,43 +146,43 @@ export default function HeroSection() {
                   display: 'block',
                   fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
                   fontWeight: 800,
-                  fontSize: 'clamp(4.5rem, 20vw, 18rem)',
+                  fontSize: 'clamp(4rem, 15vw, 12rem)',
                   lineHeight: 0.87,
-                  letterSpacing: '-0.025em',
+                  letterSpacing: '-0.02em',
                   textTransform: 'uppercase',
                 }}
                 initial={{ y: '108%' }}
                 animate={loaded ? { y: 0 } : {}}
-                transition={{ duration: 1, ease: EASE_OUT, delay: 0.05 }}
+                transition={{ duration: 0.95, ease: EASE_OUT, delay: 0.05 }}
               >
                 TRAN
               </motion.span>
             </div>
 
-            {/* CISTAS — outline / ghost */}
+            {/* CISTAS — ouro outline / ghost */}
             <div style={{ overflow: 'hidden' }}>
               <motion.span
                 style={{
                   display: 'block',
                   fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
                   fontWeight: 800,
-                  fontSize: 'clamp(4.5rem, 20vw, 18rem)',
+                  fontSize: 'clamp(4rem, 15vw, 12rem)',
                   lineHeight: 0.87,
-                  letterSpacing: '-0.025em',
+                  letterSpacing: '-0.02em',
                   textTransform: 'uppercase',
-                  WebkitTextStroke: '2px var(--ouro)',
+                  WebkitTextStroke: '1.5px var(--ouro)',
                   color: 'transparent',
                 }}
                 initial={{ y: '108%' }}
                 animate={loaded ? { y: 0 } : {}}
-                transition={{ duration: 1, ease: EASE_OUT, delay: 0.13 }}
+                transition={{ duration: 0.95, ease: EASE_OUT, delay: 0.13 }}
               >
                 CISTAS
               </motion.span>
             </div>
           </div>
 
-          {/* Animated rule */}
+          {/* Animated divider */}
           <motion.div
             style={{
               height: '1px',
@@ -140,7 +206,7 @@ export default function HeroSection() {
             <p
               style={{
                 fontFamily: "'Barlow', sans-serif",
-                fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
+                fontSize: 'clamp(0.92rem, 1.6vw, 1.08rem)',
                 lineHeight: 1.72,
                 color: 'var(--text-primary)',
                 marginBottom: '0.75rem',
@@ -153,7 +219,7 @@ export default function HeroSection() {
             <p
               style={{
                 fontFamily: "'Barlow', sans-serif",
-                fontSize: 'clamp(0.8rem, 1.2vw, 0.9rem)',
+                fontSize: 'clamp(0.8rem, 1.3vw, 0.92rem)',
                 lineHeight: 1.72,
                 color: 'var(--text-muted)',
               }}
@@ -169,23 +235,19 @@ export default function HeroSection() {
             style={{ marginBottom: '2.5rem' }}
             initial={{ opacity: 0 }}
             animate={loaded ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.62 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
           >
-            {[
-              { label: 'Categorias', value: 'Cultura · Mercado · Saúde' },
-              { label: 'Leitura',    value: '~12 minutos' },
-            ].map((item, i) => (
-              <div key={i}>
-                <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '3px' }}>
-                  {item.label}
-                </p>
-                <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.8rem', color: 'var(--text-primary)' }}>
-                  {item.value}
-                </p>
-              </div>
-            ))}
+            <div>
+              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '3px' }}>Categorias</p>
+              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.78rem', color: 'var(--text-primary)' }}>Cultura · Mercado · Saúde</p>
+            </div>
+            <div style={{ width: '1px', height: '28px', background: 'var(--border)' }} />
+            <div>
+              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '3px' }}>Leitura</p>
+              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.78rem', color: 'var(--text-primary)' }}>~12 minutos</p>
+            </div>
+            <div style={{ width: '1px', height: '28px', background: 'var(--border)' }} />
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <div style={{ width: '1px', height: '28px', background: 'var(--border)' }} />
               <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--terracota)', animation: 'pulseRing 1.8s ease-out infinite' }} />
               <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', color: 'var(--text-muted)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Ao vivo</span>
             </div>
@@ -197,7 +259,7 @@ export default function HeroSection() {
             style={{ color: 'var(--text-muted)' }}
             initial={{ opacity: 0 }}
             animate={loaded ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.78 }}
+            transition={{ duration: 0.5, delay: 0.75 }}
           >
             <div
               style={{
@@ -220,43 +282,43 @@ export default function HeroSection() {
                 }}
               />
             </div>
-            <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.56rem', letterSpacing: '0.22em', textTransform: 'uppercase' }}>
+            <span
+              style={{
+                fontFamily: "'Syne', sans-serif",
+                fontSize: '0.56rem',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+              }}
+            >
               Role para ler
             </span>
           </motion.div>
         </div>
 
-        {/* Right — photo panel (desktop only) */}
-        <div className="hidden lg:block" style={{ position: 'relative', overflow: 'hidden' }}>
-          {/* Parallax photo */}
-          <motion.div
+        {/* Right — Interactive faces (desktop only) */}
+        <div className="hidden lg:block" style={{ position: 'relative' }}>
+          {/* Left gradient so faces blend into the left column */}
+          <div
             style={{
               position: 'absolute',
-              inset: '-20%',
-              y: photoY,
+              inset: 0,
+              zIndex: 5,
+              pointerEvents: 'none',
+              background: 'linear-gradient(to right, var(--bg-primary) 0%, transparent 20%)',
             }}
-          >
-            <img
-              src="/media/photos/IMG_0558.jpg"
-              alt=""
-              aria-hidden
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'center top',
-                filter: 'sepia(15%) contrast(1.07) brightness(0.85) saturate(0.8)',
-              }}
-              draggable={false}
-            />
-          </motion.div>
-
-          {/* Gradient overlays — blend into left column and top/bottom */}
-          <div style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', background: 'linear-gradient(to right, var(--bg-primary) 0%, transparent 22%)' }} />
-          <div style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', background: 'linear-gradient(to bottom, var(--bg-primary) 0%, transparent 14%, transparent 78%, var(--bg-primary) 100%)' }} />
-
-          {/* Interactive face parallax layer */}
-          <div style={{ position: 'absolute', inset: 0, zIndex: 3 }}>
+          />
+          {/* Top/bottom gradient */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              zIndex: 5,
+              pointerEvents: 'none',
+              background:
+                'linear-gradient(to bottom, var(--bg-primary) 0%, transparent 12%, transparent 80%, var(--bg-primary) 100%)',
+            }}
+          />
+          <div style={{ position: 'absolute', inset: 0, padding: '2rem 2rem 2rem 0' }}>
             <InteractiveFaces />
           </div>
         </div>
@@ -308,10 +370,10 @@ export default function HeroSection() {
         style={{
           position: 'absolute',
           bottom: '5.5rem',
-          left: '16%',
+          left: '18%',
           zIndex: 1,
           pointerEvents: 'none',
-          opacity: 0.18,
+          opacity: 0.2,
           transform: 'rotate(-18deg)',
         }}
       >
