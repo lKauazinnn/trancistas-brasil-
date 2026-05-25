@@ -105,46 +105,26 @@ export default function HeroSection() {
             Reportagem Especial · PI 2025
           </motion.p>
 
-          {/* TRAN — linha 1, cor sólida */}
-          <div style={{ overflow: 'hidden' }}>
-            <motion.span
+          {/* TRANCISTAS — uma linha, tamanho moderado */}
+          <div style={{ overflow: 'hidden', marginBottom: '2rem' }}>
+            <motion.h1
               style={{
                 display: 'block',
                 fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
                 fontWeight: 800,
-                fontSize: 'clamp(4rem, 15vw, 12rem)',
-                lineHeight: 0.87,
-                letterSpacing: '-0.025em',
+                fontSize: 'clamp(2.8rem, 6vw, 6.5rem)',
+                lineHeight: 1,
+                letterSpacing: '-0.02em',
                 textTransform: 'uppercase',
                 color: 'var(--text-primary)',
+                whiteSpace: 'nowrap',
               }}
               initial={{ y: '108%' }}
               animate={loaded ? { y: 0 } : {}}
               transition={{ duration: 0.95, ease: EASE, delay: 0.1 }}
             >
-              TRAN
-            </motion.span>
-          </div>
-
-          {/* CISTAS — linha 2, mesma cor */}
-          <div style={{ overflow: 'hidden', marginBottom: '2rem' }}>
-            <motion.span
-              style={{
-                display: 'block',
-                fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
-                fontWeight: 800,
-                fontSize: 'clamp(4rem, 15vw, 12rem)',
-                lineHeight: 0.87,
-                letterSpacing: '-0.025em',
-                textTransform: 'uppercase',
-                color: 'var(--text-primary)',
-              }}
-              initial={{ y: '108%' }}
-              animate={loaded ? { y: 0 } : {}}
-              transition={{ duration: 0.95, ease: EASE, delay: 0.15 }}
-            >
-              CISTAS
-            </motion.span>
+              TRANCISTAS
+            </motion.h1>
           </div>
 
           {/* Linha decorativa */}
