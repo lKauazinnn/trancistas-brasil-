@@ -3,18 +3,42 @@ import { useRef, useState } from 'react'
 export default function VideoPlayer({ src, poster, title, className = '' }) {
   const videoRef = useRef(null)
   const [playing, setPlaying] = useState(false)
-  const [loaded, setLoaded] = useState(false)
+  const [error,   setError]   = useState(false)
 
   const toggle = () => {
     const v = videoRef.current
     if (!v) return
-    if (playing) {
-      v.pause()
-      setPlaying(false)
-    } else {
-      v.play()
-      setPlaying(true)
-    }
+    if (playing) { v.pause(); setPlaying(false) }
+    else         { v.play();  setPlaying(true)  }
+  }
+
+  if (error) {
+    return (
+      <div
+        className={`relative overflow-hidden ${className}`}
+        style={{
+          background: 'var(--bg-surface)',
+          border: '1px solid var(--border)',
+          display: 'flex', flexDirection: 'column',
+          alignItems: 'center', justifyContent: 'center',
+          gap: '12px', minHeight: '240px',
+        }}
+      >
+        <div style={{ width: '48px', height: '48px', borderRadius: '50%', border: '2px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="1.5">
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
+        </div>
+        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.72rem', color: 'var(--text-muted)', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+          Vídeo em breve
+        </p>
+        {title && (
+          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.8rem', color: 'var(--text-primary)' }}>
+            {title}
+          </p>
+        )}
+      </div>
+    )
   }
 
   return (
@@ -30,8 +54,8 @@ export default function VideoPlayer({ src, poster, title, className = '' }) {
         src={src}
         poster={poster}
         className="w-full"
-        onLoadedData={() => setLoaded(true)}
         onEnded={() => setPlaying(false)}
+        onError={() => setError(true)}
         playsInline
       />
 
