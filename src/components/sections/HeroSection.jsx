@@ -72,117 +72,7 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* ── Barra editorial topo ── */}
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 4,
-          borderBottom: '1px solid var(--border)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '0.75rem 1.5rem',
-        }}
-        className="md:px-12 lg:px-20"
-      >
-        <span
-          style={{
-            fontFamily: "'Syne', sans-serif",
-            fontSize: '0.58rem',
-            letterSpacing: '0.28em',
-            textTransform: 'uppercase',
-            color: 'var(--text-muted)',
-          }}
-        >
-          Reportagem Especial
-        </span>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <div
-            style={{
-              width: '6px',
-              height: '6px',
-              borderRadius: '50%',
-              background: 'var(--terracota)',
-              animation: 'pulseRing 1.8s ease-out infinite',
-            }}
-          />
-          <span
-            style={{
-              fontFamily: "'Syne', sans-serif",
-              fontSize: '0.58rem',
-              letterSpacing: '0.28em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-            }}
-          >
-            PI · 2025
-          </span>
-        </div>
-      </div>
-
-      {/* ── Título TRANCISTAS — centrado, cor sólida, massivo ── */}
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 2,
-          textAlign: 'center',
-          padding: 'clamp(3rem, 6vw, 5rem) 1.5rem 1rem',
-        }}
-      >
-        {/* Eyebrow */}
-        <motion.p
-          style={{
-            fontFamily: "'Syne', sans-serif",
-            fontSize: '0.6rem',
-            letterSpacing: '0.3em',
-            textTransform: 'uppercase',
-            color: 'var(--text-muted)',
-            marginBottom: '1.4rem',
-          }}
-          initial={{ opacity: 0, y: 8 }}
-          animate={loaded ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.05 }}
-        >
-          Cultura&nbsp;&nbsp;·&nbsp;&nbsp;Arte&nbsp;&nbsp;·&nbsp;&nbsp;Resistência&nbsp;&nbsp;·&nbsp;&nbsp;Identidade
-        </motion.p>
-
-        {/* TRANCISTAS — uma palavra, cor única, sem gradiente */}
-        <div style={{ overflow: 'hidden' }}>
-          <motion.h1
-            style={{
-              fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
-              fontWeight: 800,
-              fontSize: 'clamp(3.2rem, 14vw, 18rem)',
-              lineHeight: 0.88,
-              letterSpacing: '-0.03em',
-              textTransform: 'uppercase',
-              color: 'var(--ouro)',
-              textAlign: 'center',
-            }}
-            initial={{ y: '108%' }}
-            animate={loaded ? { y: 0 } : {}}
-            transition={{ duration: 1.05, ease: EASE, delay: 0.1 }}
-          >
-            TRANCISTAS
-          </motion.h1>
-        </div>
-
-        {/* Linha decorativa centrada */}
-        <motion.div
-          style={{
-            width: '56px',
-            height: '1px',
-            background: 'var(--terracota)',
-            margin: '1.8rem auto 0',
-            transformOrigin: 'center',
-          }}
-          initial={{ scaleX: 0 }}
-          animate={loaded ? { scaleX: 1 } : {}}
-          transition={{ duration: 0.7, ease: EASE, delay: 0.42 }}
-        />
-      </div>
-
-      {/* ── Grid: lide esquerda / faces direita ── */}
+      {/* ── Grid: título + lide esquerda / faces direita ── */}
       <div
         style={{
           flex: 1,
@@ -196,8 +86,80 @@ export default function HeroSection() {
         {/* Esquerda — texto editorial */}
         <div
           className="flex flex-col justify-end px-6 md:px-12 lg:px-20"
-          style={{ paddingTop: '1.5rem', paddingBottom: '3rem' }}
+          style={{ paddingTop: '7rem', paddingBottom: '3rem' }}
         >
+          {/* Eyebrow */}
+          <motion.p
+            style={{
+              fontFamily: "'Syne', sans-serif",
+              fontSize: '0.58rem',
+              letterSpacing: '0.25em',
+              textTransform: 'uppercase',
+              color: 'var(--text-muted)',
+              marginBottom: '1.5rem',
+            }}
+            initial={{ opacity: 0 }}
+            animate={loaded ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.05 }}
+          >
+            Reportagem Especial · PI 2025
+          </motion.p>
+
+          {/* TRAN — linha 1, cor sólida */}
+          <div style={{ overflow: 'hidden' }}>
+            <motion.span
+              style={{
+                display: 'block',
+                fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
+                fontWeight: 800,
+                fontSize: 'clamp(4rem, 15vw, 12rem)',
+                lineHeight: 0.87,
+                letterSpacing: '-0.025em',
+                textTransform: 'uppercase',
+                color: 'var(--text-primary)',
+              }}
+              initial={{ y: '108%' }}
+              animate={loaded ? { y: 0 } : {}}
+              transition={{ duration: 0.95, ease: EASE, delay: 0.1 }}
+            >
+              TRAN
+            </motion.span>
+          </div>
+
+          {/* CISTAS — linha 2, mesma cor */}
+          <div style={{ overflow: 'hidden', marginBottom: '2rem' }}>
+            <motion.span
+              style={{
+                display: 'block',
+                fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
+                fontWeight: 800,
+                fontSize: 'clamp(4rem, 15vw, 12rem)',
+                lineHeight: 0.87,
+                letterSpacing: '-0.025em',
+                textTransform: 'uppercase',
+                color: 'var(--text-primary)',
+              }}
+              initial={{ y: '108%' }}
+              animate={loaded ? { y: 0 } : {}}
+              transition={{ duration: 0.95, ease: EASE, delay: 0.15 }}
+            >
+              CISTAS
+            </motion.span>
+          </div>
+
+          {/* Linha decorativa */}
+          <motion.div
+            style={{
+              height: '1px',
+              background: 'var(--border)',
+              marginBottom: '1.5rem',
+              maxWidth: '520px',
+              transformOrigin: 'left center',
+            }}
+            initial={{ scaleX: 0 }}
+            animate={loaded ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, ease: EASE, delay: 0.38 }}
+          />
           {/* Lide */}
           <motion.div
             style={{ maxWidth: '520px', marginBottom: '2rem' }}
