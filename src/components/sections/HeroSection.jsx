@@ -112,7 +112,7 @@ export default function HeroSection() {
                 display: 'block',
                 fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
                 fontWeight: 800,
-                fontSize: 'clamp(2.8rem, 6vw, 6.5rem)',
+                fontSize: 'clamp(2rem, 3.5vw, 4rem)',
                 lineHeight: 1,
                 letterSpacing: '-0.02em',
                 textTransform: 'uppercase',
