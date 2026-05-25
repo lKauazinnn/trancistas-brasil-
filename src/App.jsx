@@ -5,6 +5,7 @@ import HeroSection from './components/sections/HeroSection'
 import AprendizadoAncestral from './components/sections/AprendizadoAncestral'
 import AutoestimaIdentidade from './components/sections/AutoestimaIdentidade'
 import GaleriaSection from './components/sections/GaleriaSection'
+import MosaicoAfroPuzzle from './components/sections/MosaicoAfroPuzzle'
 import MercadoCredito from './components/sections/MercadoCredito'
 import DesafiosRotina from './components/sections/DesafiosRotina'
 import FuturoEncerramento from './components/sections/FuturoEncerramento'
@@ -34,6 +35,8 @@ export default function App() {
         <AprendizadoAncestral />
         <KenteStripe height={22} />
         <AutoestimaIdentidade />
+        <KenteStripe height={22} />
+        <MosaicoAfroPuzzle />
         <KenteStripe height={22} />
         <GaleriaSection />
         <KenteStripe height={22} />
