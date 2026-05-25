@@ -49,8 +49,10 @@ export default function FuturoEncerramento() {
               seus negócios na lógica da economia solidária.
             </p>
             <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'var(--text-muted)' }}>
-              "Eu não preciso de pena. Preciso de acesso", diz Kamyla. "Acesso ao banco, à
-              faculdade, ao reconhecimento. O resto eu resolvo com as minhas mãos."
+              A luta por formalização, crédito justo e programas educacionais é o
+              alicerce para a expansão e valorização desses negócios. As trancistas não
+              buscam assistencialismo, mas sim oportunidades estruturais para continuarem
+              transformando suas realidades e as de suas comunidades.
             </p>
           </div>
         </ScrollReveal>

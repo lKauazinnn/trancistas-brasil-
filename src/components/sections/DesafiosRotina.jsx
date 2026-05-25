@@ -211,12 +211,6 @@ export default function DesafiosRotina() {
         </ScrollReveal>
       </div>
 
-      <CenteredQuote
-        quote="A dor no ombro começou no segundo ano. Hoje faço fisioterapia toda semana. Ninguém fala sobre isso."
-        author="Fernanda Oliveira"
-        role="Trancista — 8 anos de profissão"
-      />
-
       <ParallaxSection
         src="/media/photos/IMG_0626.jpg"
         alt="Processo de trança"

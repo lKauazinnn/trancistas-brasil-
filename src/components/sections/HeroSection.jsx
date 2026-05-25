@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import InteractiveFaces from '../ui/InteractiveFaces'
 import AfroPattern from '../ui/AfroPattern'
 import FloatingComb from '../ui/FloatingComb'
 import AdinkraFloat from '../ui/AdinkraFloat'
@@ -61,32 +60,22 @@ export default function HeroSection() {
             }}
           />
         </motion.div>
-        {/* Vinheta: escurece bordas, desfaz embaixo para o bg */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background:
-              'linear-gradient(to bottom, rgba(5,5,9,0.52) 0%, transparent 30%, var(--bg-primary) 90%)',
-          }}
-        />
+        {/* Sem vinheta — fundo limpo */}
       </div>
 
-      {/* ── Grid: título + lide esquerda / faces direita ── */}
+      {/* ── Grid: título + lide ── */}
       <div
+        className="w-full"
         style={{
           flex: 1,
           position: 'relative',
           zIndex: 1,
-          display: 'grid',
-          gridTemplateColumns: '1fr',
         }}
-        className="lg:grid lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_560px]"
       >
-        {/* Esquerda — texto editorial */}
+        {/* Texto editorial alinhado à esquerda */}
         <div
           className="flex flex-col justify-end px-6 md:px-12 lg:px-20"
-          style={{ paddingTop: '7rem', paddingBottom: '3rem' }}
+          style={{ flex: 1, paddingTop: '7rem', paddingBottom: '3rem' }}
         >
           {/* Eyebrow */}
           <motion.p
@@ -112,12 +101,11 @@ export default function HeroSection() {
                 display: 'block',
                 fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
                 fontWeight: 800,
-                fontSize: 'clamp(2rem, 3.5vw, 4rem)',
+                fontSize: 'clamp(2.5rem, 6vw, 5rem)',
                 lineHeight: 1,
                 letterSpacing: '-0.02em',
                 textTransform: 'uppercase',
                 color: 'var(--text-primary)',
-                whiteSpace: 'nowrap',
               }}
               initial={{ y: '108%' }}
               animate={loaded ? { y: 0 } : {}}
@@ -142,7 +130,7 @@ export default function HeroSection() {
           />
           {/* Lide */}
           <motion.div
-            style={{ maxWidth: '520px', marginBottom: '2rem' }}
+            style={{ maxWidth: '620px', marginBottom: '3rem' }}
             initial={{ opacity: 0, y: 16 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
@@ -150,10 +138,10 @@ export default function HeroSection() {
             <p
               style={{
                 fontFamily: "'Barlow', sans-serif",
-                fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
+                fontSize: 'clamp(1rem, 2vw, 1.15rem)',
                 lineHeight: 1.72,
                 color: 'var(--text-primary)',
-                marginBottom: '0.75rem',
+                marginBottom: '1rem',
               }}
             >
               Após séculos de invisibilidade, a profissão de trancista começa a ganhar
@@ -163,7 +151,7 @@ export default function HeroSection() {
             <p
               style={{
                 fontFamily: "'Barlow', sans-serif",
-                fontSize: 'clamp(0.8rem, 1.2vw, 0.92rem)',
+                fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
                 lineHeight: 1.72,
                 color: 'var(--text-muted)',
               }}
@@ -175,8 +163,8 @@ export default function HeroSection() {
 
           {/* Meta */}
           <motion.div
-            className="flex items-center gap-6 flex-wrap"
-            style={{ marginBottom: '2.5rem' }}
+            className="flex items-center gap-8 flex-wrap"
+            style={{ marginBottom: '4rem' }}
             initial={{ opacity: 0 }}
             animate={loaded ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.62 }}
@@ -243,26 +231,6 @@ export default function HeroSection() {
               Role para ler
             </span>
           </motion.div>
-        </div>
-
-        {/* Direita — fotos interativas (desktop) */}
-        <div className="hidden lg:block" style={{ position: 'relative' }}>
-          {/* InteractiveFaces primeiro, gradients por cima para o blend */}
-          <div style={{ position: 'absolute', inset: 0, zIndex: 1, padding: '2rem 2rem 2rem 0' }}>
-            <InteractiveFaces />
-          </div>
-          <div
-            style={{
-              position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none',
-              background: 'linear-gradient(to right, var(--bg-primary) 0%, transparent 28%)',
-            }}
-          />
-          <div
-            style={{
-              position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none',
-              background: 'linear-gradient(to bottom, var(--bg-primary) 0%, transparent 18%, transparent 75%, var(--bg-primary) 100%)',
-            }}
-          />
         </div>
       </div>
 
