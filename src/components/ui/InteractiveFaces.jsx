@@ -1,4 +1,5 @@
 import { useRef, useEffect, useCallback } from 'react'
+import { motion } from 'framer-motion'
 
 const LERP = 0.07
 
@@ -112,7 +113,8 @@ export default function InteractiveFaces() {
           }}
         >
           {/* Frame */}
-          <div
+          <motion.div
+            whileHover={{ scale: 1.04, rotate: 0, transition: { type: 'spring', stiffness: 280, damping: 20 } }}
             style={{
               overflow: 'hidden',
               aspectRatio: face.aspect,
@@ -121,6 +123,7 @@ export default function InteractiveFaces() {
               boxShadow: `0 12px 48px rgba(0,0,0,0.20), 0 2px 8px rgba(0,0,0,0.12), 0 0 0 1px ${face.borderColor}30`,
               position: 'relative',
               background: 'var(--bg-surface)',
+              cursor: 'none',
             }}
           >
             <img
@@ -139,7 +142,7 @@ export default function InteractiveFaces() {
               background: `${face.borderColor}0A`,
               pointerEvents: 'none',
             }} />
-          </div>
+          </motion.div>
 
           {/* Editorial label on select photos */}
           {face.label && (

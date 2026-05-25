@@ -6,6 +6,8 @@ import VideoPlayer from '../ui/VideoPlayer'
 import StarDivider from '../ui/StarDivider'
 import BeadDivider from '../ui/BeadDivider'
 import AfroPattern from '../ui/AfroPattern'
+import TiltCard from '../ui/TiltCard'
+import CulturaParticles from '../ui/CulturaParticles'
 import { CREDITS } from '../../data/content'
 
 const FUTURE_PILLARS = [
@@ -22,6 +24,7 @@ export default function FuturoEncerramento() {
 
       <div className="section-padding max-w-7xl mx-auto" style={{ position: 'relative' }}>
         <AfroPattern variant="adinkra" color="#D4A030" opacity={0.055} />
+        <CulturaParticles count={10} zIndex={0} />
         {/* Header */}
         <ScrollReveal variant="fade-up">
           <SectionLabel number={5} text="Futuro & Encerramento" />
@@ -56,6 +59,7 @@ export default function FuturoEncerramento() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
           {FUTURE_PILLARS.map((p, i) => (
             <ScrollReveal key={i} variant="fade-up" delay={i * 70}>
+              <TiltCard intensity={8} style={{ height: '100%' }}>
               <div
                 style={{
                   border: '1px solid var(--border)',
@@ -82,6 +86,7 @@ export default function FuturoEncerramento() {
                   {p.texto}
                 </p>
               </div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

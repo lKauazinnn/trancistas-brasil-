@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { useCountUp } from '../../hooks/useCountUp'
 
@@ -8,17 +9,17 @@ export default function StatCard({ value, suffix = '', prefix = '', label, delay
   const displayed = Number.isInteger(value) ? count : (isVisible ? value : 0)
 
   return (
-    <div
+    <motion.div
       ref={ref}
+      initial={{ opacity: 0, x: -20 }}
+      animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+      transition={{ type: 'spring', stiffness: 280, damping: 26, delay: delay / 1000 }}
+      whileHover={{ borderLeftColor: 'var(--ouro)', scale: 1.02, transition: { duration: 0.2 } }}
       style={{
         paddingLeft: '1.25rem',
         borderLeft: '2px solid var(--terracota)',
         paddingTop: '2px',
         paddingBottom: '2px',
-        transition: 'opacity 0.7s ease, transform 0.7s ease',
-        transitionDelay: `${delay}ms`,
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
       }}
     >
       <div
@@ -32,6 +33,6 @@ export default function StatCard({ value, suffix = '', prefix = '', label, delay
       <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.8rem', lineHeight: 1.4, color: 'var(--text-muted)' }}>
         {label}
       </p>
-    </div>
+    </motion.div>
   )
 }

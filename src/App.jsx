@@ -11,6 +11,7 @@ import FuturoEncerramento from './components/sections/FuturoEncerramento'
 import ReadingProgress from './components/ui/ReadingProgress'
 import SectionNav from './components/ui/SectionNav'
 import KenteStripe from './components/ui/KenteStripe'
+import CustomCursor from './components/ui/CustomCursor'
 
 // Default: light theme. Only go dark if explicitly saved.
 function initTheme() {
@@ -24,6 +25,7 @@ initTheme()
 export default function App() {
   return (
     <div style={{ overflowX: 'hidden' }}>
+      <CustomCursor />
       <ReadingProgress />
       <SectionNav />
       <Navbar />

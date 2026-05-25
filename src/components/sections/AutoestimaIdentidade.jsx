@@ -7,6 +7,7 @@ import AudioPlayer from '../ui/AudioPlayer'
 import StarDivider from '../ui/StarDivider'
 import BeadDivider from '../ui/BeadDivider'
 import ParallaxSection from '../ui/ParallaxSection'
+import AdinkraFloat from '../ui/AdinkraFloat'
 
 const REFERENCES = [
   { name: 'Michelle Obama', desc: 'Ao usar tranças em eventos oficiais, redefiniu o que é elegância num mundo que sempre negou a estética negra.' },
@@ -48,6 +49,7 @@ export default function AutoestimaIdentidade() {
       {/* Content */}
       <div className="section-padding max-w-7xl mx-auto" style={{ position: 'relative' }}>
         <AfroPattern color="#D4A030" opacity={0.05} />
+        <AdinkraFloat count={5} color="var(--ouro)" zIndex={0} />
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
           {/* Main text */}
           <div className="lg:col-span-2 space-y-5">

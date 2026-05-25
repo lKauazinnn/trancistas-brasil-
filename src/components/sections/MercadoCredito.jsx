@@ -1,4 +1,5 @@
 import { Globe, Link2, Scissors, Megaphone, Smartphone, FileText } from 'lucide-react'
+import { motion } from 'framer-motion'
 import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
 import CenteredQuote from '../ui/CenteredQuote'
@@ -8,6 +9,8 @@ import StatCard from '../ui/StatCard'
 import TickerBand from '../ui/TickerBand'
 import StarDivider from '../ui/StarDivider'
 import ParallaxSection from '../ui/ParallaxSection'
+import TiltCard from '../ui/TiltCard'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { MARKET_STATS, TIMELINE_EVENTS } from '../../data/content'
 
 const ICON_MAP = { Globe, Link2, Scissors, Megaphone, Smartphone, FileText }
@@ -51,14 +54,15 @@ export default function MercadoCredito() {
         {/* Stats grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {MARKET_STATS.map((stat, i) => (
-            <StatCard
-              key={i}
-              value={stat.value}
-              suffix={stat.suffix}
-              prefix={stat.prefix || ''}
-              label={stat.label}
-              delay={i * 70}
-            />
+            <TiltCard key={i} intensity={5}>
+              <StatCard
+                value={stat.value}
+                suffix={stat.suffix}
+                prefix={stat.prefix || ''}
+                label={stat.label}
+                delay={i * 70}
+              />
+            </TiltCard>
           ))}
         </div>
 
@@ -132,13 +136,25 @@ export default function MercadoCredito() {
           </h3>
         </ScrollReveal>
 
-        <div className="space-y-6">
+        <motion.div
+          className="space-y-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+        >
           {TIMELINE_EVENTS.map((event, i) => (
-            <ScrollReveal key={i} variant="fade-up" delay={i * 60}>
+            <motion.div
+              key={i}
+              variants={{
+                hidden:   { opacity: 0, x: -24 },
+                visible:  { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 260, damping: 24 } },
+              }}
+            >
               <TimelineItem event={event} index={i} />
-            </ScrollReveal>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <CenteredQuote
@@ -153,14 +169,26 @@ export default function MercadoCredito() {
 }
 
 function BarItem({ label, pct }) {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.5 })
   return (
-    <div>
+    <div ref={ref}>
       <div className="flex justify-between mb-1.5">
         <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.85rem', color: 'var(--text-primary)' }}>{label}</span>
-        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.85rem', fontWeight: 600, color: 'var(--terracota)' }}>{pct}%</span>
+        <span style={{
+          fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.85rem', fontWeight: 600,
+          color: 'var(--terracota)',
+          opacity: isVisible ? 1 : 0,
+          transition: 'opacity 0.4s ease 0.8s',
+        }}>{pct}%</span>
       </div>
-      <div style={{ height: '3px', background: 'var(--border)', borderRadius: '2px', overflow: 'hidden' }}>
-        <div style={{ height: '100%', width: `${pct}%`, background: 'var(--terracota)', borderRadius: '2px' }} />
+      <div style={{ height: '4px', background: 'var(--border)', borderRadius: '2px', overflow: 'hidden' }}>
+        <div style={{
+          height: '100%',
+          width: isVisible ? `${pct}%` : '0%',
+          background: `linear-gradient(90deg, var(--terracota), var(--ouro))`,
+          borderRadius: '2px',
+          transition: isVisible ? `width 1.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.25s` : 'none',
+        }} />
       </div>
     </div>
   )

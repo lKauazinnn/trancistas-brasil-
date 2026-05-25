@@ -4,6 +4,9 @@ import ClipReveal from '../ui/ClipReveal'
 import InteractiveFaces from '../ui/InteractiveFaces'
 import AfroPattern from '../ui/AfroPattern'
 import FloatingComb from '../ui/FloatingComb'
+import ScrambleText from '../ui/ScrambleText'
+import AdinkraFloat from '../ui/AdinkraFloat'
+import CulturaParticles from '../ui/CulturaParticles'
 
 export default function HeroSection() {
   const [scrollY, setScrollY] = useState(0)
@@ -100,7 +103,11 @@ export default function HeroSection() {
                   whiteSpace: 'nowrap',
                 }}
               >
-                <span className="wood-text">TRAN</span>CISTAS
+                <ScrambleText
+                  text="TRANCISTAS"
+                  delay={520}
+                  finalRender={<><span className="wood-text">TRAN</span>CISTAS</>}
+                />
               </h1>
             </ClipReveal>
           </div>
@@ -204,6 +211,10 @@ export default function HeroSection() {
 
       {/* Kuba pattern overlay on left content — very subtle */}
       <AfroPattern variant="kuba" color="#C0522A" opacity={0.04} />
+      {/* Floating adinkra symbols */}
+      <AdinkraFloat count={7} color="var(--ouro)" zIndex={0} />
+      {/* Drifting bead particles */}
+      <CulturaParticles count={12} zIndex={0} />
 
       {/* Floating decorative comb — desktop only */}
       <div className="hidden lg:block" style={{

@@ -188,6 +188,16 @@
   from { transform: scaleX(0); }
   to   { transform: scaleX(1); }
 }
+@keyframes beadPulse {
+  0%, 100% { transform: scale(1);   opacity: 0.72; }
+  50%       { transform: scale(1.4); opacity: 1;    }
+}
+
+/* Hide OS cursor on mouse devices — replaced by CustomCursor component */
+@media (pointer: fine) {
+  html { cursor: none; }
+  input, textarea, select { cursor: text; }
+}
 @keyframes revealUp {
   from { transform: translateY(100%); opacity: 0; }
   to   { transform: translateY(0);    opacity: 1; }

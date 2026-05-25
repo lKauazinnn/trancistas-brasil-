@@ -1,17 +1,40 @@
 import { HeartPulse, Banknote, Landmark, Scale } from 'lucide-react'
+import { motion } from 'framer-motion'
 import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
 import CenteredQuote from '../ui/CenteredQuote'
 import SectionLabel from '../ui/SectionLabel'
 import StarDivider from '../ui/StarDivider'
 import ParallaxSection from '../ui/ParallaxSection'
+import AdinkraFloat from '../ui/AdinkraFloat'
 
 const PAIN_POINTS = [
-  { icon: HeartPulse, titulo: 'Dores Crônicas',        texto: '71% das trancistas relatam dores musculoesqueléticas recorrentes nos ombros, pescoço e costas, causadas pelas horas de trabalho com os braços elevados.' },
-  { icon: Banknote,   titulo: 'Falta de Crédito',       texto: 'Sem CNPJ e sem garantias formais, o acesso ao crédito para investir em equipamentos e espaço físico é sistematicamente negado.' },
-  { icon: Landmark,   titulo: 'Sem Políticas Públicas', texto: 'O Mapa Afetivo aponta que apenas 3% das trancistas conhecem algum programa público de apoio à sua categoria.' },
-  { icon: Scale,      titulo: 'Racismo Estrutural',     texto: 'Discriminação em salões não negros e diferença salarial média de 34% em relação a profissionais de cabelos lisos.' },
+  { icon: HeartPulse, titulo: 'Dores Crônicas',        texto: '71% das trancistas relatam dores musculoesqueléticas recorrentes nos ombros, pescoço e costas, causadas pelas horas de trabalho com os braços elevados.', color: 'var(--terracota)' },
+  { icon: Banknote,   titulo: 'Falta de Crédito',       texto: 'Sem CNPJ e sem garantias formais, o acesso ao crédito para investir em equipamentos e espaço físico é sistematicamente negado.',                           color: 'var(--ouro)'     },
+  { icon: Landmark,   titulo: 'Sem Políticas Públicas', texto: 'O Mapa Afetivo aponta que apenas 3% das trancistas conhecem algum programa público de apoio à sua categoria.',                                              color: 'var(--verde)'    },
+  { icon: Scale,      titulo: 'Racismo Estrutural',     texto: 'Discriminação em salões não negros e diferença salarial média de 34% em relação a profissionais de cabelos lisos.',                                         color: 'var(--terracota)' },
 ]
+
+// SVG adinkra inline for hover overlay
+const adinkraBg = `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='20' cy='20' r='15' stroke='%231C1C1A' stroke-width='1.5' fill='none'/><line x1='20' y1='5' x2='20' y2='35' stroke='%231C1C1A' stroke-width='1'/><line x1='5' y1='20' x2='35' y2='20' stroke='%231C1C1A' stroke-width='1'/><path d='M20 11L29 20L20 29L11 20Z' stroke='%231C1C1A' stroke-width='1' fill='none'/></svg>")`
+
+// Framer Motion variants for card hover (propagates to children)
+const cardV = {
+  rest:  { y: 0,  boxShadow: '0 2px 8px rgba(0,0,0,0.04)' },
+  hover: { y: -7, boxShadow: '0 20px 50px rgba(0,0,0,0.1)', transition: { type: 'spring', stiffness: 280, damping: 22 } },
+}
+const patternV = {
+  rest:  { opacity: 0 },
+  hover: { opacity: 0.065, transition: { duration: 0.3 } },
+}
+const borderV = {
+  rest:  { scaleY: 0 },
+  hover: { scaleY: 1, transition: { type: 'spring', stiffness: 350, damping: 28 } },
+}
+const iconV = {
+  rest:  { scale: 1, rotate: 0 },
+  hover: { scale: 1.25, rotate: -8, transition: { type: 'spring', stiffness: 400, damping: 18 } },
+}
 
 export default function DesafiosRotina() {
   return (
@@ -19,7 +42,8 @@ export default function DesafiosRotina() {
       {/* Accent line */}
       <div style={{ height: '3px', background: `linear-gradient(90deg, var(--terracota), var(--ouro), var(--terracota))` }} />
 
-      <div className="section-padding max-w-7xl mx-auto">
+      <div className="section-padding max-w-7xl mx-auto" style={{ position: 'relative' }}>
+        <AdinkraFloat count={5} color="var(--terracota)" zIndex={0} />
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-14">
           <div>
@@ -55,34 +79,60 @@ export default function DesafiosRotina() {
         {/* Pain point cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-14">
           {PAIN_POINTS.map((item, i) => (
-            <ScrollReveal key={i} variant="fade-up" delay={i * 70}>
-              <div
+            <motion.div
+              key={i}
+              variants={cardV}
+              initial="rest"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              whileHover="hover"
+              style={{
+                background: 'var(--bg-surface)',
+                border: '1px solid var(--border)',
+                padding: 'clamp(1.25rem, 3vw, 2rem)',
+                cursor: 'default',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
+            >
+              {/* Adinkra texture on hover */}
+              <motion.div
+                variants={patternV}
                 style={{
-                  background: 'var(--bg-surface)',
-                  border: '1px solid var(--border)',
-                  padding: 'clamp(1.25rem, 3vw, 2rem)',
-                  transition: 'border-color 0.35s',
-                  cursor: 'default',
+                  position: 'absolute', inset: 0,
+                  backgroundImage: adinkraBg,
+                  backgroundSize: '40px 40px',
+                  pointerEvents: 'none',
                 }}
-                onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(192,82,42,0.4)'}
-                onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
-              >
-                <div className="flex items-start gap-4 mb-3">
-                  <span style={{ flexShrink: 0, marginTop: '3px', color: 'var(--terracota)' }}>
-                    <item.icon size={22} strokeWidth={1.5} />
-                  </span>
-                  <h3
-                    className="font-display font-bold uppercase leading-tight"
-                    style={{ fontSize: '1.05rem', color: 'var(--text-primary)' }}
-                  >
-                    {item.titulo}
-                  </h3>
-                </div>
-                <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.65 }}>
-                  {item.texto}
-                </p>
+              />
+              {/* Colored left border that grows up from bottom on hover */}
+              <motion.div
+                variants={borderV}
+                style={{
+                  position: 'absolute', left: 0, top: 0, bottom: 0,
+                  width: '4px',
+                  background: item.color,
+                  transformOrigin: 'bottom',
+                }}
+              />
+              <div className="flex items-start gap-4 mb-3" style={{ position: 'relative' }}>
+                <motion.span
+                  variants={iconV}
+                  style={{ flexShrink: 0, marginTop: '3px', color: item.color, display: 'inline-block' }}
+                >
+                  <item.icon size={22} strokeWidth={1.5} />
+                </motion.span>
+                <h3
+                  className="font-display font-bold uppercase leading-tight"
+                  style={{ fontSize: '1.05rem', color: 'var(--text-primary)' }}
+                >
+                  {item.titulo}
+                </h3>
               </div>
-            </ScrollReveal>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.65, position: 'relative' }}>
+                {item.texto}
+              </p>
+            </motion.div>
           ))}
         </div>
 
