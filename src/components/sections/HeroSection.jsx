@@ -1,248 +1,321 @@
 import { useEffect, useRef, useState } from 'react'
-import ScrollReveal from '../ui/ScrollReveal'
-import ClipReveal from '../ui/ClipReveal'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import InteractiveFaces from '../ui/InteractiveFaces'
 import AfroPattern from '../ui/AfroPattern'
 import FloatingComb from '../ui/FloatingComb'
-
 import AdinkraFloat from '../ui/AdinkraFloat'
 import CulturaParticles from '../ui/CulturaParticles'
 
-export default function HeroSection() {
-  const [scrollY, setScrollY] = useState(0)
-  const [loaded, setLoaded] = useState(false)
-  const heroRef = useRef(null)
+const EASE_OUT = [0.16, 1, 0.3, 1]
 
-  useEffect(() => {
-    const h = () => setScrollY(window.scrollY)
-    window.addEventListener('scroll', h, { passive: true })
-    return () => window.removeEventListener('scroll', h)
-  }, [])
+export default function HeroSection() {
+  const [loaded, setLoaded] = useState(false)
+  const sectionRef = useRef(null)
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  })
+  const photoY = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 80)
     return () => clearTimeout(t)
   }, [])
 
-  const parallax = scrollY * 0.2
-
   return (
     <section
-      ref={heroRef}
+      ref={sectionRef}
       id="hero"
-      style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden' }}
+      style={{
+        minHeight: '100svh',
+        display: 'flex',
+        flexDirection: 'column',
+        background: 'var(--bg-primary)',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
     >
-      {/* Background photo */}
+      {/* ── Editorial top bar ── */}
       <div
         style={{
-          position: 'absolute', inset: 0,
-          transform: `translateY(${parallax}px) scale(1.1)`,
-          zIndex: 0,
+          position: 'relative',
+          zIndex: 4,
+          borderBottom: '1px solid var(--border)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '0.75rem 1.5rem',
         }}
+        className="md:px-12 lg:px-16"
       >
-        <img
-          src="/media/photos/IMG_0558.jpg"
-          alt=""
-          aria-hidden
-          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35 }}
-        />
-        {/* Gradient: transparent top → full bg-primary bottom */}
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 30%, var(--bg-primary) 85%)',
-        }} />
+        <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.58rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+          Reportagem Especial
+        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--terracota)', animation: 'pulseRing 1.8s ease-out infinite' }} />
+          <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.58rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+            PI · 2025
+          </span>
+        </div>
       </div>
 
-      {/* Content grid */}
+      {/* ── Main content grid ── */}
       <div
-        style={{
-          flex: 1,
-          position: 'relative', zIndex: 1,
-          display: 'grid',
-          gridTemplateColumns: '1fr',
-          padding: '0',
-        }}
+        style={{ flex: 1, position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1fr' }}
         className="lg:grid lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_560px]"
       >
-        {/* Left: editorial content */}
+        {/* Left — editorial typography */}
         <div
-          className="flex flex-col justify-end px-6 md:px-12 lg:px-20"
-          style={{ paddingTop: '8rem', paddingBottom: '3rem' }}
+          className="flex flex-col justify-end px-6 md:px-12 lg:px-16"
+          style={{ paddingTop: '5rem', paddingBottom: '3rem' }}
         >
-          {/* Eyebrow */}
-          <div
-            style={{
-              display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '2rem',
-              opacity: loaded ? 1 : 0,
-              transform: loaded ? 'none' : 'translateY(12px)',
-              transition: 'opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s',
-            }}
-          >
-            {/* Animated accent line */}
-            <span style={{
-              display: 'block',
-              width: '40px', height: '1px',
-              background: 'var(--terracota)',
-              transformOrigin: 'left',
-              transform: loaded ? 'scaleX(1)' : 'scaleX(0)',
-              transition: 'transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.3s',
-            }} />
-            <span className="label-tag">Reportagem Especial · PI 2025</span>
-          </div>
-
-          {/* Main title — ClipReveal */}
-          <div style={{ marginBottom: '1.5rem' }}>
-            <ClipReveal delay={0}>
-              <h1
-                className="font-display font-black uppercase"
+          {/* Giant headline */}
+          <div style={{ marginBottom: '2rem' }}>
+            {/* TRAN — wood-grain solid */}
+            <div style={{ overflow: 'hidden' }}>
+              <motion.span
+                className="wood-text"
                 style={{
-                  fontSize: 'clamp(3rem, 7vw, 6.5rem)',
-                  lineHeight: 0.92,
-                  letterSpacing: '-0.01em',
-                  color: 'var(--text-primary)',
-                  whiteSpace: 'nowrap',
+                  display: 'block',
+                  fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
+                  fontWeight: 800,
+                  fontSize: 'clamp(4.5rem, 20vw, 18rem)',
+                  lineHeight: 0.87,
+                  letterSpacing: '-0.025em',
+                  textTransform: 'uppercase',
                 }}
+                initial={{ y: '108%' }}
+                animate={loaded ? { y: 0 } : {}}
+                transition={{ duration: 1, ease: EASE_OUT, delay: 0.05 }}
               >
-                <span className="wood-text">TRAN</span>CISTAS
-              </h1>
-            </ClipReveal>
+                TRAN
+              </motion.span>
+            </div>
+
+            {/* CISTAS — outline / ghost */}
+            <div style={{ overflow: 'hidden' }}>
+              <motion.span
+                style={{
+                  display: 'block',
+                  fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
+                  fontWeight: 800,
+                  fontSize: 'clamp(4.5rem, 20vw, 18rem)',
+                  lineHeight: 0.87,
+                  letterSpacing: '-0.025em',
+                  textTransform: 'uppercase',
+                  WebkitTextStroke: '2px var(--ouro)',
+                  color: 'transparent',
+                }}
+                initial={{ y: '108%' }}
+                animate={loaded ? { y: 0 } : {}}
+                transition={{ duration: 1, ease: EASE_OUT, delay: 0.13 }}
+              >
+                CISTAS
+              </motion.span>
+            </div>
           </div>
 
-          {/* Thin rule — animated */}
-          <div
+          {/* Animated rule */}
+          <motion.div
             style={{
-              height: '1px', background: 'var(--border)', marginBottom: '1.5rem', maxWidth: '480px',
-              transformOrigin: 'left',
-              transform: loaded ? 'scaleX(1)' : 'scaleX(0)',
-              transition: 'transform 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s',
+              height: '1px',
+              background: 'var(--border)',
+              marginBottom: '1.5rem',
+              maxWidth: '520px',
+              transformOrigin: 'left center',
             }}
+            initial={{ scaleX: 0 }}
+            animate={loaded ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.9, ease: EASE_OUT, delay: 0.38 }}
           />
 
           {/* Lide */}
-          <ScrollReveal variant="fade-up" delay={280}>
-            <div style={{ maxWidth: '520px' }}>
-              <p
-                className="font-body"
-                style={{ fontSize: 'clamp(1rem, 1.8vw, 1.15rem)', lineHeight: 1.7, color: 'var(--text-primary)', marginBottom: '1rem' }}
-              >
-                Após séculos de invisibilidade, a profissão de trancista começa a ganhar
-                o reconhecimento que sempre mereceu. Entre agulhas, linhas e cabelos crespos,
-                mulheres negras constroem identidade, renda e resistência com as próprias mãos.
-              </p>
-              <p
-                className="font-body"
-                style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1rem)', lineHeight: 1.7, color: 'var(--text-muted)' }}
-              >
-                Esta reportagem documenta a história de uma arte ancestral que sobreviveu
-                à opressão — e hoje disputa espaço num mercado bilionário.
-              </p>
-            </div>
-          </ScrollReveal>
+          <motion.div
+            style={{ maxWidth: '520px', marginBottom: '2rem' }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={loaded ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.48 }}
+          >
+            <p
+              style={{
+                fontFamily: "'Barlow', sans-serif",
+                fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
+                lineHeight: 1.72,
+                color: 'var(--text-primary)',
+                marginBottom: '0.75rem',
+              }}
+            >
+              Após séculos de invisibilidade, a profissão de trancista começa a ganhar
+              o reconhecimento que sempre mereceu. Entre agulhas, linhas e cabelos crespos,
+              mulheres negras constroem identidade, renda e resistência com as próprias mãos.
+            </p>
+            <p
+              style={{
+                fontFamily: "'Barlow', sans-serif",
+                fontSize: 'clamp(0.8rem, 1.2vw, 0.9rem)',
+                lineHeight: 1.72,
+                color: 'var(--text-muted)',
+              }}
+            >
+              Esta reportagem documenta a história de uma arte ancestral que sobreviveu
+              à opressão — e hoje disputa espaço num mercado bilionário.
+            </p>
+          </motion.div>
 
           {/* Meta row */}
-          <ScrollReveal variant="fade-up" delay={340}>
-            <div className="flex items-center gap-6 mt-8 flex-wrap">
-              <div>
-                <p style={{ fontSize: '0.6rem', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '2px' }}>Categorias</p>
-                <p style={{ fontSize: '0.8rem', fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>Cultura · Mercado · Saúde</p>
+          <motion.div
+            className="flex items-center gap-6 flex-wrap"
+            style={{ marginBottom: '2.5rem' }}
+            initial={{ opacity: 0 }}
+            animate={loaded ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.62 }}
+          >
+            {[
+              { label: 'Categorias', value: 'Cultura · Mercado · Saúde' },
+              { label: 'Leitura',    value: '~12 minutos' },
+            ].map((item, i) => (
+              <div key={i}>
+                <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '3px' }}>
+                  {item.label}
+                </p>
+                <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.8rem', color: 'var(--text-primary)' }}>
+                  {item.value}
+                </p>
               </div>
-              <div style={{ width: '1px', height: '32px', background: 'var(--border)' }} />
-              <div>
-                <p style={{ fontSize: '0.6rem', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '2px' }}>Tempo de leitura</p>
-                <p style={{ fontSize: '0.8rem', fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>~12 minutos</p>
-              </div>
-              <div style={{ width: '1px', height: '32px', background: 'var(--border)' }} />
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--terracota)', animation: 'pulseRing 1.8s ease-out infinite' }} />
-                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.6rem', color: 'var(--text-muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>Ao vivo</span>
-              </div>
+            ))}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <div style={{ width: '1px', height: '28px', background: 'var(--border)' }} />
+              <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--terracota)', animation: 'pulseRing 1.8s ease-out infinite' }} />
+              <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', color: 'var(--text-muted)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Ao vivo</span>
             </div>
-          </ScrollReveal>
+          </motion.div>
 
           {/* Scroll hint */}
-          <ScrollReveal variant="fade-up" delay={420}>
-            <div className="flex items-center gap-3 mt-12" style={{ color: 'var(--text-muted)' }}>
+          <motion.div
+            className="flex items-center gap-3"
+            style={{ color: 'var(--text-muted)' }}
+            initial={{ opacity: 0 }}
+            animate={loaded ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.78 }}
+          >
+            <div
+              style={{
+                width: '28px',
+                height: '42px',
+                border: '1.5px solid var(--border)',
+                borderRadius: '14px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
               <div
-                className="flex items-center justify-center"
                 style={{
-                  width: '32px', height: '44px',
-                  border: '1.5px solid var(--border)',
-                  borderRadius: '16px',
-                  position: 'relative',
+                  width: '3px',
+                  height: '7px',
+                  borderRadius: '2px',
+                  background: 'var(--ouro)',
+                  animation: 'fadeUp 1.4s ease-in-out infinite',
                 }}
-              >
-                <div
-                  style={{
-                    width: '4px', height: '8px',
-                    borderRadius: '2px',
-                    background: 'var(--terracota)',
-                    animation: 'fadeUp 1.4s ease-in-out infinite',
-                  }}
-                />
-              </div>
-              <span style={{ fontSize: '0.62rem', letterSpacing: '0.2em', fontFamily: "'Space Grotesk', sans-serif", textTransform: 'uppercase' }}>
-                Role para ler
-              </span>
+              />
             </div>
-          </ScrollReveal>
+            <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.56rem', letterSpacing: '0.22em', textTransform: 'uppercase' }}>
+              Role para ler
+            </span>
+          </motion.div>
         </div>
 
-        {/* Right: Interactive face parallax — hidden on mobile */}
-        <div className="hidden lg:block" style={{ position: 'relative' }}>
-          {/* Left gradient fade so photos blend into editorial content */}
-          <div style={{
-            position: 'absolute', inset: 0, zIndex: 5, pointerEvents: 'none',
-            background: 'linear-gradient(to right, var(--bg-primary) 0%, transparent 20%)',
-          }} />
-          {/* Top/bottom fade */}
-          <div style={{
-            position: 'absolute', inset: 0, zIndex: 5, pointerEvents: 'none',
-            background: 'linear-gradient(to bottom, var(--bg-primary) 0%, transparent 12%, transparent 80%, var(--bg-primary) 100%)',
-          }} />
-          <div style={{ position: 'absolute', inset: 0, padding: '2rem 2rem 2rem 0' }}>
+        {/* Right — photo panel (desktop only) */}
+        <div className="hidden lg:block" style={{ position: 'relative', overflow: 'hidden' }}>
+          {/* Parallax photo */}
+          <motion.div
+            style={{
+              position: 'absolute',
+              inset: '-20%',
+              y: photoY,
+            }}
+          >
+            <img
+              src="/media/photos/IMG_0558.jpg"
+              alt=""
+              aria-hidden
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center top',
+                filter: 'sepia(15%) contrast(1.07) brightness(0.85) saturate(0.8)',
+              }}
+              draggable={false}
+            />
+          </motion.div>
+
+          {/* Gradient overlays — blend into left column and top/bottom */}
+          <div style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', background: 'linear-gradient(to right, var(--bg-primary) 0%, transparent 22%)' }} />
+          <div style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', background: 'linear-gradient(to bottom, var(--bg-primary) 0%, transparent 14%, transparent 78%, var(--bg-primary) 100%)' }} />
+
+          {/* Interactive face parallax layer */}
+          <div style={{ position: 'absolute', inset: 0, zIndex: 3 }}>
             <InteractiveFaces />
           </div>
         </div>
       </div>
 
-      {/* Kuba pattern overlay on left content — very subtle */}
-      <AfroPattern variant="kuba" color="#C0522A" opacity={0.04} />
-      {/* Floating adinkra symbols */}
-      <AdinkraFloat count={7} color="var(--ouro)" zIndex={0} />
-      {/* Drifting bead particles */}
-      <CulturaParticles count={12} zIndex={0} />
-
-      {/* Floating decorative comb — desktop only */}
-      <div className="hidden lg:block" style={{
-        position: 'absolute',
-        bottom: '7rem',
-        left: '18%',
-        zIndex: 1,
-        pointerEvents: 'none',
-        opacity: 0.22,
-        transform: 'rotate(-18deg)',
-      }}>
-        <FloatingComb size={72} />
-      </div>
-
-      {/* Bottom info strip */}
+      {/* ── Bottom marquee strip ── */}
       <div
         style={{
-          position: 'relative', zIndex: 1,
+          position: 'relative',
+          zIndex: 4,
           borderTop: '1px solid var(--border)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '12px 24px',
+          overflow: 'hidden',
+          padding: '9px 0',
         }}
-        className="md:px-12 lg:px-20"
       >
-        <p style={{ fontSize: '0.65rem', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
-          PI — Publicação Independente
-        </p>
-        <p style={{ fontSize: '0.65rem', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.12em', color: 'var(--text-muted)' }}>
-          Arte · Resistência · Identidade
-        </p>
+        <div
+          style={{
+            display: 'flex',
+            width: 'max-content',
+            animation: 'ticker 24s linear infinite',
+          }}
+        >
+          {[0, 1, 2, 3].map(i => (
+            <span
+              key={i}
+              style={{
+                fontFamily: "'Syne', 'Space Grotesk', sans-serif",
+                fontSize: '0.56rem',
+                letterSpacing: '0.28em',
+                textTransform: 'uppercase',
+                color: 'var(--text-muted)',
+                padding: '0 3rem',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Arte&nbsp;&nbsp;·&nbsp;&nbsp;Resistência&nbsp;&nbsp;·&nbsp;&nbsp;Identidade&nbsp;&nbsp;·&nbsp;&nbsp;Ancestralidade&nbsp;&nbsp;·&nbsp;&nbsp;Cultura&nbsp;&nbsp;·&nbsp;&nbsp;Mercado
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Decorative elements ── */}
+      <AfroPattern variant="kuba" color="#C0522A" opacity={0.03} />
+      <AdinkraFloat count={6} color="var(--ouro)" zIndex={0} />
+      <CulturaParticles count={10} zIndex={0} />
+
+      <div
+        className="hidden lg:block"
+        style={{
+          position: 'absolute',
+          bottom: '5.5rem',
+          left: '16%',
+          zIndex: 1,
+          pointerEvents: 'none',
+          opacity: 0.18,
+          transform: 'rotate(-18deg)',
+        }}
+      >
+        <FloatingComb size={68} />
       </div>
     </section>
   )

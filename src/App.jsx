@@ -12,19 +12,20 @@ import ReadingProgress from './components/ui/ReadingProgress'
 import SectionNav from './components/ui/SectionNav'
 import KenteStripe from './components/ui/KenteStripe'
 import CustomCursor from './components/ui/CustomCursor'
+import BraidGuia from './components/ui/BraidGuia'
 
-// Default: light theme. Only go dark if explicitly saved.
+// Default: dark theme. Only go light if explicitly saved as 'light'.
 function initTheme() {
   const saved = localStorage.getItem('trancistas-theme')
-  if (saved === 'dark') {
-    document.documentElement.classList.add('dark')
-  }
+  if (saved === 'light') return
+  document.documentElement.classList.add('dark')
 }
 initTheme()
 
 export default function App() {
   return (
     <div style={{ overflowX: 'hidden' }}>
+      <BraidGuia />
       <CustomCursor />
       <ReadingProgress />
       <SectionNav />

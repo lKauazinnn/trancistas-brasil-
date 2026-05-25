@@ -4,7 +4,7 @@ export function useTheme() {
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('trancistas-theme')
     if (saved) return saved === 'dark'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
+    return true // dark by default
   })
 
   useEffect(() => {

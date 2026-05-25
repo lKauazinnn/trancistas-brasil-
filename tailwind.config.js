@@ -27,6 +27,7 @@ export default {
         display:  ['Barlow Condensed', 'sans-serif'],
         body:     ['Barlow', 'sans-serif'],
         grotesk:  ['Space Grotesk', 'sans-serif'],
+        syne:     ['Syne', 'sans-serif'],
       },
       letterSpacing: {
         widest2: '0.25em',
