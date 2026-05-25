@@ -4,6 +4,8 @@ import CenteredQuote from '../ui/CenteredQuote'
 import SectionLabel from '../ui/SectionLabel'
 import VideoPlayer from '../ui/VideoPlayer'
 import StarDivider from '../ui/StarDivider'
+import BeadDivider from '../ui/BeadDivider'
+import AfroPattern from '../ui/AfroPattern'
 import { CREDITS } from '../../data/content'
 
 const FUTURE_PILLARS = [
@@ -18,7 +20,8 @@ export default function FuturoEncerramento() {
     <section id="futuro" style={{ background: 'var(--bg-primary)' }}>
       <div style={{ height: '1px', background: 'var(--border)' }} />
 
-      <div className="section-padding max-w-7xl mx-auto">
+      <div className="section-padding max-w-7xl mx-auto" style={{ position: 'relative' }}>
+        <AfroPattern variant="adinkra" color="#D4A030" opacity={0.055} />
         {/* Header */}
         <ScrollReveal variant="fade-up">
           <SectionLabel number={5} text="Futuro & Encerramento" />
@@ -30,7 +33,7 @@ export default function FuturoEncerramento() {
             style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: 'var(--text-primary)' }}
           >
             O FUTURO<br />
-            <span style={{ color: 'var(--ouro)' }}>ESTÁ</span><br />
+            <span className="wood-text-gold">ESTÁ</span><br />
             NAS MÃOS
           </h2>
         </ClipReveal>
@@ -83,7 +86,7 @@ export default function FuturoEncerramento() {
           ))}
         </div>
 
-        <StarDivider className="mb-12" />
+        <BeadDivider className="mb-12" />
 
         {/* Documentário */}
         <ScrollReveal variant="fade-up">

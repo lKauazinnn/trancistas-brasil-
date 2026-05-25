@@ -26,7 +26,7 @@ export default function AprendizadoAncestral() {
                 style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: 'var(--text-primary)' }}
               >
                 A ARTE<br />
-                <span style={{ color: 'var(--terracota)' }}>PASSOU</span><br />
+                <span className="wood-text">PASSOU</span><br />
                 DE MÃO EM MÃO
               </h2>
             </ClipReveal>

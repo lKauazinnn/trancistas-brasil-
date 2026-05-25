@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 
 const SECTIONS = [
-  { id: 'hero',       label: 'Início' },
-  { id: 'aprendizado',label: 'História' },
-  { id: 'identidade', label: 'Identidade' },
-  { id: 'galeria',    label: 'Galeria' },
-  { id: 'mercado',    label: 'Mercado' },
-  { id: 'desafios',   label: 'Desafios' },
-  { id: 'futuro',     label: 'Futuro' },
+  { id: 'hero',        label: 'Início',     color: 'var(--terracota)' },
+  { id: 'aprendizado', label: 'História',   color: 'var(--terracota)' },
+  { id: 'identidade',  label: 'Identidade', color: 'var(--ouro)'     },
+  { id: 'galeria',     label: 'Galeria',    color: 'var(--verde)'    },
+  { id: 'mercado',     label: 'Mercado',    color: 'var(--verde)'    },
+  { id: 'desafios',    label: 'Desafios',   color: 'var(--ouro)'     },
+  { id: 'futuro',      label: 'Futuro',     color: 'var(--terracota)' },
 ]
 
 export default function SectionNav() {
@@ -49,7 +49,7 @@ export default function SectionNav() {
         pointerEvents: visible ? 'auto' : 'none',
       }}
     >
-      {SECTIONS.map(({ id, label }) => {
+      {SECTIONS.map(({ id, label, color }) => {
         const isActive = active === id
         return (
           <button
@@ -61,11 +61,12 @@ export default function SectionNav() {
               width: isActive ? '22px' : '6px',
               height: '6px',
               borderRadius: '3px',
-              background: isActive ? 'var(--terracota)' : 'var(--text-dim)',
+              background: isActive ? color : 'var(--text-dim)',
               border: 'none',
               cursor: 'pointer',
               padding: 0,
               transition: 'all 0.35s cubic-bezier(0.25,0.46,0.45,0.94)',
+              boxShadow: isActive ? `0 0 8px ${color}80` : 'none',
             }}
           />
         )

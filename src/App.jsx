@@ -29,17 +29,17 @@ export default function App() {
       <Navbar />
       <main>
         <HeroSection />
-        <KenteStripe height={12} />
+        <KenteStripe height={22} />
         <AprendizadoAncestral />
-        <KenteStripe height={12} />
+        <KenteStripe height={22} />
         <AutoestimaIdentidade />
-        <KenteStripe height={12} />
+        <KenteStripe height={22} />
         <GaleriaSection />
-        <KenteStripe height={12} />
+        <KenteStripe height={22} />
         <MercadoCredito />
-        <KenteStripe height={12} />
+        <KenteStripe height={22} />
         <DesafiosRotina />
-        <KenteStripe height={12} />
+        <KenteStripe height={22} />
         <FuturoEncerramento />
       </main>
       <Footer />

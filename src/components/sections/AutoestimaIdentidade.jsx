@@ -5,6 +5,7 @@ import AfroPattern from '../ui/AfroPattern'
 import SectionLabel from '../ui/SectionLabel'
 import AudioPlayer from '../ui/AudioPlayer'
 import StarDivider from '../ui/StarDivider'
+import BeadDivider from '../ui/BeadDivider'
 import ParallaxSection from '../ui/ParallaxSection'
 
 const REFERENCES = [
@@ -37,7 +38,7 @@ export default function AutoestimaIdentidade() {
               className="font-display font-black uppercase leading-none"
               style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', color: '#FAFAF5' }}
             >
-              A <span style={{ color: 'var(--ouro)' }}>POTÊNCIA</span><br />
+              A <span className="wood-text-gold">POTÊNCIA</span><br />
               DO CRESPO
             </h2>
           </ClipReveal>
@@ -130,7 +131,7 @@ export default function AutoestimaIdentidade() {
           </ScrollReveal>
         </div>
 
-        <StarDivider className="my-10" />
+        <BeadDivider className="my-10" />
 
         <CenteredQuote
           quote="Quando termino uma trança, minha cliente chora. Não é de dor. É de se ver."

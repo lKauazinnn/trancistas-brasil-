@@ -32,7 +32,7 @@ export default function MercadoCredito() {
             style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: 'var(--text-primary)' }}
           >
             UM MERCADO<br />
-            <span style={{ color: 'var(--verde)' }}>BILIONÁRIO</span><br />
+            <span className="wood-text-verde">BILIONÁRIO</span><br />
             SEM CRÉDITO
           </h2>
         </ClipReveal>
@@ -121,7 +121,7 @@ export default function MercadoCredito() {
 
       {/* Timeline */}
       <div className="section-padding max-w-7xl mx-auto" style={{ position: 'relative' }}>
-        <AfroPattern color="#2D6A4F" opacity={0.05} />
+        <AfroPattern variant="mudcloth" color="#2D6A4F" opacity={0.06} />
         <ScrollReveal variant="fade-up">
           <p className="label-tag mb-3">Linha do Tempo</p>
           <h3

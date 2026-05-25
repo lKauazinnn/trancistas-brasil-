@@ -243,6 +243,71 @@
   line-height: 1.2;
 }
 
+/* ─────────────────────────────────────────
+   WOOD-GRAIN TEXT (background-clip: text)
+───────────────────────────────────────── */
+.wood-text {
+  color: var(--terracota);
+  background-image: repeating-linear-gradient(
+    170deg,
+    #8B3520 0px, #B84A30 1px, #D86545 2px,
+    #C0522A 4px, #7A2E18 6px, #A04028 8px,
+    #CE6038 9px, #B05030 11px, #8B3520 13px
+  );
+  background-size: 200% 14px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wood-text-gold {
+  color: var(--ouro);
+  background-image: repeating-linear-gradient(
+    165deg,
+    #7A5010 0px, #AA7828 2px, #E8B84B 3.5px,
+    #D4A030 5px, #8A6018 7px, #C09030 9px,
+    #E8C060 10.5px, #C8A040 12px, #7A5010 14px
+  );
+  background-size: 200% 16px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wood-text-verde {
+  color: var(--verde);
+  background-image: repeating-linear-gradient(
+    168deg,
+    #1A4A30 0px, #2D6A4F 2px, #3D8060 3.5px,
+    #225840 5px, #152810 7px, #2A5A45 9px,
+    #3D7055 10.5px, #2D6A4F 12px, #1A4A30 14px
+  );
+  background-size: 200% 14px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Kente mini-stripe left border via pseudo-element */
+.kente-left {
+  position: relative;
+  padding-left: 1.25rem;
+}
+.kente-left::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: repeating-linear-gradient(
+    180deg,
+    #C0522A 0px, #C0522A 9px,
+    #D4A030 9px, #D4A030 18px,
+    #2D6A4F 18px, #2D6A4F 27px
+  );
+}
+
 /* Audio player range */
 input[type="range"] {
   -webkit-appearance: none;

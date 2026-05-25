@@ -1,31 +1,48 @@
-// Kente cloth-inspired colored stripe divider
-export default function KenteStripe({ height = 10, className = '' }) {
+import { useId } from 'react'
+
+// Kente cloth-inspired SVG stripe divider with diamond accent
+export default function KenteStripe({ height = 22, className = '' }) {
+  const uid = useId().replace(/:/g, 'x')
+  const patId = `kp${uid}`
+  const h = Math.max(height, 14)
+  const mid = h / 2
+  const dHalf = Math.min((h - 4) / 2 - 1, 8)
+
   return (
-    <div
-      className={className}
-      style={{
-        width: '100%',
-        height: `${height}px`,
-        backgroundImage: [
-          'repeating-linear-gradient(90deg,',
-          '#1C1C1A 0px,   #1C1C1A 2px,',
-          '#D4A843 2px,   #D4A843 18px,',
-          '#1C1C1A 18px,  #1C1C1A 20px,',
-          '#C0522A 20px,  #C0522A 36px,',
-          '#1C1C1A 36px,  #1C1C1A 38px,',
-          '#2D6A4F 38px,  #2D6A4F 54px,',
-          '#1C1C1A 54px,  #1C1C1A 56px,',
-          '#E8B84B 56px,  #E8B84B 72px,',
-          '#1C1C1A 72px,  #1C1C1A 74px,',
-          '#C0522A 74px,  #C0522A 90px,',
-          '#1C1C1A 90px,  #1C1C1A 92px,',
-          '#D4A843 92px,  #D4A843 108px,',
-          '#1C1C1A 108px, #1C1C1A 110px,',
-          '#2D6A4F 110px, #2D6A4F 126px,',
-          '#1C1C1A 126px, #1C1C1A 128px',
-          ')',
-        ].join(' '),
-      }}
-    />
+    <div className={className} style={{ width: '100%', height: `${h}px`, overflow: 'hidden', flexShrink: 0 }}>
+      <svg
+        width="100%"
+        height={h}
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ display: 'block' }}
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <pattern id={patId} x="0" y="0" width="128" height={h} patternUnits="userSpaceOnUse">
+            {/* Full black background */}
+            <rect width="128" height={h} fill="#1C1C1A" />
+            {/* Ouro — band 1 */}
+            <rect x="0"   y="2" width="18" height={h - 4} fill="#D4A843" />
+            {/* Terracota — band 2 */}
+            <rect x="20"  y="2" width="18" height={h - 4} fill="#C0522A" />
+            {/* Verde — band 3 */}
+            <rect x="40"  y="2" width="14" height={h - 4} fill="#2D6A4F" />
+            {/* Centre ouro + diamond accent */}
+            <rect x="56"  y="2" width="16" height={h - 4} fill="#E8B84B" />
+            <polygon
+              points={`64,${mid - dHalf} ${64 + dHalf},${mid} 64,${mid + dHalf} ${64 - dHalf},${mid}`}
+              fill="#1C1C1A"
+            />
+            {/* Verde — band 5 */}
+            <rect x="74"  y="2" width="14" height={h - 4} fill="#2D6A4F" />
+            {/* Terracota — band 6 */}
+            <rect x="90"  y="2" width="18" height={h - 4} fill="#C0522A" />
+            {/* Ouro — band 7 */}
+            <rect x="110" y="2" width="18" height={h - 4} fill="#D4A843" />
+          </pattern>
+        </defs>
+        <rect width="100%" height={h} fill={`url(#${patId})`} />
+      </svg>
+    </div>
   )
 }

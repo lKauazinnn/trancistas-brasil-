@@ -1,5 +1,10 @@
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 
+const mudclothBg = (color) => {
+  const c = color.replace(/#/g, '%23').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/var\(/g, '').replace(/\)/g, '')
+  return `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28'><line x1='0' y1='0' x2='28' y2='28' stroke='%23C0522A' stroke-width='1.5'/><line x1='28' y1='0' x2='0' y2='28' stroke='%23C0522A' stroke-width='1.5'/><path d='M14 4L24 14L14 24L4 14Z' stroke='%23C0522A' stroke-width='1' fill='none'/></svg>")`
+}
+
 export default function CenteredQuote({ quote, author, role, dark = false, accentColor = 'var(--terracota)' }) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.2 })
 
@@ -15,6 +20,30 @@ export default function CenteredQuote({ quote, author, role, dark = false, accen
         borderBottom: '1px solid var(--border)',
       }}
     >
+      {/* Mudcloth texture overlay */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28'><line x1='0' y1='0' x2='28' y2='28' stroke='%231C1C1A' stroke-width='1.5'/><line x1='28' y1='0' x2='0' y2='28' stroke='%231C1C1A' stroke-width='1.5'/><path d='M14 4L24 14L14 24L4 14Z' stroke='%231C1C1A' stroke-width='1' fill='none'/></svg>")`,
+        backgroundRepeat: 'repeat',
+        backgroundSize: '28px 28px',
+        opacity: dark ? 0.04 : 0.025,
+        pointerEvents: 'none',
+        zIndex: 0,
+      }} />
+
+      {/* Left kente strip */}
+      <div style={{
+        position: 'absolute', left: 0, top: 0, bottom: 0, width: '7px',
+        backgroundImage: 'repeating-linear-gradient(180deg, #C0522A 0px, #C0522A 10px, #D4A030 10px, #D4A030 20px, #2D6A4F 20px, #2D6A4F 30px)',
+        zIndex: 1,
+      }} />
+      {/* Right kente strip */}
+      <div style={{
+        position: 'absolute', right: 0, top: 0, bottom: 0, width: '7px',
+        backgroundImage: 'repeating-linear-gradient(180deg, #2D6A4F 0px, #2D6A4F 10px, #D4A030 10px, #D4A030 20px, #C0522A 20px, #C0522A 30px)',
+        zIndex: 1,
+      }} />
+
       {/* Giant decorative quotation mark */}
       <span
         aria-hidden
@@ -25,7 +54,7 @@ export default function CenteredQuote({ quote, author, role, dark = false, accen
           fontSize: 'clamp(14rem, 28vw, 22rem)',
           lineHeight: 1,
           color: accentColor,
-          opacity: 0.055,
+          opacity: 0.07,
           fontWeight: 900,
           pointerEvents: 'none',
           userSelect: 'none',
@@ -35,7 +64,7 @@ export default function CenteredQuote({ quote, author, role, dark = false, accen
         "
       </span>
 
-      <div ref={ref}>
+      <div ref={ref} style={{ position: 'relative', zIndex: 2 }}>
         {/* Quote text */}
         <div style={{ overflow: 'hidden', marginBottom: '2rem' }}>
           <p

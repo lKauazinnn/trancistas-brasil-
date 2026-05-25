@@ -2,37 +2,51 @@ import { useRef, useEffect, useCallback } from 'react'
 
 const LERP = 0.07
 
-// Scattered editorial layout — each photo at a specific depth for parallax
 const FACES = [
   {
     src: '/media/photos/Cópia de IMG_3732.jpg',
     top: '4%', left: '3%', width: '52%',
     depth: 22, rotate: -2.5, z: 1, aspect: '3 / 4',
     label: 'Arte Ancestral',
+    borderColor: 'var(--terracota)',
+    borderWidth: 3,
+    clipPath: 'polygon(0 0, 100% 0, 100% 94%, 94% 100%, 0 100%)',
   },
   {
     src: '/media/photos/_MG_0353.jpg',
     top: '2%', left: '52%', width: '42%',
     depth: 55, rotate: 2, z: 3, aspect: '4 / 5',
     label: null,
+    borderColor: 'var(--ouro)',
+    borderWidth: 2,
+    clipPath: 'polygon(6% 0, 100% 0, 100% 100%, 0 100%, 0 6%)',
   },
   {
     src: '/media/photos/_MG_0317.jpg',
     top: '40%', left: '1%', width: '40%',
     depth: 16, rotate: 1.8, z: 2, aspect: '5 / 6',
     label: null,
+    borderColor: 'var(--verde)',
+    borderWidth: 2,
+    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 6% 100%, 0 94%)',
   },
   {
     src: '/media/photos/_MG_0346.jpg',
     top: '32%', left: '37%', width: '58%',
     depth: 42, rotate: -1.5, z: 4, aspect: '3 / 4',
     label: 'Resistência',
+    borderColor: 'var(--ouro)',
+    borderWidth: 3,
+    clipPath: 'polygon(0 0, 94% 0, 100% 6%, 100% 100%, 0 100%)',
   },
   {
     src: '/media/photos/_MG_0527.jpg',
     top: '72%', left: '10%', width: '46%',
     depth: 34, rotate: 1.2, z: 2, aspect: '4 / 3',
     label: null,
+    borderColor: 'var(--terracota)',
+    borderWidth: 2,
+    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
   },
 ]
 
@@ -102,8 +116,9 @@ export default function InteractiveFaces() {
             style={{
               overflow: 'hidden',
               aspectRatio: face.aspect,
-              border: '1px solid rgba(255,255,255,0.12)',
-              boxShadow: '0 12px 48px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.14)',
+              border: `${face.borderWidth}px solid ${face.borderColor}`,
+              clipPath: face.clipPath,
+              boxShadow: `0 12px 48px rgba(0,0,0,0.20), 0 2px 8px rgba(0,0,0,0.12), 0 0 0 1px ${face.borderColor}30`,
               position: 'relative',
               background: 'var(--bg-surface)',
             }}
@@ -111,12 +126,19 @@ export default function InteractiveFaces() {
             <img
               src={face.src}
               alt=""
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              style={{
+                width: '100%', height: '100%', objectFit: 'cover', display: 'block',
+                filter: 'sepia(18%) contrast(1.06) brightness(0.96) saturate(0.88)',
+              }}
               draggable={false}
               loading="lazy"
             />
-            {/* Subtle tint */}
-            <div style={{ position: 'absolute', inset: 0, background: 'rgba(5,5,9,0.06)', pointerEvents: 'none' }} />
+            {/* Colored tint layer */}
+            <div style={{
+              position: 'absolute', inset: 0,
+              background: `${face.borderColor}0A`,
+              pointerEvents: 'none',
+            }} />
           </div>
 
           {/* Editorial label on select photos */}

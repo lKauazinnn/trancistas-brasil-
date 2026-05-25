@@ -3,6 +3,7 @@ import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
 import InteractiveFaces from '../ui/InteractiveFaces'
 import AfroPattern from '../ui/AfroPattern'
+import FloatingComb from '../ui/FloatingComb'
 
 export default function HeroSection() {
   const [scrollY, setScrollY] = useState(0)
@@ -99,7 +100,7 @@ export default function HeroSection() {
                   whiteSpace: 'nowrap',
                 }}
               >
-                <span style={{ color: 'var(--terracota)' }}>TRAN</span>CISTAS
+                <span className="wood-text">TRAN</span>CISTAS
               </h1>
             </ClipReveal>
           </div>
@@ -202,7 +203,20 @@ export default function HeroSection() {
       </div>
 
       {/* Kuba pattern overlay on left content — very subtle */}
-      <AfroPattern color="#C0522A" opacity={0.04} />
+      <AfroPattern variant="kuba" color="#C0522A" opacity={0.04} />
+
+      {/* Floating decorative comb — desktop only */}
+      <div className="hidden lg:block" style={{
+        position: 'absolute',
+        bottom: '7rem',
+        left: '18%',
+        zIndex: 1,
+        pointerEvents: 'none',
+        opacity: 0.22,
+        transform: 'rotate(-18deg)',
+      }}>
+        <FloatingComb size={72} />
+      </div>
 
       {/* Bottom info strip */}
       <div

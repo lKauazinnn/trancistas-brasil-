@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from '../../hooks/useTheme'
+import KenteStripe from '../ui/KenteStripe'
 
 const NAV_LINKS = [
-  { label: 'História',   href: '#aprendizado' },
-  { label: 'Identidade', href: '#identidade' },
-  { label: 'Galeria',    href: '#galeria' },
-  { label: 'Mercado',    href: '#mercado' },
-  { label: 'Desafios',   href: '#desafios' },
-  { label: 'Futuro',     href: '#futuro' },
+  { label: 'História',   href: '#aprendizado', color: 'var(--terracota)' },
+  { label: 'Identidade', href: '#identidade',  color: 'var(--verde)'    },
+  { label: 'Galeria',    href: '#galeria',      color: 'var(--ouro)'     },
+  { label: 'Mercado',    href: '#mercado',      color: 'var(--verde)'    },
+  { label: 'Desafios',   href: '#desafios',     color: 'var(--terracota)'},
+  { label: 'Futuro',     href: '#futuro',       color: 'var(--ouro)'     },
 ]
 
 export default function Navbar() {
@@ -82,15 +83,28 @@ export default function Navbar() {
                     fontSize: '0.7rem',
                     letterSpacing: '0.18em',
                     textTransform: 'uppercase',
-                    color: 'var(--text-muted)',
+                    color: link.color,
                     background: 'none',
                     border: 'none',
-                    transition: 'color 0.25s',
+                    transition: 'opacity 0.25s',
+                    opacity: 0.7,
                   }}
-                  onMouseEnter={e => e.currentTarget.style.color = 'var(--text-primary)'}
-                  onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+                  onMouseEnter={e => e.currentTarget.style.opacity = '1'}
+                  onMouseLeave={e => e.currentTarget.style.opacity = '0.7'}
                 >
                   {link.label}
+                  {/* Underline accent on hover */}
+                  <span
+                    style={{
+                      display: 'block',
+                      height: '1.5px',
+                      background: link.color,
+                      transform: 'scaleX(0)',
+                      transformOrigin: 'left',
+                      transition: 'transform 0.25s ease',
+                    }}
+                    className="group-hover:[transform:scaleX(1)_!important]"
+                  />
                 </button>
               </li>
             ))}
@@ -154,6 +168,14 @@ export default function Navbar() {
             </button>
           </div>
         </nav>
+        {/* Kente accent stripe — appears on scroll */}
+        <div style={{
+          overflow: 'hidden',
+          height: scrolled ? '4px' : '0px',
+          transition: 'height 0.4s ease',
+        }}>
+          <KenteStripe height={4} />
+        </div>
       </header>
 
       {/* Mobile menu */}

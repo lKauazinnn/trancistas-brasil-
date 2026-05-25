@@ -32,7 +32,7 @@ export default function DesafiosRotina() {
                 style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: 'var(--text-primary)' }}
               >
                 AS DORES<br />QUE{' '}
-                <span style={{ color: 'var(--terracota)' }}>NINGUÉM</span><br />VÊ
+                <span className="wood-text">NINGUÉM</span><br />VÊ
               </h2>
             </ClipReveal>
           </div>
