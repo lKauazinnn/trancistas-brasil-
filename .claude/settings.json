@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "WebFetch(domain:www.metropoles.com)",
-      "mcp__claude_ai_Vercel__deploy_to_vercel",
-      "Bash(npx vercel *)"
-    ]
-  }
-}
