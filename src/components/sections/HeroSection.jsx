@@ -4,7 +4,7 @@ import ClipReveal from '../ui/ClipReveal'
 import InteractiveFaces from '../ui/InteractiveFaces'
 import AfroPattern from '../ui/AfroPattern'
 import FloatingComb from '../ui/FloatingComb'
-import ScrambleText from '../ui/ScrambleText'
+
 import AdinkraFloat from '../ui/AdinkraFloat'
 import CulturaParticles from '../ui/CulturaParticles'
 
@@ -103,11 +103,7 @@ export default function HeroSection() {
                   whiteSpace: 'nowrap',
                 }}
               >
-                <ScrambleText
-                  text="TRANCISTAS"
-                  delay={520}
-                  finalRender={<><span className="wood-text">TRAN</span>CISTAS</>}
-                />
+                <span className="wood-text">TRAN</span>CISTAS
               </h1>
             </ClipReveal>
           </div>
