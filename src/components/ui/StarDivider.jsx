@@ -1,15 +1,22 @@
 import { Star } from 'lucide-react'
 
+const COLORS = ['var(--terracota)', 'var(--ouro)', 'var(--verde)']
+
 export default function StarDivider({ className = '', light = false }) {
-  const color = light ? 'rgba(28,28,26,0.35)' : 'var(--text-muted)'
   return (
     <div
       className={`star-divider py-1 ${className}`}
-      style={{ color, display: 'flex', alignItems: 'center', gap: '10px' }}
+      style={{ display: 'flex', alignItems: 'center', gap: '12px' }}
     >
-      <Star size={8} fill="currentColor" strokeWidth={0} />
-      <Star size={8} fill="currentColor" strokeWidth={0} />
-      <Star size={8} fill="currentColor" strokeWidth={0} />
+      {COLORS.map((color, i) => (
+        <Star
+          key={i}
+          size={9}
+          fill={light ? 'rgba(28,28,26,0.3)' : color}
+          strokeWidth={0}
+          style={{ color: light ? 'rgba(28,28,26,0.3)' : color }}
+        />
+      ))}
     </div>
   )
 }

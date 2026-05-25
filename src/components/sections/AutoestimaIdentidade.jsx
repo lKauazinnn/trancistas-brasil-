@@ -1,6 +1,7 @@
 import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
 import CenteredQuote from '../ui/CenteredQuote'
+import AfroPattern from '../ui/AfroPattern'
 import SectionLabel from '../ui/SectionLabel'
 import AudioPlayer from '../ui/AudioPlayer'
 import StarDivider from '../ui/StarDivider'
@@ -36,7 +37,7 @@ export default function AutoestimaIdentidade() {
               className="font-display font-black uppercase leading-none"
               style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', color: '#FAFAF5' }}
             >
-              A <span style={{ color: 'var(--terracota)' }}>POTÊNCIA</span><br />
+              A <span style={{ color: 'var(--ouro)' }}>POTÊNCIA</span><br />
               DO CRESPO
             </h2>
           </ClipReveal>
@@ -44,7 +45,8 @@ export default function AutoestimaIdentidade() {
       </ParallaxSection>
 
       {/* Content */}
-      <div className="section-padding max-w-7xl mx-auto">
+      <div className="section-padding max-w-7xl mx-auto" style={{ position: 'relative' }}>
+        <AfroPattern color="#D4A030" opacity={0.05} />
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
           {/* Main text */}
           <div className="lg:col-span-2 space-y-5">
@@ -135,6 +137,7 @@ export default function AutoestimaIdentidade() {
           author="Beatriz Lima"
           role="Trancista — Salvador, BA"
           dark
+          accentColor="var(--ouro)"
         />
 
         {/* Podcast block */}

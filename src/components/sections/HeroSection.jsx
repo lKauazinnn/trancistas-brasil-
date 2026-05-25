@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
 import InteractiveFaces from '../ui/InteractiveFaces'
+import AfroPattern from '../ui/AfroPattern'
 
 export default function HeroSection() {
   const [scrollY, setScrollY] = useState(0)
@@ -199,6 +200,9 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Kuba pattern overlay on left content — very subtle */}
+      <AfroPattern color="#C0522A" opacity={0.04} />
 
       {/* Bottom info strip */}
       <div

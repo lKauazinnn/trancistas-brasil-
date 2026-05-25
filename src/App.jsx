@@ -10,12 +10,12 @@ import DesafiosRotina from './components/sections/DesafiosRotina'
 import FuturoEncerramento from './components/sections/FuturoEncerramento'
 import ReadingProgress from './components/ui/ReadingProgress'
 import SectionNav from './components/ui/SectionNav'
+import KenteStripe from './components/ui/KenteStripe'
 
-// Apply saved theme class before first paint to avoid flash
+// Default: light theme. Only go dark if explicitly saved.
 function initTheme() {
   const saved = localStorage.getItem('trancistas-theme')
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-  if (saved === 'dark' || (!saved && prefersDark)) {
+  if (saved === 'dark') {
     document.documentElement.classList.add('dark')
   }
 }
@@ -29,11 +29,17 @@ export default function App() {
       <Navbar />
       <main>
         <HeroSection />
+        <KenteStripe height={12} />
         <AprendizadoAncestral />
+        <KenteStripe height={12} />
         <AutoestimaIdentidade />
+        <KenteStripe height={12} />
         <GaleriaSection />
+        <KenteStripe height={12} />
         <MercadoCredito />
+        <KenteStripe height={12} />
         <DesafiosRotina />
+        <KenteStripe height={12} />
         <FuturoEncerramento />
       </main>
       <Footer />

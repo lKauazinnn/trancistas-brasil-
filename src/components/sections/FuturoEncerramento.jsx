@@ -30,7 +30,7 @@ export default function FuturoEncerramento() {
             style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: 'var(--text-primary)' }}
           >
             O FUTURO<br />
-            <span style={{ color: 'var(--terracota)' }}>ESTÁ</span><br />
+            <span style={{ color: 'var(--ouro)' }}>ESTÁ</span><br />
             NAS MÃOS
           </h2>
         </ClipReveal>

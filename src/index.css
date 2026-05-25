@@ -6,18 +6,20 @@
    THEME TOKENS
 ───────────────────────────────────────── */
 :root {
-  --bg-primary:   #F2E8D5;
-  --bg-secondary: #E8D5B0;
+  --bg-primary:   #FAF6EF;
+  --bg-secondary: #F0E6CC;
   --bg-surface:   #FFFFFF;
   --bg-deep:      #EDE0CC;
   --text-primary: #1C1C1A;
-  --text-muted:   #7A7A78;
-  --text-dim:     #C8C8C6;
-  --border:       rgba(28,28,26,0.12);
+  --text-muted:   #7A6A58;
+  --text-dim:     #C0B0A0;
+  --border:       rgba(28,28,26,0.13);
 
   --terracota: #C0522A;
-  --ouro:      #D4A843;
-  --bege:      #E8D5B0;
+  --ouro:      #D4A030;
+  --verde:     #2D6A4F;
+  --vermelho:  #B83228;
+  --bege:      #F0E6CC;
 }
 
 .dark {
@@ -29,6 +31,9 @@
   --text-muted:   #8C8C8A;
   --text-dim:     #444440;
   --border:       rgba(255,255,255,0.08);
+
+  --verde:     #3D8A65;
+  --vermelho:  #C84040;
 }
 
 /* ─────────────────────────────────────────

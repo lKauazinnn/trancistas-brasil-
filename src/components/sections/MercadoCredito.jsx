@@ -2,6 +2,7 @@ import { Globe, Link2, Scissors, Megaphone, Smartphone, FileText } from 'lucide-
 import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
 import CenteredQuote from '../ui/CenteredQuote'
+import AfroPattern from '../ui/AfroPattern'
 import SectionLabel from '../ui/SectionLabel'
 import StatCard from '../ui/StatCard'
 import TickerBand from '../ui/TickerBand'
@@ -31,7 +32,7 @@ export default function MercadoCredito() {
             style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: 'var(--text-primary)' }}
           >
             UM MERCADO<br />
-            <span style={{ color: 'var(--terracota)' }}>BILIONÁRIO</span><br />
+            <span style={{ color: 'var(--verde)' }}>BILIONÁRIO</span><br />
             SEM CRÉDITO
           </h2>
         </ClipReveal>
@@ -119,7 +120,8 @@ export default function MercadoCredito() {
       </ParallaxSection>
 
       {/* Timeline */}
-      <div className="section-padding max-w-7xl mx-auto">
+      <div className="section-padding max-w-7xl mx-auto" style={{ position: 'relative' }}>
+        <AfroPattern color="#2D6A4F" opacity={0.05} />
         <ScrollReveal variant="fade-up">
           <p className="label-tag mb-3">Linha do Tempo</p>
           <h3
@@ -144,6 +146,7 @@ export default function MercadoCredito() {
         author="Beatriz Lima"
         role="Trancista e empreendedora"
         dark
+        accentColor="var(--verde)"
       />
     </section>
   )

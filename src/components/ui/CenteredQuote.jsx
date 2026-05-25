@@ -1,6 +1,6 @@
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 
-export default function CenteredQuote({ quote, author, role, dark = false }) {
+export default function CenteredQuote({ quote, author, role, dark = false, accentColor = 'var(--terracota)' }) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.2 })
 
   return (
@@ -24,7 +24,7 @@ export default function CenteredQuote({ quote, author, role, dark = false }) {
           fontFamily: "'Barlow Condensed', sans-serif",
           fontSize: 'clamp(14rem, 28vw, 22rem)',
           lineHeight: 1,
-          color: 'var(--terracota)',
+          color: accentColor,
           opacity: 0.055,
           fontWeight: 900,
           pointerEvents: 'none',
@@ -67,7 +67,7 @@ export default function CenteredQuote({ quote, author, role, dark = false }) {
             transition: 'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s',
           }}
         >
-          <span style={{ width: '32px', height: '1px', background: 'var(--terracota)', flexShrink: 0 }} />
+          <span style={{ width: '32px', height: '1px', background: accentColor, flexShrink: 0 }} />
           <div style={{ textAlign: 'left' }}>
             <p style={{
               fontFamily: "'Space Grotesk', sans-serif",
