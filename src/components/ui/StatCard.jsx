@@ -24,7 +24,7 @@ export default function StatCard({ value, suffix = '', prefix = '', label, delay
     >
       <div
         className="font-display font-black leading-none"
-        style={{ fontSize: 'clamp(2.8rem, 5vw, 4rem)', marginBottom: '0.4rem', color: 'var(--text-primary)' }}
+        style={{ fontSize: 'clamp(1.8rem, 5vw, 4rem)', marginBottom: '0.4rem', color: 'var(--text-primary)' }}
       >
         <span style={{ fontSize: '0.5em', color: 'var(--text-muted)' }}>{prefix}</span>
         <span>{displayed}</span>

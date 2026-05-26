@@ -1,11 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
 import { ChevronLeft, ChevronRight, X, ArrowDown } from 'lucide-react'
 
-const SLOT_W = 420  // px — each image slot width
-const GAP    = 20   // px between slots
-const STEP   = SLOT_W + GAP
-const DEBOUNCE_MS = 520  // min ms between image advances
-
 export default function ScrollCarousel({ images, title = 'Galeria', label = 'Fotografias' }) {
   const sectionRef   = useRef(null)
   const activeRef    = useRef(0)        // mirror of state — safe inside event handlers
@@ -17,6 +12,18 @@ export default function ScrollCarousel({ images, title = 'Galeria', label = 'Fot
   const [activeIndex, _setActiveIndex] = useState(0)
   const [lightbox,    setLightbox]     = useState(null)
   const [hint,        setHint]         = useState(true) // show "role para ver" hint
+  const [vw, setVw] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024)
+
+  useEffect(() => {
+    const onResize = () => setVw(window.innerWidth)
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  const SLOT_W = Math.min(420, Math.max(260, vw * 0.8))
+  const GAP    = 20
+  const STEP   = SLOT_W + GAP
+  const DEBOUNCE_MS = 520
 
   // Sync ref so event handlers always read the latest value
   const setActiveIndex = useCallback((val) => {

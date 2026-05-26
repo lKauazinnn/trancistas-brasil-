@@ -12,7 +12,7 @@ export default function CenteredQuote({ quote, author, role, dark = false, accen
     <div
       style={{
         background: dark ? 'var(--bg-deep)' : 'var(--bg-surface)',
-        padding: 'clamp(3.5rem, 10vw, 7rem) clamp(1.5rem, 10vw, 14rem)',
+        padding: 'clamp(3.5rem, 10vw, 7rem) clamp(1rem, 5vw, 14rem)',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
@@ -51,7 +51,7 @@ export default function CenteredQuote({ quote, author, role, dark = false, accen
           position: 'absolute', top: '-0.1em', left: '50%',
           transform: 'translateX(-50%)',
           fontFamily: "'Barlow Condensed', sans-serif",
-          fontSize: 'clamp(14rem, 28vw, 22rem)',
+          fontSize: 'clamp(6rem, 28vw, 22rem)',
           lineHeight: 1,
           color: accentColor,
           opacity: 0.07,

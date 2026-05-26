@@ -206,7 +206,7 @@ export default function MosaicoAfroPuzzle() {
           style={{
             display: 'grid',
             gridTemplateColumns: isDesktop ? 'repeat(4, 1fr)' : 'repeat(2, 1fr)',
-            gridAutoRows: isDesktop ? '200px' : '160px',
+            gridAutoRows: isDesktop ? '200px' : 'min(160px, 40vw)',
             gap: '8px',
           }}
         >

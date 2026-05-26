@@ -195,7 +195,7 @@ export default function Navbar() {
             style={{
               fontFamily: "'Barlow Condensed', sans-serif",
               fontWeight: 900,
-              fontSize: '2.5rem',
+              fontSize: 'clamp(1.8rem, 6vw, 2.5rem)',
               textTransform: 'uppercase',
               letterSpacing: '0.04em',
               color: 'var(--text-primary)',

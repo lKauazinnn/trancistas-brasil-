@@ -65,7 +65,7 @@ export default function AprendizadoAncestral() {
 
             <ScrollReveal variant="fade-up" delay={240}>
               <StarDivider className="my-8" />
-              <div className="flex gap-8">
+              <div className="flex gap-8 flex-wrap">
                 <div style={{ borderLeft: '2px solid var(--terracota)', paddingLeft: '1rem' }}>
                   <p className="font-display font-black text-3xl" style={{ color: 'var(--terracota)' }}>+400</p>
                   <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-muted)', marginTop: '4px' }}>

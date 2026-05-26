@@ -155,7 +155,7 @@ export default function MapaBrasilMosaico() {
         >
           {/* SVG Map */}
           <motion.div
-            style={{ flex: '0 0 auto', position: 'relative' }}
+            style={{ flex: '0 0 auto', position: 'relative', maxWidth: '100%' }}
             initial={{ opacity: 0, scale: 0.92 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.15 }}
@@ -164,7 +164,7 @@ export default function MapaBrasilMosaico() {
             <svg
               ref={svgRef}
               viewBox={`0 0 480 500`}
-              style={{ width: 'min(92vw, 550px)', height: 'auto', display: 'block', cursor: 'crosshair', filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.15))' }}
+              style={{ width: 'min(85vw, 550px)', maxWidth: '100%', height: 'auto', display: 'block', cursor: 'crosshair', filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.15))' }}
               onMouseMove={handleMouseMove}
               onMouseLeave={() => setTooltip(null)}
             >
@@ -285,7 +285,7 @@ export default function MapaBrasilMosaico() {
           </motion.div>
 
           {/* Stats / legend column */}
-          <div style={{ flex: 1, minWidth: '280px', paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+          <div style={{ flex: 1, minWidth: 'min(280px, 100%)', paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
             <ScrollReveal variant="fade-up" delay={180}>
               <div style={{ position: 'relative' }}>
                 <p style={{
