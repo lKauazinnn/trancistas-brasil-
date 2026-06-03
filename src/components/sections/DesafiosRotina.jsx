@@ -4,10 +4,8 @@ import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
 import CenteredQuote from '../ui/CenteredQuote'
 import SectionLabel from '../ui/SectionLabel'
-import StarDivider from '../ui/StarDivider'
 import ParallaxSection from '../ui/ParallaxSection'
 import AdinkraFloat from '../ui/AdinkraFloat'
-import PerguntaWidget from '../ui/PerguntaWidget'
 
 const PAIN_POINTS = [
   { icon: HeartPulse, titulo: 'Dores Crônicas',        texto: '71% das trancistas relatam dores musculoesqueléticas recorrentes nos ombros, pescoço e costas, causadas pelas horas de trabalho com os braços elevados.', color: 'var(--terracota)' },
@@ -178,14 +176,6 @@ export default function DesafiosRotina() {
           </div>
         </ScrollReveal>
 
-        {/* Pergunta 3 — Conta PJ */}
-        <PerguntaWidget perguntaId={3} />
-
-        <StarDivider className="mb-12" />
-
-        {/* Pergunta 4 — Tempo formal */}
-        <PerguntaWidget perguntaId={4} />
-
         {/* Mapa Afetivo */}
         <ScrollReveal variant="fade-up">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -216,11 +206,6 @@ export default function DesafiosRotina() {
             </div>
           </div>
         </ScrollReveal>
-      </div>
-
-      {/* Pergunta 5 — IR/MEI */}
-      <div className="section-padding max-w-7xl mx-auto" style={{ paddingTop: 0, paddingBottom: 0 }}>
-        <PerguntaWidget perguntaId={5} />
       </div>
 
       <ParallaxSection

@@ -4,6 +4,7 @@ import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
 import SectionLabel from '../ui/SectionLabel'
 import StarDivider from '../ui/StarDivider'
+import PerguntaWidget from '../ui/PerguntaWidget'
 import { useSimulacao } from '../../context/SimulacaoContext'
 
 const MOTIVOS_NEGATIVA = [
@@ -73,12 +74,20 @@ export default function SimulacaoCredito() {
 
         <ScrollReveal variant="fade-up" delay={100}>
           <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--text-muted)', maxWidth: '600px', marginBottom: '2.5rem' }}>
-            Você respondeu às 5 perguntas do formulário de crédito ao longo desta reportagem.
+            Responda às 5 perguntas do formulário de crédito aqui, em um único bloco.
             Precisa de um empréstimo de{' '}
             <strong style={{ color: 'var(--text-primary)' }}>R$ 8 mil</strong> para abrir seu estúdio.
             Este é o resultado:
           </p>
         </ScrollReveal>
+
+        <div style={{ maxWidth: '760px', marginBottom: '2.5rem' }}>
+          <PerguntaWidget perguntaId={1} />
+          <PerguntaWidget perguntaId={2} />
+          <PerguntaWidget perguntaId={3} />
+          <PerguntaWidget perguntaId={4} />
+          <PerguntaWidget perguntaId={5} />
+        </div>
 
         {/* Indicador de progresso antes de completar */}
         <AnimatePresence mode="wait">
@@ -112,7 +121,7 @@ export default function SimulacaoCredito() {
               </p>
               <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.65 }}>
                 Você respondeu <strong style={{ color: 'var(--text-primary)' }}>{totalRespondidas} de 5</strong> perguntas.
-                Continue lendo — as demais aparecem ao longo da reportagem.
+                Continue no formulário acima para ver o resultado final.
               </p>
               {/* Barra de progresso */}
               <div style={{ marginTop: '1rem', height: '3px', background: 'var(--border)', borderRadius: '2px', overflow: 'hidden' }}>
