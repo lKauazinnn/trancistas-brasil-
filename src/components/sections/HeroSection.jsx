@@ -8,18 +8,36 @@ const EASE = [0.16, 1, 0.3, 1]
 
 export default function HeroSection() {
   const [loaded, setLoaded] = useState(false)
+  const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains('dark'))
   const sectionRef = useRef(null)
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end start'],
   })
-  const photoY = useTransform(scrollYProgress, [0, 1], ['0%', '8%'])
+  const photoY = useTransform(scrollYProgress, [0, 1], ['0%', '2.5%'])
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 80)
     return () => clearTimeout(t)
   }, [])
+
+  useEffect(() => {
+    const root = document.documentElement
+    const updateTheme = () => setIsDark(root.classList.contains('dark'))
+    updateTheme()
+
+    const observer = new MutationObserver(updateTheme)
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] })
+
+    return () => observer.disconnect()
+  }, [])
+
+  const panelBg = isDark ? 'rgba(8,8,16,0.6)' : 'rgba(255,255,255,0.72)'
+  const imageFrameBg = isDark ? '#0D0D15' : '#ECE6DC'
+  const imageOverlay = isDark
+    ? 'linear-gradient(180deg, rgba(5,5,10,0.2) 0%, rgba(5,5,10,0.05) 55%, rgba(5,5,10,0.28) 100%)'
+    : 'linear-gradient(180deg, rgba(250,246,239,0.14) 0%, rgba(250,246,239,0.05) 55%, rgba(250,246,239,0.2) 100%)'
 
   return (
     <section
@@ -34,48 +52,36 @@ export default function HeroSection() {
         overflow: 'hidden',
       }}
     >
-      {/* ── Full-bleed background photo com parallax ── */}
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        <motion.div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            scale: 1.18,
-            y: photoY,
-          }}
-        >
-          <img
-            src="/media/photos/hero-grupo.jpg"
-            alt=""
-            aria-hidden
-            draggable={false}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center 55%',
-              opacity: 0.45,
-              filter: 'sepia(6%) contrast(1.08) brightness(0.78) saturate(0.80)',
-            }}
-          />
-        </motion.div>
-        {/* Sem vinheta — fundo limpo */}
-      </div>
-
-      {/* ── Grid: título + lide ── */}
       <div
-        className="w-full"
+        className="section-padding"
         style={{
-          flex: 1,
           position: 'relative',
           zIndex: 1,
+          paddingTop: '6.5rem',
+          paddingBottom: '2.75rem',
         }}
       >
-        {/* Texto editorial alinhado à esquerda */}
         <div
-          className="flex flex-col justify-end px-6 md:px-12 lg:px-20"
-          style={{ flex: 1, paddingTop: '7rem', paddingBottom: '3rem' }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch"
+          style={{ maxWidth: '1280px', margin: '0 auto' }}
         >
+          <article
+            className="lg:col-span-6"
+            style={{
+              border: '1px solid var(--border)',
+              borderRadius: '22px',
+              background: panelBg,
+              backdropFilter: 'blur(6px)',
+              boxShadow: isDark
+                ? '0 18px 38px rgba(0,0,0,0.35)'
+                : '0 14px 32px rgba(20,20,20,0.08)',
+              padding: 'clamp(1.1rem, 2.1vw, 2rem)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              minHeight: 'clamp(460px, 66vh, 760px)',
+            }}
+          >
           {/* Eyebrow */}
           <motion.p
             style={{
@@ -84,7 +90,7 @@ export default function HeroSection() {
               letterSpacing: '0.25em',
               textTransform: 'uppercase',
               color: 'var(--text-muted)',
-              marginBottom: '1.5rem',
+              marginBottom: '1.2rem',
             }}
             initial={{ opacity: 0 }}
             animate={loaded ? { opacity: 1 } : {}}
@@ -100,11 +106,16 @@ export default function HeroSection() {
                 display: 'block',
                 fontFamily: "'Syne', 'Barlow Condensed', sans-serif",
                 fontWeight: 800,
-                fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-                lineHeight: 1,
+                  fontSize: 'clamp(2.35rem, 5.8vw, 5rem)',
+                  lineHeight: 0.92,
                 letterSpacing: '-0.02em',
                 textTransform: 'uppercase',
                 color: 'var(--text-primary)',
+                maxWidth: '100%',
+                  whiteSpace: 'normal',
+                  overflowWrap: 'normal',
+                  wordBreak: 'keep-all',
+                  hyphens: 'none',
               }}
               initial={{ y: '108%' }}
               animate={loaded ? { y: 0 } : {}}
@@ -129,7 +140,7 @@ export default function HeroSection() {
           />
           {/* Lide */}
           <motion.div
-            style={{ maxWidth: '620px', marginBottom: '3rem' }}
+            style={{ maxWidth: '100%', marginBottom: '1.9rem' }}
             initial={{ opacity: 0, y: 16 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
@@ -137,33 +148,24 @@ export default function HeroSection() {
             <p
               style={{
                 fontFamily: "'Barlow', sans-serif",
-                fontSize: 'clamp(1rem, 2vw, 1.15rem)',
-                lineHeight: 1.72,
+                fontSize: 'clamp(0.96rem, 1.35vw, 1.08rem)',
+                lineHeight: 1.68,
                 color: 'var(--text-primary)',
-                marginBottom: '1rem',
+                maxWidth: '52ch',
               }}
             >
-              Após séculos de invisibilidade, a profissão de trancista começa a ganhar
-              o reconhecimento que sempre mereceu. Entre agulhas, linhas e cabelos crespos,
+              Após séculos de invisibilidade, a profissão de trancista começa a ganhar o
+              reconhecimento que sempre mereceu. Entre agulhas, linhas e cabelos crespos,
               mulheres negras constroem identidade, renda e resistência com as próprias mãos.
-            </p>
-            <p
-              style={{
-                fontFamily: "'Barlow', sans-serif",
-                fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
-                lineHeight: 1.72,
-                color: 'var(--text-muted)',
-              }}
-            >
-              Esta reportagem documenta a história de uma arte ancestral que sobreviveu
-              à opressão — e hoje disputa espaço num mercado bilionário.
+              Esta reportagem documenta a história de uma arte ancestral que sobreviveu à
+              opressão, e hoje disputa espaço num mercado bilionário.
             </p>
           </motion.div>
 
           {/* Meta */}
           <motion.div
             className="flex items-center gap-8 flex-wrap"
-            style={{ marginBottom: '4rem' }}
+            style={{ marginBottom: '0.9rem', gap: '1rem' }}
             initial={{ opacity: 0 }}
             animate={loaded ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.62 }}
@@ -190,7 +192,6 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Scroll hint */}
           <motion.div
             className="flex items-center gap-3"
             style={{ color: 'var(--text-muted)' }}
@@ -230,6 +231,50 @@ export default function HeroSection() {
               Role para ler
             </span>
           </motion.div>
+          </article>
+
+          <motion.article
+            className="lg:col-span-6"
+            style={{
+              position: 'relative',
+              borderRadius: '22px',
+              overflow: 'hidden',
+              border: '1px solid var(--border)',
+              background: imageFrameBg,
+              boxShadow: isDark
+                ? '0 20px 44px rgba(0,0,0,0.42)'
+                : '0 16px 36px rgba(20,20,20,0.1)',
+              minHeight: 'clamp(460px, 66vh, 760px)',
+            }}
+            initial={{ opacity: 0, y: 26 }}
+            animate={loaded ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: EASE, delay: 0.2 }}
+          >
+            <motion.img
+              src="/media/photos/hero-grupo.jpg"
+              alt="Grupo de trancistas"
+              draggable={false}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                objectPosition: 'center 48%',
+                y: photoY,
+                filter: isDark
+                  ? 'sepia(6%) contrast(1.08) brightness(0.77) saturate(0.84)'
+                  : 'sepia(4%) contrast(1.05) brightness(0.95) saturate(0.95)',
+              }}
+            />
+            <div
+              aria-hidden
+              style={{
+                position: 'absolute',
+                inset: 0,
+                pointerEvents: 'none',
+                background: imageOverlay,
+              }}
+            />
+          </motion.article>
         </div>
       </div>
 
