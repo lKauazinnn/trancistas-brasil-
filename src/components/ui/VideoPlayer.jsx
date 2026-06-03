@@ -1,9 +1,36 @@
 import { useRef, useState } from 'react'
 
+function getYouTubeId(url) {
+  if (!url) return null
+  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([^?&\s]+)/)
+  return m ? m[1] : null
+}
+
 export default function VideoPlayer({ src, poster, title, className = '' }) {
   const videoRef = useRef(null)
   const [playing, setPlaying] = useState(false)
   const [error,   setError]   = useState(false)
+
+  const youtubeId = getYouTubeId(src)
+
+  // ── YouTube embed ──
+  if (youtubeId) {
+    return (
+      <div className={`relative overflow-hidden ${className}`} style={{ background: '#000' }}>
+        <span className="absolute top-0 left-0 w-6 h-6 border-t border-l border-terracota z-10 pointer-events-none" />
+        <span className="absolute top-0 right-0 w-6 h-6 border-t border-r border-terracota z-10 pointer-events-none" />
+        <span className="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-terracota z-10 pointer-events-none" />
+        <span className="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-terracota z-10 pointer-events-none" />
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0&modestbranding=1`}
+          title={title || 'Vídeo'}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{ width: '100%', height: '100%', border: 'none', display: 'block', aspectRatio: '16/9' }}
+        />
+      </div>
+    )
+  }
 
   const toggle = () => {
     const v = videoRef.current

@@ -8,7 +8,7 @@ import StarDivider from '../ui/StarDivider'
 import ParallaxSection from '../ui/ParallaxSection'
 import { CARROSSEL1_IMAGES } from '../../data/content'
 
-const VIDEO_SRC = import.meta.env.VITE_VIDEO_DOCUMENTARIO || '/media/videos/documentario-kamyla.mp4'
+const VIDEO_SRC = import.meta.env.VITE_VIDEO_DOCUMENTARIO || '/media/videos/documentario-web.mp4'
 
 export default function AprendizadoAncestral() {
   return (

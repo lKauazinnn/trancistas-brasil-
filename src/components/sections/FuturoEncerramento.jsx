@@ -9,7 +9,7 @@ import AfroPattern from '../ui/AfroPattern'
 import TiltCard from '../ui/TiltCard'
 import { CREDITS } from '../../data/content'
 
-const VIDEO_SRC = import.meta.env.VITE_VIDEO_DOCUMENTARIO || '/media/videos/documentario-kamyla.mp4'
+const VIDEO_SRC = import.meta.env.VITE_VIDEO_DOCUMENTARIO || '/media/videos/documentario-web.mp4'
 
 const FUTURE_PILLARS = [
   { numero: '01', titulo: 'Regulamentação', texto: 'O debate sobre a formalização da profissão avança no legislativo, impulsionado pelo movimento negro.' },
