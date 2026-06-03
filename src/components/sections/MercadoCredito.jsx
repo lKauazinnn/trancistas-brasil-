@@ -10,6 +10,7 @@ import TickerBand from '../ui/TickerBand'
 import StarDivider from '../ui/StarDivider'
 import ParallaxSection from '../ui/ParallaxSection'
 import TiltCard from '../ui/TiltCard'
+import PerguntaWidget from '../ui/PerguntaWidget'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { MARKET_STATS, TIMELINE_EVENTS } from '../../data/content'
 
@@ -66,6 +67,9 @@ export default function MercadoCredito() {
           ))}
         </div>
 
+        {/* Pergunta 1 — CNPJ */}
+        <PerguntaWidget perguntaId={1} />
+
         <StarDivider className="mb-14" />
 
         {/* Infográfico Crédito */}
@@ -103,6 +107,10 @@ export default function MercadoCredito() {
             </p>
           </div>
         </ScrollReveal>
+
+        {/* Pergunta 2 — Renda */}
+        <PerguntaWidget perguntaId={2} />
+
       </div>
 
       {/* Parallax break before timeline */}

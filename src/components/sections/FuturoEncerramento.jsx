@@ -9,6 +9,8 @@ import AfroPattern from '../ui/AfroPattern'
 import TiltCard from '../ui/TiltCard'
 import { CREDITS } from '../../data/content'
 
+const VIDEO_SRC = import.meta.env.VITE_VIDEO_DOCUMENTARIO || '/media/videos/documentario-kamyla.mp4'
+
 const FUTURE_PILLARS = [
   { numero: '01', titulo: 'Regulamentação', texto: 'O debate sobre a formalização da profissão avança no legislativo, impulsionado pelo movimento negro.' },
   { numero: '02', titulo: 'Crédito Justo',  texto: 'Iniciativas de microcrédito voltadas a trabalhadores informais negros começam a surgir em fintechs afro-centradas.' },
@@ -103,7 +105,7 @@ export default function FuturoEncerramento() {
             Trançando com Kamyla
           </h3>
           <VideoPlayer
-            src="/media/videos/Vídeo-entrevista_ trançando com Kamyla.mov"
+            src={VIDEO_SRC}
             title="Assistir o documentário completo"
             className="w-full aspect-video max-w-4xl mx-auto"
           />

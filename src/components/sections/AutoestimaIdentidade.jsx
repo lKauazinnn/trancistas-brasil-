@@ -4,10 +4,12 @@ import CenteredQuote from '../ui/CenteredQuote'
 import AfroPattern from '../ui/AfroPattern'
 import SectionLabel from '../ui/SectionLabel'
 import AudioPlayer from '../ui/AudioPlayer'
+import ImageCarousel from '../ui/ImageCarousel'
 import StarDivider from '../ui/StarDivider'
 import BeadDivider from '../ui/BeadDivider'
 import ParallaxSection from '../ui/ParallaxSection'
 import AdinkraFloat from '../ui/AdinkraFloat'
+import { CARROSSEL2_IMAGES } from '../../data/content'
 
 const REFERENCES = [
   { name: 'Michelle Obama', desc: 'Ao usar tranças em eventos oficiais, redefiniu o que é elegância num mundo que sempre negou a estética negra.' },
@@ -135,6 +137,20 @@ export default function AutoestimaIdentidade() {
 
         <BeadDivider className="my-10" />
 
+        {/* Carrossel 2 — identidade e grupo */}
+        <ScrollReveal variant="fade-up">
+          <p className="label-tag mb-3">Ensaio Fotográfico · Identidade e Grupo</p>
+          <h3
+            className="font-display font-black uppercase mb-6"
+            style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)', color: 'var(--text-primary)' }}
+          >
+            Potência coletiva
+          </h3>
+        </ScrollReveal>
+        <ImageCarousel images={CARROSSEL2_IMAGES} />
+
+        <BeadDivider className="my-10" />
+
         <CenteredQuote
           quote="Quando termino uma trança, minha cliente chora. Não é de dor. É de se ver."
           author="Beatriz Lima"
@@ -148,10 +164,10 @@ export default function AutoestimaIdentidade() {
           <div className="mb-4">
             <p className="label-tag mb-5">Ouça o episódio</p>
             <AudioPlayer
-              title="Cabelo, Cultura e Resistência"
+              title="Podcast PI — Trancistas do Brasil"
               guest="Com Kamyla Santos e Dra. Aline Ferreira"
-              episode="Podcast Trancistas — Ep. 01"
-              src={null}
+              episode="Episódio especial · PI 2025"
+              src={import.meta.env.VITE_PODCAST_URL || '/media/audio/podcast.mp3'}
             />
           </div>
         </ScrollReveal>

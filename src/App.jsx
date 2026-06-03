@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { SimulacaoProvider } from './context/SimulacaoContext'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import HeroSection from './components/sections/HeroSection'
@@ -9,6 +10,7 @@ import MosaicoAfroPuzzle from './components/sections/MosaicoAfroPuzzle'
 import MercadoCredito from './components/sections/MercadoCredito'
 import MapaBrasilMosaico from './components/sections/MapaBrasilMosaico'
 import DesafiosRotina from './components/sections/DesafiosRotina'
+import SimulacaoCredito from './components/sections/SimulacaoCredito'
 import FuturoEncerramento from './components/sections/FuturoEncerramento'
 import ReadingProgress from './components/ui/ReadingProgress'
 import SectionNav from './components/ui/SectionNav'
@@ -25,6 +27,7 @@ initTheme()
 
 export default function App() {
   return (
+    <SimulacaoProvider>
     <div style={{ overflowX: 'hidden' }}>
       <BraidGuia />
       <ReadingProgress />
@@ -47,9 +50,12 @@ export default function App() {
         <KenteStripe height={22} />
         <DesafiosRotina />
         <KenteStripe height={22} />
+        <SimulacaoCredito />
+        <KenteStripe height={22} />
         <FuturoEncerramento />
       </main>
       <Footer />
     </div>
+    </SimulacaoProvider>
   )
 }

@@ -5,7 +5,7 @@ dist
 .DS_Store
 *.local
 .claude/
-# Arquivos de mídia grandes — hospede no Vercel/CDN separadamente
+# Vídeos grandes — ficam locais, para Vercel use VITE_VIDEO_DOCUMENTARIO e VITE_VIDEO_PODCAST no .env
 public/media/videos/
 *.mov
 *.mp4

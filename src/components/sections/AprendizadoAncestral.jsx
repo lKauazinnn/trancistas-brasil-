@@ -2,9 +2,13 @@ import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
 import SectionLabel from '../ui/SectionLabel'
 import VideoPlayer from '../ui/VideoPlayer'
+import ImageCarousel from '../ui/ImageCarousel'
 import TickerBand from '../ui/TickerBand'
 import StarDivider from '../ui/StarDivider'
 import ParallaxSection from '../ui/ParallaxSection'
+import { CARROSSEL1_IMAGES } from '../../data/content'
+
+const VIDEO_SRC = import.meta.env.VITE_VIDEO_DOCUMENTARIO || '/media/videos/documentario-kamyla.mp4'
 
 export default function AprendizadoAncestral() {
   return (
@@ -86,7 +90,7 @@ export default function AprendizadoAncestral() {
           <div className="flex flex-col gap-5">
             <ScrollReveal variant="fade-left" delay={120}>
               <VideoPlayer
-                src="/media/videos/Vídeo-entrevista_ trançando com Kamyla.mov"
+                src={VIDEO_SRC}
                 title="Trançando com Kamyla"
                 className="aspect-video"
               />
@@ -109,6 +113,20 @@ export default function AprendizadoAncestral() {
             </ScrollReveal>
           </div>
         </div>
+      </div>
+
+      {/* Carrossel 1 — processo e técnica */}
+      <div className="section-padding max-w-7xl mx-auto" style={{ paddingTop: 0 }}>
+        <ScrollReveal variant="fade-up">
+          <p className="label-tag mb-3">Ensaio Fotográfico · Processo e Técnica</p>
+          <h3
+            className="font-display font-black uppercase mb-6"
+            style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)', color: 'var(--text-primary)' }}
+          >
+            Arte feita de mãos
+          </h3>
+        </ScrollReveal>
+        <ImageCarousel images={CARROSSEL1_IMAGES} />
       </div>
 
       {/* Parallax divider */}

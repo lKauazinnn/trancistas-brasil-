@@ -12,6 +12,16 @@ export const GALLERY_IMAGES = [
   { src: '/media/photos/_MG_0533.jpg', alt: 'Resultado final' },
 ]
 
+export const CARROSSEL1_IMAGES = Array.from({ length: 13 }, (_, i) => ({
+  src: `/media/carrossel1/c1-${String(i + 1).padStart(2, '0')}.jpg`,
+  alt: `Processo e técnica — foto ${i + 1}`,
+}))
+
+export const CARROSSEL2_IMAGES = Array.from({ length: 12 }, (_, i) => ({
+  src: `/media/carrossel2/c2-${String(i + 1).padStart(2, '0')}.jpg`,
+  alt: `Identidade e grupo — foto ${i + 1}`,
+}))
+
 export const MARKET_STATS = [
   { value: 600000, suffix: '+', label: 'Estabelecimentos de beleza negra no Brasil', category: 'renda' },
   { value: 78, suffix: '%', label: 'Das trancistas sem acesso a crédito formal', category: 'credito' },

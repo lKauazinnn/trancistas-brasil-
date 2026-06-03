@@ -45,7 +45,7 @@ export default function HeroSection() {
           }}
         >
           <img
-            src="/media/photos/IMG_0558.jpg"
+            src="/media/photos/hero-grupo.jpg"
             alt=""
             aria-hidden
             draggable={false}
@@ -53,9 +53,9 @@ export default function HeroSection() {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: 'center top',
-              opacity: 0.32,
-              filter: 'sepia(10%) contrast(1.08) brightness(0.88) saturate(0.72)',
+              objectPosition: 'center 30%',
+              opacity: 0.42,
+              filter: 'sepia(8%) contrast(1.05) brightness(0.82) saturate(0.78)',
             }}
           />
         </motion.div>
