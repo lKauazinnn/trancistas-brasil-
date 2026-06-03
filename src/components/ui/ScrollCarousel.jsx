@@ -202,12 +202,12 @@ export default function ScrollCarousel({ images, title = 'Galeria', label = 'Fot
                     overflow: 'hidden',
                     cursor: 'pointer',
                     outline: 'none',
-                    background: 'var(--bg-surface)',
+                    background: 'var(--bg-deep)',
                   }}
                 >
                   <img
                     src={img.src} alt={img.alt}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
                     draggable={false} loading="lazy"
                   />
                 </button>

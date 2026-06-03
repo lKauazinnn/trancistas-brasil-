@@ -85,17 +85,24 @@ export default function ImageCarousel({ images }) {
               onClick={() => setLightbox(i)}
               className={`
                 flex-shrink-0 overflow-hidden
-                w-[72vw] md:w-[380px] lg:w-[420px]
-                aspect-[3/4]
+                w-[80vw] md:w-[400px] lg:w-[440px]
                 border transition-all duration-300 cursor-pointer
                 ${active === i ? 'border-terracota' : 'border-dim/30 hover:border-dim/60'}
               `}
+              style={{ background: 'var(--bg-deep)' }}
               aria-label={`Ver imagem: ${img.alt}`}
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '520px',
+                  objectFit: 'contain',
+                  display: 'block',
+                }}
+                className="hover:scale-[1.02] transition-transform duration-700"
                 draggable={false}
                 loading="lazy"
               />

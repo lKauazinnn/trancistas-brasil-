@@ -24,10 +24,10 @@ export default {
         dim:   '#444440',
       },
       fontFamily: {
-        display:  ['Barlow Condensed', 'sans-serif'],
-        body:     ['Barlow', 'sans-serif'],
+        display:  ['DM Sans', 'sans-serif'],
+        body:     ['Lora', 'Georgia', 'serif'],
         grotesk:  ['Space Grotesk', 'sans-serif'],
-        syne:     ['Syne', 'sans-serif'],
+        syne:     ['DM Sans', 'sans-serif'],
       },
       letterSpacing: {
         widest2: '0.25em',

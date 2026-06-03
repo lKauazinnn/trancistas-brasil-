@@ -14,7 +14,7 @@ export default function HeroSection() {
     target: sectionRef,
     offset: ['start start', 'end start'],
   })
-  const photoY = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
+  const photoY = useTransform(scrollYProgress, [0, 1], ['0%', '8%'])
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 80)
@@ -40,7 +40,7 @@ export default function HeroSection() {
           style={{
             position: 'absolute',
             inset: 0,
-            scale: 1.12,
+            scale: 1.18,
             y: photoY,
           }}
         >
@@ -53,9 +53,9 @@ export default function HeroSection() {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: 'center 30%',
-              opacity: 0.42,
-              filter: 'sepia(8%) contrast(1.05) brightness(0.82) saturate(0.78)',
+              objectPosition: 'center 55%',
+              opacity: 0.45,
+              filter: 'sepia(6%) contrast(1.08) brightness(0.78) saturate(0.80)',
             }}
           />
         </motion.div>

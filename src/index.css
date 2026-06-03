@@ -50,9 +50,9 @@
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Lora', Georgia, serif;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -244,11 +244,11 @@
 
 /* Pull quote */
 .pull-quote {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 700;
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-weight: 500;
   font-style: italic;
-  line-height: 1.2;
+  line-height: 1.35;
 }
 
 /* ─────────────────────────────────────────
