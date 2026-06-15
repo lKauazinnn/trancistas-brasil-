@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback, useState } from 'react'
+﻿import { useRef, useEffect, useCallback, useState } from 'react'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
@@ -377,3 +377,5 @@ function PuzzleCard({ card, index }) {
     </motion.div>
   )
 }
+
+

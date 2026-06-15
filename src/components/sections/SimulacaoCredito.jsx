@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+﻿import { motion, AnimatePresence } from 'framer-motion'
 import { XCircle, AlertTriangle, CheckCircle } from 'lucide-react'
 import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
@@ -348,3 +348,5 @@ export default function SimulacaoCredito() {
     </section>
   )
 }
+
+

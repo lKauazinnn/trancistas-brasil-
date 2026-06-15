@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react'
+﻿import { useState, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../ui/ScrollReveal'
 import SectionLabel from '../ui/SectionLabel'
@@ -282,7 +282,7 @@ export default function MapaBrasilMosaico() {
                   fontFamily: "'Barlow', sans-serif",
                   fontWeight: 600,
                   fontSize: '0.75rem',
-                  color: '#ffffff',
+                  color: 'var(--text-primary)',
                   lineHeight: 1,
                 }}>
                   {tooltip.state.name}
@@ -430,3 +430,5 @@ export default function MapaBrasilMosaico() {
     </section>
   )
 }
+
+
