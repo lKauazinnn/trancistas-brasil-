@@ -2,20 +2,20 @@ import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
 import CenteredQuote from '../ui/CenteredQuote'
 import SectionLabel from '../ui/SectionLabel'
-import VideoPlayer from '../ui/VideoPlayer'
+import AudioPlayer from '../ui/AudioPlayer'
 import StarDivider from '../ui/StarDivider'
 import BeadDivider from '../ui/BeadDivider'
 import AfroPattern from '../ui/AfroPattern'
 import TiltCard from '../ui/TiltCard'
 import { CREDITS } from '../../data/content'
 
-const VIDEO_SRC = import.meta.env.VITE_VIDEO_DOCUMENTARIO || '/media/videos/documentario-web.mp4'
+const DOCUMENTARIO_AUDIO = import.meta.env.VITE_DOCUMENTARIO_AUDIO || '/media/audio/documentario.mp3'
 
 const FUTURE_PILLARS = [
-  { numero: '01', titulo: 'Regulamentação', texto: 'O debate sobre a formalização da profissão avança no legislativo, impulsionado pelo movimento negro.' },
-  { numero: '02', titulo: 'Crédito Justo',  texto: 'Iniciativas de microcrédito voltadas a trabalhadores informais negros começam a surgir em fintechs afro-centradas.' },
-  { numero: '03', titulo: 'Formação',        texto: 'Cursos técnicos de tranças começam a ser incluídos em programas de qualificação em cidades como Salvador e São Paulo.' },
-  { numero: '04', titulo: 'Visibilidade',    texto: 'Reportagens como esta constroem o arquivo histórico que a profissão merece.' },
+  { numero: '01', titulo: 'Patrimônio Cultural', texto: 'Reconhecer o saber das trancistas como patrimônio cultural do DF fortalece identidade, memória e permanência do ofício.' },
+  { numero: '02', titulo: 'Políticas Públicas',  texto: 'Acesso a crédito, formação continuada e cuidado em saúde física e mental são condições para carreiras longas e dignas.' },
+  { numero: '03', titulo: 'Regulamentação com Escuta', texto: 'PL 1.747/2024 e PL 2.831/2024 podem ser avanços, desde que não criem barreiras para saberes comunitários e familiares.' },
+  { numero: '04', titulo: 'Rede entre Mulheres', texto: 'Movimentos como Fios da Ancestralidade, Mapa Afetivo e Tranças no Mapa seguem articulando formação e visibilidade.' },
 ]
 
 export default function FuturoEncerramento() {
@@ -36,23 +36,22 @@ export default function FuturoEncerramento() {
             style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: 'var(--text-primary)' }}
           >
             O FUTURO<br />
-            <span className="wood-text-gold">ESTÁ</span><br />
-            NAS MÃOS
+            <span className="wood-text-gold">DA PROFISSÃO</span>
           </h2>
         </ClipReveal>
 
         <ScrollReveal variant="fade-up" delay={140}>
           <div className="max-w-3xl mb-12 space-y-5">
             <p style={{ fontSize: '1.05rem', lineHeight: 1.75, color: 'var(--text-primary)' }}>
-              As trancistas do Brasil não esperam. Elas criam redes de apoio entre si,
-              ensinam as mais jovens, organizam feiras, desenvolvem produtos e reinventam
-              seus negócios na lógica da economia solidária.
+              Muito mais do que um ofício, trançar carrega um patrimônio cultural construído ao
+              longo de gerações. A inclusão da ocupação na CBO, em 2025, é um marco importante,
+              mas ainda distante do reconhecimento social, econômico e institucional necessário.
             </p>
             <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'var(--text-muted)' }}>
-              A luta por formalização, crédito justo e programas educacionais é o
-              alicerce para a expansão e valorização desses negócios. As trancistas não
-              buscam assistencialismo, mas sim oportunidades estruturais para continuarem
-              transformando suas realidades e as de suas comunidades.
+              A proposta legislativa em tramitação no Congresso pode abrir caminhos, mas também
+              acende alertas sobre burocracia excessiva e novos custos para trancistas que
+              aprenderam pela transmissão familiar e comunitária. O desafio agora é avançar sem
+              apagar a origem ancestral do saber.
             </p>
           </div>
         </ScrollReveal>
@@ -95,20 +94,24 @@ export default function FuturoEncerramento() {
 
         <BeadDivider className="mb-12" />
 
-        {/* Documentário */}
+        {/* Documentário em áudio */}
         <ScrollReveal variant="fade-up">
-          <p className="label-tag mb-3">Mini-documentário</p>
+          <p className="label-tag mb-3">Documentário</p>
           <h3
             className="font-display font-black uppercase mb-8"
             style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', color: 'var(--text-primary)' }}
           >
-            Trançando com Kamyla
+            Trançando Caminhos · Versão em áudio
           </h3>
-          <VideoPlayer
-            src={VIDEO_SRC}
-            title="Assistir o documentário completo"
-            className="w-full aspect-video max-w-4xl mx-auto"
-          />
+          <div className="max-w-4xl mx-auto">
+            <AudioPlayer
+              title="Documentário Especial — Trançando Caminhos"
+              guest="Reportagem em áudio com vozes de trancistas do DF"
+              episode="Formato estilo player"
+              src={DOCUMENTARIO_AUDIO}
+              cover="/media/photos/moça.jpeg"
+            />
+          </div>
         </ScrollReveal>
 
         {/* Encerramento tipográfico */}
@@ -136,9 +139,9 @@ export default function FuturoEncerramento() {
         </div>
 
         <CenteredQuote
-          quote="Eu não preciso de pena. Preciso de acesso. O resto eu resolvo com as minhas mãos."
-          author="Kamyla Santos"
-          role="Trancista — Piauí"
+          quote="Entre fios que ligam passado e futuro, as trancistas seguem trançando caminhos."
+          author="Encerramento da reportagem"
+          role="Edição final aprovada"
           dark
         />
 

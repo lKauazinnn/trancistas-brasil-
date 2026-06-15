@@ -18,10 +18,10 @@ export default function Footer() {
               className="font-display font-black uppercase leading-none"
               style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--text-primary)' }}
             >
-              Trancistas
+              Trançando Caminhos
             </h2>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '8px', maxWidth: '280px' }}>
-              Resistência, arte e ancestralidade afro-brasileira.
+              Da rota de fuga à independência financeira.
             </p>
           </div>
           <div style={{ textAlign: 'right' }}>

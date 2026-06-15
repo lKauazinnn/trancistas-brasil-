@@ -8,8 +8,8 @@ export default function GaleriaSection() {
     <section id="galeria" className="bg-deep">
       <ScrollCarousel
         images={GALLERY_IMAGES}
-        title="Arte em Movimento"
-        label="Galeria · Resistência Visual"
+        title="Memória Em Imagem"
+        label="Galeria · Texto aprovado"
       />
     </section>
   )

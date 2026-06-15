@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { SimulacaoProvider } from './context/SimulacaoContext'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
@@ -6,7 +5,6 @@ import HeroSection from './components/sections/HeroSection'
 import AprendizadoAncestral from './components/sections/AprendizadoAncestral'
 import AutoestimaIdentidade from './components/sections/AutoestimaIdentidade'
 import GaleriaSection from './components/sections/GaleriaSection'
-import MosaicoAfroPuzzle from './components/sections/MosaicoAfroPuzzle'
 import MercadoCredito from './components/sections/MercadoCredito'
 import MapaBrasilMosaico from './components/sections/MapaBrasilMosaico'
 import DesafiosRotina from './components/sections/DesafiosRotina'
@@ -28,30 +26,28 @@ initTheme()
 export default function App() {
   return (
     <SimulacaoProvider>
-    <div style={{ overflowX: 'hidden' }}>
+    <div className="afro-texture-layer" style={{ overflowX: 'hidden' }}>
       <BraidGuia />
       <ReadingProgress />
       <SectionNav />
       <Navbar />
       <main>
         <HeroSection />
-        <KenteStripe height={22} />
+        <KenteStripe height={50} />
         <AprendizadoAncestral />
-        <KenteStripe height={22} />
+        <KenteStripe height={50} />
         <AutoestimaIdentidade />
-        <KenteStripe height={22} />
-        <MosaicoAfroPuzzle />
-        <KenteStripe height={22} />
+        <KenteStripe height={50} />
         <GaleriaSection />
-        <KenteStripe height={22} />
+        <KenteStripe height={50} />
         <MercadoCredito />
-        <KenteStripe height={22} />
+        <KenteStripe height={50} />
         <MapaBrasilMosaico />
-        <KenteStripe height={22} />
+        <KenteStripe height={50} />
         <DesafiosRotina />
-        <KenteStripe height={22} />
+        <KenteStripe height={50} />
         <SimulacaoCredito />
-        <KenteStripe height={22} />
+        <KenteStripe height={50} />
         <FuturoEncerramento />
       </main>
       <Footer />

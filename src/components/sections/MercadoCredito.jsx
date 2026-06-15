@@ -26,7 +26,7 @@ export default function MercadoCredito() {
       <div className="section-padding max-w-7xl mx-auto">
         {/* Header */}
         <ScrollReveal variant="fade-up">
-          <SectionLabel number={3} text="Mercado, Crédito e Dados" />
+          <SectionLabel number={3} text="Abrindo caminhos · Onde estão os dados?" />
         </ScrollReveal>
 
         <ClipReveal delay={60}>
@@ -34,9 +34,8 @@ export default function MercadoCredito() {
             className="font-display font-black uppercase leading-none mb-4"
             style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: 'var(--text-primary)' }}
           >
-            UM MERCADO<br />
-            <span className="wood-text-verde">BILIONÁRIO</span><br />
-            SEM CRÉDITO
+            MERCADO VIVO,<br />
+            <span className="wood-text-verde">DADOS AUSENTES</span>
           </h2>
         </ClipReveal>
 
@@ -44,9 +43,10 @@ export default function MercadoCredito() {
           <div className="max-w-2xl mb-12">
             <div style={{ height: '1px', background: 'var(--border)', marginBottom: '1.5rem' }} />
             <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--text-muted)' }}>
-              O Brasil tem o maior mercado de beleza negra da América Latina. Apesar disso,
-              a maioria das profissionais ainda opera na informalidade — sem CNPJ, sem acesso
-              a crédito, sem proteção trabalhista.
+              A ausência de dados formais sobre quantas trancistas atuam no DF e no Brasil
+              impacta diretamente crédito, assistência e políticas públicas. Mesmo com reconhecimento
+              recente na CBO (2025), a profissão ainda convive com informalidade e barreiras
+              de acesso ao sistema financeiro.
             </p>
           </div>
         </ScrollReveal>
@@ -83,15 +83,15 @@ export default function MercadoCredito() {
               className="font-display font-black uppercase mb-8"
               style={{ fontSize: 'clamp(1.3rem, 2.5vw, 2rem)', color: 'var(--text-primary)' }}
             >
-              Por que o crédito formal é tão distante?
+              Simulando o acesso ao crédito
             </h3>
             <div className="space-y-5">
               {[
-                { label: 'Falta de comprovação de renda formal', pct: 85 },
-                { label: 'Ausência de CNPJ ou registro profissional', pct: 72 },
-                { label: 'Histórico de crédito insuficiente', pct: 68 },
-                { label: 'Burocracia inacessível dos bancos', pct: 61 },
-                { label: 'Desconhecimento de linhas disponíveis', pct: 74 },
+                { label: 'Renda sem formalização dificulta comprovação bancária', pct: 84 },
+                { label: 'Falta de linha específica para trabalho ancestral autônomo', pct: 78 },
+                { label: 'Burocracia de análise ignora realidade territorial periférica', pct: 76 },
+                { label: 'Jornadas exaustivas reduzem tempo para capacitação financeira', pct: 69 },
+                { label: 'Reconhecimento recente da ocupação ainda não virou política de crédito', pct: 73 },
               ].map((item, i) => (
                 <ScrollReveal key={i} variant="fade-up" delay={i * 60}>
                   <BarItem {...item} />
@@ -99,7 +99,7 @@ export default function MercadoCredito() {
               ))}
             </div>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '1.5rem', letterSpacing: '0.05em' }}>
-              * Pesquisa PI 2025 — 340 trancistas em 8 estados
+              * Referências: Censo 2022, CBO 2025 e levantamento Tranças no Mapa (DF/Entorno)
             </p>
           </div>
         </ScrollReveal>
@@ -119,7 +119,7 @@ export default function MercadoCredito() {
             className="font-display font-black uppercase"
             style={{ fontSize: 'clamp(1.4rem, 4vw, 3rem)', color: '#FAFAF5', letterSpacing: '0.08em', textAlign: 'center' }}
           >
-            África → Brasil → Resistência
+            Da rota de fuga à autonomia
           </p>
         </div>
       </ParallaxSection>
@@ -159,9 +159,9 @@ export default function MercadoCredito() {
       </div>
 
       <CenteredQuote
-        quote="Banco nenhum me deu crédito na primeira vez. Tive que começar com R$200 emprestados da minha mãe."
-        author="Beatriz Lima"
-        role="Trancista e empreendedora"
+        quote="A maioria das trancistas opera sem resguardo jurídico e econômico, forçada a jornadas duplas ou triplas."
+        author="José Fhanoel"
+        role="Artigo Tecendo histórias e caminhos"
         dark
         accentColor="var(--verde)"
       />

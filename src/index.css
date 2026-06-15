@@ -20,23 +20,29 @@
   --verde:     #2D6A4F;
   --vermelho:  #B83228;
   --bege:      #F0E6CC;
+  --afro-accent-a: #E4572E;
+  --afro-accent-b: #F3B61F;
+  --afro-accent-c: #0C7C59;
 }
 
 .dark {
-  --bg-primary:   #05050A;
-  --bg-secondary: #0B0B13;
+  --bg-primary:   #06050C;
+  --bg-secondary: #0C0B14;
   --bg-surface:   #111118;
   --bg-deep:      #080810;
   --text-primary: #F5F0E8;
   --text-muted:   #8A8480;
   --text-dim:     #444440;
-  --border:       rgba(255,255,255,0.08);
+  --border:       rgba(255,255,255,0.09);
 
-  /* Ouro mais rico e saturado no escuro */
-  --ouro:      #D4A843;
-  --terracota: #C85A30;
-  --verde:     #3D8A65;
-  --vermelho:  #C84040;
+  /* Cores mais vivas e saturadas no modo escuro */
+  --ouro:      #E6B835;
+  --terracota: #D4622C;
+  --verde:     #3A9870;
+  --vermelho:  #D44040;
+  --afro-accent-a: #FF6E38;
+  --afro-accent-b: #FFD04A;
+  --afro-accent-c: #28B882;
 }
 
 /* ─────────────────────────────────────────
@@ -49,6 +55,11 @@
 
   body {
     background-color: var(--bg-primary);
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(212,98,44,0.14) 0 160px, transparent 161px),
+      radial-gradient(circle at 85% 9%,  rgba(230,184,53,0.11) 0 150px, transparent 151px),
+      radial-gradient(circle at 88% 80%, rgba(58,152,112,0.11) 0 140px, transparent 141px),
+      radial-gradient(circle at 40% 60%, rgba(184,50,40,0.07)  0 100px, transparent 101px);
     color: var(--text-primary);
     font-family: 'Lora', Georgia, serif;
     font-size: 16px;
@@ -70,6 +81,54 @@
 @layer components {
   .section-padding {
     @apply px-6 md:px-12 lg:px-20 py-20 md:py-28 lg:py-32;
+  }
+
+  .afro-texture-layer {
+    position: relative;
+    isolation: isolate;
+  }
+  .afro-texture-layer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      /* Weave diagonal */
+      linear-gradient(45deg,  rgba(212,98,44,0.055) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(212,98,44,0.055) 25%, transparent 25%),
+      linear-gradient(45deg,  transparent 75%, rgba(212,98,44,0.055) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(212,98,44,0.055) 75%),
+      /* Grain dots terracota */
+      radial-gradient(circle at 22% 32%, rgba(212,98,44,0.22) 0 1.8px, transparent 2px),
+      radial-gradient(circle at 72% 68%, rgba(230,184,53,0.18) 0 1.8px, transparent 2px),
+      /* Grain dots verde */
+      radial-gradient(circle at 50% 18%, rgba(58,152,112,0.16) 0 1.5px, transparent 1.7px),
+      radial-gradient(circle at 85% 44%, rgba(212,98,44,0.14) 0 1.4px, transparent 1.6px);
+    background-size:
+      22px 22px, 22px 22px, 22px 22px, 22px 22px,
+      38px 38px, 44px 44px, 52px 52px, 34px 34px;
+    background-position: 0 0, 0 11px, 11px -11px, -11px 0, 0 0, 8px 12px, 4px 6px, 20px 18px;
+    opacity: 0.42;
+    z-index: -1;
+  }
+
+  .braid-panel {
+    border: 1px solid var(--border);
+    background: linear-gradient(160deg, rgba(255,255,255,0.8), rgba(255,255,255,0.55));
+    position: relative;
+    overflow: hidden;
+  }
+  .dark .braid-panel {
+    background: linear-gradient(160deg, rgba(20,20,24,0.82), rgba(12,12,16,0.9));
+  }
+  .braid-panel::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--afro-accent-a), var(--afro-accent-b), var(--afro-accent-c));
   }
 
   .display-title {

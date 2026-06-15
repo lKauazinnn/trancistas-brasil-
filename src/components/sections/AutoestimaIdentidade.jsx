@@ -4,49 +4,41 @@ import CenteredQuote from '../ui/CenteredQuote'
 import AfroPattern from '../ui/AfroPattern'
 import SectionLabel from '../ui/SectionLabel'
 import AudioPlayer from '../ui/AudioPlayer'
-import ImageCarousel from '../ui/ImageCarousel'
 import StarDivider from '../ui/StarDivider'
 import BeadDivider from '../ui/BeadDivider'
-import ParallaxSection from '../ui/ParallaxSection'
 import AdinkraFloat from '../ui/AdinkraFloat'
-import { CARROSSEL2_IMAGES } from '../../data/content'
 
 const REFERENCES = [
-  { name: 'Michelle Obama', desc: 'Ao usar tranças em eventos oficiais, redefiniu o que é elegância num mundo que sempre negou a estética negra.' },
-  { name: 'Solange Knowles', desc: 'Transformou o Grammy em manifesto capilar ao subir ao palco com tranças afros.' },
-  { name: 'Léa Araújo', desc: 'Atriz brasileira que abriu espaço na TV para a discussão sobre representatividade capilar.' },
+  { name: 'Felicidade por um fio', desc: 'A história de Violet reflete o processo de transição capilar e reconexão com identidade vivido por muitas mulheres negras.' },
+  { name: 'Doechii', desc: 'Em performance musical, artista e dançarinas conectadas por tranças simbolizam vínculo entre mulheres negras no Hip-Hop.' },
+  { name: 'Marcus Samuel Cunha', desc: 'No clipe Nego, o multiartista do DF relata ter se enxergado bonito pela primeira vez usando tranças.' },
 ]
 
 export default function AutoestimaIdentidade() {
   return (
     <section id="identidade" style={{ background: 'var(--bg-secondary)' }}>
-      {/* Parallax header image */}
-      <ParallaxSection
-        src="/media/photos/IMG_0592.jpg"
-        alt="Identidade e autoestima"
-        height="65vh"
-        intensity={0.2}
-        overlay={0.48}
-        objectPosition="center 40%"
-      >
-        <div
-          className="flex flex-col justify-end h-full px-6 md:px-12 lg:px-20"
-          style={{ paddingBottom: '2.5rem' }}
-        >
-          <ScrollReveal variant="fade-up">
-            <SectionLabel number={2} text="Autoestima e Identidade" />
-          </ScrollReveal>
+      <div className="section-padding max-w-7xl mx-auto" style={{ paddingBottom: '2rem' }}>
+        <ScrollReveal variant="fade-up">
+          <SectionLabel number={2} text="Fios da identidade e autoestima" />
+        </ScrollReveal>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-end">
           <ClipReveal delay={80}>
             <h2
               className="font-display font-black uppercase leading-none"
-              style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', color: '#FAFAF5' }}
+              style={{ fontSize: 'clamp(2.4rem, 5.4vw, 4.8rem)', color: 'var(--text-primary)' }}
             >
-              A <span className="wood-text-gold">POTÊNCIA</span><br />
-              DO CRESPO
+              FIOS DA<br />
+              <span className="wood-text-gold">IDENTIDADE</span>
             </h2>
           </ClipReveal>
+          <figure style={{ border: '1px solid var(--border)', background: 'var(--bg-surface)' }}>
+            <img src="/media/photos/iomagm.jpeg" alt="Performance artística com tranças" style={{ width: '100%', aspectRatio: '16 / 9', objectFit: 'cover' }} />
+            <figcaption style={{ padding: '0.7rem', fontSize: '0.73rem', color: 'var(--text-muted)' }}>
+              Cena de performance com tranças como símbolo de conexão coletiva.
+            </figcaption>
+          </figure>
         </div>
-      </ParallaxSection>
+      </div>
 
       {/* Content */}
       <div className="section-padding max-w-7xl mx-auto" style={{ position: 'relative' }}>
@@ -57,17 +49,16 @@ export default function AutoestimaIdentidade() {
           <div className="lg:col-span-2 space-y-5">
             <ScrollReveal variant="fade-up">
               <p style={{ fontSize: '1.1rem', lineHeight: 1.75, color: 'var(--text-primary)' }}>
-                Quando uma mulher negra senta na cadeira de uma trancista, algo além do estético
-                acontece. É um ritual de retomada. Num país onde o cabelo crespo foi proibido,
-                ridicularizado e associado à falta de higiene por décadas, cada trança é um ato
-                político e espiritual.
+                O processo de aceitação capilar vai muito além de "mudar o cabelo". É reconexão
+                com ancestralidade, identidade e autoestima. Nesse percurso, as tranças deixam de
+                ser apenas estética e se tornam acolhimento para mulheres negras em transição.
               </p>
             </ScrollReveal>
             <ScrollReveal variant="fade-up" delay={80}>
               <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'var(--text-muted)' }}>
-                "Quando termino uma trança, minha cliente chora", conta Beatriz Lima, trancista
-                há 8 anos em Salvador. "Não é de dor. É de se ver. Às vezes é a primeira vez
-                que elas se olham no espelho e se reconhecem bonitas do jeito que nasceram."
+                Maria Luiza Pereira, trancista no Riacho Fundo II, conta que foi durante sua
+                própria descoberta como mulher preta que aprendeu a cuidar do cabelo crespo,
+                desenvolveu a habilidade de trançar e passou a cuidar também de outras mulheres.
               </p>
             </ScrollReveal>
 
@@ -97,13 +88,13 @@ export default function AutoestimaIdentidade() {
                   Depoimento
                 </span>
                 <p className="pull-quote" style={{ color: 'var(--text-primary)' }}>
-                  "O cabelo negro nunca foi apenas estético. Ele foi alvo de opressão e hoje
-                  é símbolo de retomada de identidade."
+                  "Foi graças às tranças que tive coragem de assumir meu cabelo natural,
+                  minha identidade. Foi um ato de autoperdão."
                 </p>
                 <footer style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <span style={{ width: '24px', height: '1px', background: 'var(--terracota)' }} />
                   <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                    Dra. Aline Ferreira — Pesquisadora de Cultura Afro-Brasileira, USP
+                    Lady Barbara — professora de dança
                   </span>
                 </footer>
               </div>
@@ -137,24 +128,10 @@ export default function AutoestimaIdentidade() {
 
         <BeadDivider className="my-10" />
 
-        {/* Carrossel 2 — identidade e grupo */}
-        <ScrollReveal variant="fade-up">
-          <p className="label-tag mb-3">Ensaio Fotográfico · Identidade e Grupo</p>
-          <h3
-            className="font-display font-black uppercase mb-6"
-            style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)', color: 'var(--text-primary)' }}
-          >
-            Potência coletiva
-          </h3>
-        </ScrollReveal>
-        <ImageCarousel images={CARROSSEL2_IMAGES} />
-
-        <BeadDivider className="my-10" />
-
         <CenteredQuote
-          quote="Quando termino uma trança, minha cliente chora. Não é de dor. É de se ver."
-          author="Beatriz Lima"
-          role="Trancista — Salvador, BA"
+          quote="A trança, além do viés estético, é símbolo de autoestima, cultura e resistência negra."
+          author="Síntese da reportagem"
+          role="Fios da identidade e autoestima"
           dark
           accentColor="var(--ouro)"
         />

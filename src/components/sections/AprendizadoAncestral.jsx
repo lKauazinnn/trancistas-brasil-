@@ -5,7 +5,7 @@ import VideoPlayer from '../ui/VideoPlayer'
 import ImageCarousel from '../ui/ImageCarousel'
 import TickerBand from '../ui/TickerBand'
 import StarDivider from '../ui/StarDivider'
-import ParallaxSection from '../ui/ParallaxSection'
+import BraidDivider from '../ui/BraidDivider'
 import { CARROSSEL1_IMAGES } from '../../data/content'
 
 const VIDEO_SRC = import.meta.env.VITE_VIDEO_DOCUMENTARIO || '/media/videos/documentario-web.mp4'
@@ -28,23 +28,23 @@ export default function AprendizadoAncestral() {
                 className="font-display font-black uppercase leading-none mb-8"
                 style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: 'var(--text-primary)' }}
               >
-                A ARTE<br />
-                <span className="wood-text">PASSOU</span><br />
-                DE MÃO EM MÃO
+                A GÊNESE<br />
+                <span className="wood-text">DA RAIZ</span>
               </h2>
             </ClipReveal>
 
             <ScrollReveal variant="fade-up" delay={180}>
               <div className="space-y-5 max-w-lg">
                 <p style={{ fontSize: '1.05rem', lineHeight: 1.75, color: 'var(--text-primary)' }}>
-                  Não existe escola formal. Não existe diploma emoldurado na parede. O conhecimento
-                  das trancistas chegou até o Brasil nas mãos e na memória de mulheres africanas,
-                  transmitido de avó para neta, de mãe para filha.
+                  As trancistas no Distrito Federal carregam um conhecimento ancestral herdado de
+                  outras mulheres há milhares de anos. Segundo a pedagoga e trancista Layla
+                  Maryzandra, esse saber nasce da interação com território, migração e práticas
+                  socioculturais cotidianas, conectando fios do passado e do presente.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'var(--text-muted)' }}>
-                  Kamyla Santos aprendeu aos 9 anos, sentada entre as pernas da avó Dona Maria.
-                  Uma corrente humana de conhecimento que atravessa séculos, oceanos e toda a
-                  violência da colonização.
+                  A falta de interesse público em produzir dados também é parte da história.
+                  A reconstrução da cultura brasileira passa pela diáspora africana e por um
+                  processo de apagamento que ainda impacta reconhecimento, pesquisa e direitos.
                 </p>
 
                 {/* Pull quote inline — estilo Metrópoles */}
@@ -56,11 +56,12 @@ export default function AprendizadoAncestral() {
                   }}
                 >
                   <p className="pull-quote" style={{ color: 'var(--text-primary)' }}>
-                    "Minha avó dizia que quando ela trança um cabelo, ela está rezando."
+                    "A construção das trancistas como profissionais se relaciona diretamente com
+                    seus pertencimentos e vínculos entre os fios do passado e do presente."
                   </p>
                   <footer style={{ marginTop: '0.75rem' }}>
                     <cite style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.75rem', fontStyle: 'normal', color: 'var(--text-muted)', letterSpacing: '0.1em' }}>
-                      — Kamyla Santos, trancista
+                      — Layla Maryzandra, em "Entre os fios da ancestralidade"
                     </cite>
                   </footer>
                 </blockquote>
@@ -71,15 +72,15 @@ export default function AprendizadoAncestral() {
               <StarDivider className="my-8" />
               <div className="flex gap-8 flex-wrap">
                 <div style={{ borderLeft: '2px solid var(--terracota)', paddingLeft: '1rem' }}>
-                  <p className="font-display font-black text-3xl" style={{ color: 'var(--terracota)' }}>+400</p>
+                  <p className="font-display font-black text-3xl" style={{ color: 'var(--terracota)' }}>3.500 a.C.</p>
                   <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-muted)', marginTop: '4px' }}>
-                    anos de tradição oral
+                    referência ancestral
                   </p>
                 </div>
                 <div style={{ borderLeft: '1px solid var(--border)', paddingLeft: '1rem' }}>
-                  <p className="font-display font-black text-3xl" style={{ color: 'var(--text-primary)' }}>3 ger.</p>
+                  <p className="font-display font-black text-3xl" style={{ color: 'var(--text-primary)' }}>2025</p>
                   <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-muted)', marginTop: '4px' }}>
-                    por família em média
+                    inclusão na CBO
                   </p>
                 </div>
               </div>
@@ -88,10 +89,23 @@ export default function AprendizadoAncestral() {
 
           {/* Right: Video */}
           <div className="flex flex-col gap-5">
+            <ScrollReveal variant="fade-left" delay={80}>
+              <div className="grid grid-cols-2 gap-3">
+                <figure style={{ border: '1px solid var(--border)', background: 'var(--bg-surface)' }}>
+                  <img src="/media/photos/imagem 1.jpeg" alt="Layla Maryzandra em registro autoral" style={{ width: '100%', aspectRatio: '4 / 5', objectFit: 'cover' }} />
+                  <figcaption style={{ padding: '0.65rem', fontSize: '0.72rem', color: 'var(--text-muted)' }}>Layla Maryzandra · foto autoral</figcaption>
+                </figure>
+                <figure style={{ border: '1px solid var(--border)', background: 'var(--bg-surface)' }}>
+                  <img src="/media/photos/iamgem.jpeg" alt="Mapa da diáspora africana" style={{ width: '100%', aspectRatio: '4 / 5', objectFit: 'cover' }} />
+                  <figcaption style={{ padding: '0.65rem', fontSize: '0.72rem', color: 'var(--text-muted)' }}>Diáspora africana · foto autoral</figcaption>
+                </figure>
+              </div>
+            </ScrollReveal>
+
             <ScrollReveal variant="fade-left" delay={120}>
               <VideoPlayer
                 src={VIDEO_SRC}
-                title="Trançando com Kamyla"
+                title="Vídeo: história das tranças"
                 className="aspect-video"
               />
             </ScrollReveal>
@@ -106,8 +120,8 @@ export default function AprendizadoAncestral() {
               >
                 <p className="label-tag mb-2">Sobre o vídeo</p>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.65 }}>
-                  Em "Trançando com Kamyla", acompanhamos uma tarde de trabalho e as memórias
-                  que cada trança carrega — dos dedos ao coração.
+                  Um recorte da trajetória histórica da trança como tecnologia de resistência,
+                  identidade e mobilidade para mulheres negras no Brasil.
                 </p>
               </div>
             </ScrollReveal>
@@ -129,31 +143,14 @@ export default function AprendizadoAncestral() {
         <ImageCarousel images={CARROSSEL1_IMAGES} />
       </div>
 
-      {/* Parallax divider */}
-      <ParallaxSection
-        src="/media/photos/_MG_0462.jpg"
-        alt="Trançando"
-        height="50vh"
-        intensity={0.2}
-        overlay={0.55}
-        objectPosition="center 40%"
-      >
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', gap: '1rem' }}>
-          <p
-            className="font-display font-black uppercase"
-            style={{ fontSize: 'clamp(1.8rem, 5vw, 4rem)', color: '#FAFAF5', letterSpacing: '0.06em', textAlign: 'center' }}
-          >
-            Arte &amp; Memória
-          </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ width: '40px', height: '1px', background: 'var(--terracota)' }} />
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.6rem', color: 'rgba(255,255,255,0.6)', letterSpacing: '0.22em', textTransform: 'uppercase' }}>
-              Piauí · 2025
-            </span>
-            <span style={{ width: '40px', height: '1px', background: 'var(--terracota)' }} />
-          </div>
-        </div>
-      </ParallaxSection>
+      <div className="section-padding max-w-7xl mx-auto" style={{ paddingTop: '1.5rem' }}>
+        <BraidDivider className="mb-6" />
+        <p style={{ maxWidth: '72ch', color: 'var(--text-muted)', fontSize: '0.92rem', lineHeight: 1.75 }}>
+          O reconhecimento tardio da profissão demonstra como esse saber ainda é tratado à margem.
+          Sem dados robustos e políticas públicas específicas, o ofício segue sustentado pela força
+          coletiva de mulheres que transformam memória em trabalho.
+        </p>
+      </div>
 
     </section>
   )

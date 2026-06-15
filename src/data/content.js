@@ -1,15 +1,15 @@
 export const GALLERY_IMAGES = [
-  { src: '/media/photos/_MG_0317.jpg', alt: 'Trancista com cliente' },
-  { src: '/media/photos/_MG_0329.jpg', alt: 'Arte em tranças' },
-  { src: '/media/photos/_MG_0346.jpg', alt: 'Box braid em processo' },
-  { src: '/media/photos/_MG_0370.jpg', alt: 'Detalhes das tranças' },
-  { src: '/media/photos/_MG_0398.jpg', alt: 'Twist natural' },
-  { src: '/media/photos/_MG_0527.jpg', alt: 'Finalização do trabalho' },
-  { src: '/media/photos/Cópia de IMG_3732.jpg', alt: 'Retrato ancestral' },
-  { src: '/media/photos/_MG_0319.jpg', alt: 'Mãos em movimento' },
-  { src: '/media/photos/_MG_0353.jpg', alt: 'Concentração e arte' },
-  { src: '/media/photos/_MG_0462.jpg', alt: 'Trança nagô' },
-  { src: '/media/photos/_MG_0533.jpg', alt: 'Resultado final' },
+  { src: '/media/photos/imagem.png', alt: 'Folder Tranças no Mapa' },
+  { src: '/media/photos/imagem 1.jpeg', alt: 'Pesquisadora com livro e acervo' },
+  { src: '/media/photos/imagem 2.jpeg', alt: 'Oficina e roda de formação' },
+  { src: '/media/photos/rapaz.png', alt: 'Retrato de entrevistado' },
+  { src: '/media/photos/iomagm.jpeg', alt: 'Performance artística com tranças' },
+  { src: '/media/photos/iamgem.jpeg', alt: 'Mapa da diáspora africana' },
+  { src: '/media/photos/nmova.jpeg', alt: 'Roda de diálogo com trancistas' },
+  { src: '/media/photos/moça.jpeg', alt: 'Laodicéia em seu salão' },
+  { src: '/media/photos/Cópia de IMG_3937.jpg', alt: 'Encontro Tranças no Mapa' },
+  { src: '/media/photos/Cópia de IMG_3844.jpg', alt: 'Trancistas em atividade' },
+  { src: '/media/photos/Cópia de IMG_3750.jpg', alt: 'Registro autoral do projeto' },
 ]
 
 export const CARROSSEL1_IMAGES = Array.from({ length: 13 }, (_, i) => ({
@@ -23,12 +23,12 @@ export const CARROSSEL2_IMAGES = Array.from({ length: 12 }, (_, i) => ({
 }))
 
 export const MARKET_STATS = [
-  { value: 600000, suffix: '+', label: 'Estabelecimentos de beleza negra no Brasil', category: 'renda' },
-  { value: 78, suffix: '%', label: 'Das trancistas sem acesso a crédito formal', category: 'credito' },
-  { value: 3.5, suffix: 'bi', prefix: 'R$', label: 'Mercado de beleza afro no Brasil', category: 'renda' },
-  { value: 65, suffix: '%', label: 'Atuam na informalidade', category: 'informalidade' },
-  { value: 71, suffix: '%', label: 'Relatam dores físicas ocupacionais', category: 'saude' },
-  { value: 58, suffix: '%', label: 'Nunca fizeram curso de formação formal', category: 'formacao' },
+  { value: 700, suffix: 'bi', prefix: 'R$', label: 'Negócios anuais movimentados por mulheres negras (Sebrae)', category: 'renda' },
+  { value: 72.9, suffix: '%', label: 'População preta e parda em favelas e comunidades urbanas (Censo 2022)', category: 'territorio' },
+  { value: 122, suffix: '', label: 'Trancistas mapeadas no DF e Entorno (abr-jul/2023)', category: 'dados' },
+  { value: 2025, suffix: '', label: 'Ano de inclusão da ocupação de trancista na CBO', category: 'reconhecimento' },
+  { value: 7, suffix: 'd', label: 'Dias por semana em jornadas exaustivas para parte da categoria', category: 'trabalho' },
+  { value: 12, suffix: 'h', label: 'Horas diárias de atendimento em rotinas intensas', category: 'saude' },
 ]
 
 export const TIMELINE_EVENTS = [
@@ -74,9 +74,9 @@ export const TIMELINE_EVENTS = [
   },
   {
     fase: 'resistencia',
-    periodo: '2023–Hoje',
-    titulo: 'Reconhecimento Oficial',
-    descricao: 'A profissão entra no debate de regulamentação. O Mapa Afetivo e pesquisas documentam a luta por direitos, crédito e reconhecimento formal das trancistas.',
+    periodo: '2024–2026',
+    titulo: 'Debate de Regulamentação',
+    descricao: 'O PL 1.747/2024 e o PL 2.831/2024 ampliam o debate sobre regulamentação: avanço em direitos, mas também risco de barreiras para quem aprendeu pelo saber comunitário.',
     icon: 'FileText',
     cor: '#D4A843',
   },
@@ -84,27 +84,27 @@ export const TIMELINE_EVENTS = [
 
 export const QUOTES = [
   {
-    texto: 'Cada trança que faço carrega a memória das minhas avós. Isso não é só trabalho — é resistência.',
-    autora: 'Kamyla Santos',
-    cargo: 'Trancista há 12 anos',
+    texto: 'No decorrer de me descobrir como mulher preta, a transição capilar me despertou o olhar para cuidar de mim e depois das outras. Foi aí que desenvolvi a habilidade de trançar.',
+    autora: 'Maria Luiza Pereira',
+    cargo: 'Trancista no Riacho Fundo II (DF)',
   },
   {
-    texto: 'O cabelo negro nunca foi apenas estético. Ele foi alvo de opressão e hoje é símbolo de retomada de identidade.',
-    autora: 'Dra. Aline Ferreira',
-    cargo: 'Pesquisadora de Cultura Afro-Brasileira – USP',
+    texto: 'As tranças são minha forma de comunicação com outras mulheres.',
+    autora: 'Laodicéia Nascimento',
+    cargo: 'Trancista há mais de 48 anos no DF',
   },
   {
-    texto: 'Banco nenhum me deu crédito na primeira vez. Tive que começar com R$200 emprestados da minha mãe.',
-    autora: 'Beatriz Lima',
-    cargo: 'Trancista e empreendedora',
+    texto: 'É comum sentir dor uma vez ou outra, mas não é normal viver com dor. A longo prazo, isso derruba desempenho, descanso e renda.',
+    autora: 'David Souza',
+    cargo: 'Fisioterapeuta entrevistado na reportagem',
   },
 ]
 
 export const CREDITS = [
-  { role: 'Reportagem e Texto', name: 'Equipe PI' },
-  { role: 'Fotografia', name: 'Fotógrafo(a) da Produção' },
-  { role: 'Vídeo', name: 'Direção PI' },
-  { role: 'Design & Desenvolvimento', name: 'Laboratório Digital PI' },
-  { role: 'Pesquisa de Dados', name: 'Redação PI' },
-  { role: 'Orientação Editorial', name: 'Editoria PI' },
+  { role: 'Reportagem e Texto', name: 'Texto aprovado da produção' },
+  { role: 'Fotos Autorais', name: 'Acervo da reportagem' },
+  { role: 'Captação de Áudio', name: 'Equipe de campo' },
+  { role: 'Montagem Web', name: 'Laboratório Digital PI' },
+  { role: 'Pesquisa', name: 'Tranças no Mapa e fontes públicas' },
+  { role: 'Edição Final', name: 'Editoria do projeto' },
 ]

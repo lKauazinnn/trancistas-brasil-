@@ -8,10 +8,10 @@ import ParallaxSection from '../ui/ParallaxSection'
 import AdinkraFloat from '../ui/AdinkraFloat'
 
 const PAIN_POINTS = [
-  { icon: HeartPulse, titulo: 'Dores Crônicas',        texto: '71% das trancistas relatam dores musculoesqueléticas recorrentes nos ombros, pescoço e costas, causadas pelas horas de trabalho com os braços elevados.', color: 'var(--terracota)' },
-  { icon: Banknote,   titulo: 'Falta de Crédito',       texto: 'Sem CNPJ e sem garantias formais, o acesso ao crédito para investir em equipamentos e espaço físico é sistematicamente negado.',                           color: 'var(--ouro)'     },
-  { icon: Landmark,   titulo: 'Sem Políticas Públicas', texto: 'O Mapa Afetivo aponta que apenas 3% das trancistas conhecem algum programa público de apoio à sua categoria.',                                              color: 'var(--verde)'    },
-  { icon: Scale,      titulo: 'Racismo Estrutural',     texto: 'Discriminação em salões não negros e diferença salarial média de 34% em relação a profissionais de cabelos lisos.',                                         color: 'var(--terracota)' },
+  { icon: HeartPulse, titulo: 'Dores Ocupacionais', texto: 'Jornadas que chegam a 7 dias por semana e mais de 12 horas por dia agravam lombalgia, tendinite, hérnia de disco e desgaste articular.', color: 'var(--terracota)' },
+  { icon: Banknote, titulo: 'Financeiro no Limite', texto: 'Sem acesso regular a crédito e com renda instável, muitas profissionais sustentam família inteira sem rede de proteção econômica.', color: 'var(--ouro)' },
+  { icon: Landmark, titulo: 'Suporte Institucional Baixo', texto: 'A profissão entrou na CBO em 2025, mas políticas públicas de cuidado e longevidade na carreira ainda são insuficientes.', color: 'var(--verde)' },
+  { icon: Scale, titulo: 'Peso Histórico', texto: 'A invisibilidade da profissão reflete exclusões estruturais que atingem mulheres negras e periféricas nas políticas e no mercado formal.', color: 'var(--terracota)' },
 ]
 
 // SVG adinkra inline for hover overlay
@@ -63,13 +63,13 @@ export default function DesafiosRotina() {
           <ScrollReveal variant="fade-left" delay={120}>
             <div className="flex flex-col justify-end gap-4">
               <p style={{ fontSize: '1.05rem', lineHeight: 1.75, color: 'var(--text-primary)' }}>
-                Por trás da beleza de uma trança, existe uma jornada física de 8 a 12 horas
-                de trabalho, braços elevados, costas curvadas.
+                Um trabalho que demorou para ser reconhecido como ocupação traz consequências
+                no corpo: dores em mãos, pés, costas e quadros que podem se tornar crônicos.
               </p>
               <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'var(--text-muted)' }}>
-                O racismo estrutural, a falta de proteção social e a invisibilidade das
-                políticas públicas formam o pano de fundo do cotidiano de quem escolheu —
-                ou precisou escolher — essa profissão.
+                Fisioterapeutas alertam que atividade física, alongamento e pausas são parte
+                da prevenção. Saúde mental também entra na conta: viver com dor contínua reduz
+                descanso, desempenho e renda.
               </p>
             </div>
           </ScrollReveal>
@@ -159,17 +159,17 @@ export default function DesafiosRotina() {
               Depoimento
             </span>
             <p className="pull-quote" style={{ color: 'var(--text-primary)', marginTop: '1rem' }}>
-              "A dor no ombro começou no segundo ano. Hoje faço fisioterapia toda semana.
-              Ninguém fala sobre isso."
+              "É comum você sentir uma dor ou outra, mas não é normal viver com essa dor. A
+              longo prazo, isso afeta desempenho, descanso e a própria saúde mental."
             </p>
             <footer style={{ marginTop: '1.25rem', display: 'flex', alignItems: 'center', gap: '12px' }}>
               <span style={{ width: '28px', height: '1px', background: 'var(--terracota)' }} />
               <div>
                 <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.8rem', color: 'var(--text-primary)', fontWeight: 600 }}>
-                  Fernanda Oliveira
+                  David Souza
                 </p>
                 <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.7rem', color: 'var(--text-muted)' }}>
-                  Trancista — 8 anos de profissão
+                  Fisioterapeuta entrevistado
                 </p>
               </div>
             </footer>
@@ -190,18 +190,16 @@ export default function DesafiosRotina() {
             </div>
             <div className="md:col-span-2 space-y-4">
               <p style={{ fontSize: '0.95rem', color: 'var(--text-primary)', lineHeight: 1.75 }}>
-                O Mapa Afetivo é uma metodologia de pesquisa qualitativa que ouve trabalhadores
-                informais de setores negligenciados. No caso das trancistas, ele revelou o que
-                os números não conseguem capturar: a solidão de trabalhar sem rede de proteção,
-                o medo de adoecer e perder a única fonte de renda.
+                Projetos como Tranças no Mapa, Fios da Ancestralidade e Mapa Afetivo vêm
+                preenchendo lacunas que o Estado ainda não cobre, promovendo pesquisa, oficinas,
+                rodas de diálogo e articulação entre profissionais no Distrito Federal.
               </p>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>
-                "Quando você pergunta para uma trancista como ela se sente em relação ao futuro,
-                as respostas são dois opostos: esperança — porque ela ama o que faz — e medo —
-                porque não existe nada que a proteja se ela parar de conseguir trabalhar."
+                Entre abril e julho de 2023, o Tranças no Mapa identificou 122 trancistas no DF
+                e Entorno, com maior concentração em Ceilândia, Taguatinga e Santa Maria.
               </p>
               <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                — Prof. Cláudio Nascimento, Economista – UFBA
+                — Levantamento de Layla Maryzandra
               </p>
             </div>
           </div>

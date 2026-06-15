@@ -59,7 +59,7 @@ export default function Navbar() {
                 display: 'block',
               }}
             >
-              Trancistas
+              Trançando Caminhos
             </span>
             <span
               style={{

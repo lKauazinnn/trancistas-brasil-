@@ -58,7 +58,7 @@ export default function SimulacaoCredito() {
       <div className="section-padding max-w-7xl mx-auto">
 
         <ScrollReveal variant="fade-up">
-          <SectionLabel number="✦" text="Resultado · Pedido de Crédito" />
+          <SectionLabel number="✦" text="Infográfico · Simulando o acesso a crédito" />
         </ScrollReveal>
 
         <ClipReveal delay={60}>
@@ -66,18 +66,17 @@ export default function SimulacaoCredito() {
             className="font-display font-black uppercase leading-none mb-6"
             style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: 'var(--text-primary)' }}
           >
-            VOCÊ QUER<br />
-            <span className="wood-text">ABRIR</span><br />
-            SEU ESTÚDIO
+            CRÉDITO NA PRÁTICA:<br />
+            <span className="wood-text">QUEM CONSEGUE</span> ENTRAR?
           </h2>
         </ClipReveal>
 
         <ScrollReveal variant="fade-up" delay={100}>
           <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--text-muted)', maxWidth: '600px', marginBottom: '2.5rem' }}>
-            Responda às 5 perguntas do formulário de crédito aqui, em um único bloco.
-            Precisa de um empréstimo de{' '}
-            <strong style={{ color: 'var(--text-primary)' }}>R$ 8 mil</strong> para abrir seu estúdio.
-            Este é o resultado:
+            Nesta simulação, você assume o perfil de uma trancista autônoma pedindo
+            <strong style={{ color: 'var(--text-primary)' }}> R$ 8 mil </strong>
+            para estruturar atendimento. O formulário mostra por que tantas profissionais,
+            mesmo com demanda alta, ficam fora do crédito formal.
           </p>
         </ScrollReveal>
 

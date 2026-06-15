@@ -1,5 +1,8 @@
 param([string]$msg = "")
 
+# Garante que os comandos git rodem na pasta correta (onde está o .git)
+Set-Location $PSScriptRoot
+
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "  TRANCISTAS BRASIL - Enviar para Git  " -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan

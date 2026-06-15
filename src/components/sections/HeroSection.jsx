@@ -99,7 +99,7 @@ export default function HeroSection() {
             Reportagem Especial · PI 2025
           </motion.p>
 
-          {/* TRANCISTAS — uma linha, tamanho moderado */}
+          {/* Título principal */}
           <div style={{ overflow: 'hidden', marginBottom: '2rem' }}>
             <motion.h1
               style={{
@@ -121,7 +121,7 @@ export default function HeroSection() {
               animate={loaded ? { y: 0 } : {}}
               transition={{ duration: 0.95, ease: EASE, delay: 0.1 }}
             >
-              TRANCISTAS
+              TRANÇANDO CAMINHOS
             </motion.h1>
           </div>
 
@@ -138,7 +138,7 @@ export default function HeroSection() {
             animate={loaded ? { scaleX: 1 } : {}}
             transition={{ duration: 0.8, ease: EASE, delay: 0.38 }}
           />
-          {/* Lide */}
+          {/* Lide aprovado */}
           <motion.div
             style={{ maxWidth: '100%', marginBottom: '1.9rem' }}
             initial={{ opacity: 0, y: 16 }}
@@ -154,11 +154,11 @@ export default function HeroSection() {
                 maxWidth: '52ch',
               }}
             >
-              Após séculos de invisibilidade, a profissão de trancista começa a ganhar o
-              reconhecimento que sempre mereceu. Entre agulhas, linhas e cabelos crespos,
-              mulheres negras constroem identidade, renda e resistência com as próprias mãos.
-              Esta reportagem documenta a história de uma arte ancestral que sobreviveu à
-              opressão, e hoje disputa espaço num mercado bilionário.
+              Da rota de fuga à independência financeira, trancistas sustentam lares e movem
+              uma economia historicamente invisibilizada pela falta de políticas públicas e
+              acesso a crédito. Esta reportagem acompanha a trajetória ancestral do ofício,
+              sua força no presente e os desafios para que esse saber seja reconhecido,
+              valorizado e preservado como patrimônio vivo.
             </p>
           </motion.div>
 
@@ -171,8 +171,8 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.62 }}
           >
             {[
-              { label: 'Categorias', value: 'Cultura · Mercado · Saúde' },
-              { label: 'Leitura',    value: '~12 minutos' },
+              { label: 'Categorias', value: 'Ancestralidade · Mercado · Direitos' },
+              { label: 'Leitura',    value: 'Especial longa' },
             ].map((item, i) => (
               <div key={i}>
                 <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '3px' }}>
@@ -187,7 +187,7 @@ export default function HeroSection() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--terracota)', animation: 'pulseRing 1.8s ease-out infinite' }} />
               <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.55rem', color: 'var(--text-muted)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
-                Ao vivo
+                Texto aprovado
               </span>
             </div>
           </motion.div>
@@ -308,7 +308,7 @@ export default function HeroSection() {
                 whiteSpace: 'nowrap',
               }}
             >
-              Arte&nbsp;&nbsp;·&nbsp;&nbsp;Resistência&nbsp;&nbsp;·&nbsp;&nbsp;Identidade&nbsp;&nbsp;·&nbsp;&nbsp;Ancestralidade&nbsp;&nbsp;·&nbsp;&nbsp;Cultura&nbsp;&nbsp;·&nbsp;&nbsp;Mercado&nbsp;&nbsp;·&nbsp;&nbsp;Beleza
+              Trançando Caminhos&nbsp;&nbsp;·&nbsp;&nbsp;Rota de Fuga&nbsp;&nbsp;·&nbsp;&nbsp;Independência Financeira&nbsp;&nbsp;·&nbsp;&nbsp;CBO 2025&nbsp;&nbsp;·&nbsp;&nbsp;Políticas Públicas&nbsp;&nbsp;·&nbsp;&nbsp;Crédito Justo
             </span>
           ))}
         </div>
