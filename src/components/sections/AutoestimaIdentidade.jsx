@@ -21,7 +21,7 @@ function InlinePhoto({ src, alt, caption, ratio = '3/2' }) {
         />
         <figcaption style={{
           paddingTop: '0.55rem',
-          fontSize: '0.85rem',
+          fontSize: '0.95rem',
           color: 'var(--text-muted)',
           fontStyle: 'italic',
           lineHeight: 1.6,
@@ -39,14 +39,14 @@ function PullQuote({ text, author, role, accentColor = 'var(--terracota)' }) {
   return (
     <ScrollReveal variant="fade-up">
       <blockquote style={{ margin: '0 0 2.5rem', paddingLeft: '1.5rem', borderLeft: `4px solid ${accentColor}` }}>
-        <p style={{ fontSize: 'clamp(1.35rem, 2vw, 1.6rem)', lineHeight: 1.75, color: 'var(--text-primary)', fontStyle: 'italic', marginBottom: '0.75rem' }}>
+        <p style={{ fontSize: 'clamp(1.35rem, 2.2vw, 1.65rem)', lineHeight: 1.75, color: 'var(--text-primary)', fontStyle: 'italic', marginBottom: '0.75rem' }}>
           {text}
         </p>
         <footer style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <span style={{ width: '20px', height: '1px', background: accentColor, flexShrink: 0 }} />
           <div>
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)', fontStyle: 'normal', display: 'block' }}>{author}</span>
-            {role && <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.7rem', color: 'var(--text-muted)', fontStyle: 'normal' }}>{role}</span>}
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', fontStyle: 'normal', display: 'block' }}>{author}</span>
+            {role && <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.9rem', color: 'var(--text-muted)', fontStyle: 'normal' }}>{role}</span>}
           </div>
         </footer>
       </blockquote>
@@ -92,7 +92,7 @@ export default function AutoestimaIdentidade() {
       <div style={COL}>
 
         <ScrollReveal variant="fade-up">
-          <p style={{ fontSize: 'clamp(1.35rem, 2.2vw, 1.55rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem', fontWeight: 500 }}>
+          <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             O filme "Felicidade por um fio", romance norte-americano, aborda as vivências de
             uma mulher negra e sua relação com o cabelo afro. Violet, protagonista do filme,
             foi ensinada a viver nos padrões de uma sociedade racista e, por isso, associava
@@ -101,7 +101,7 @@ export default function AutoestimaIdentidade() {
             fio aceitando seu cabelo natural, aprendendo sobre suas raízes, e chegando à
             aceitação capilar.
           </p>
-          <p style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.35rem)', lineHeight: 2, color: 'var(--text-muted)', marginBottom: '2rem' }}>
+          <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             A história de Violet não é apenas uma obra cinematográfica, e sim um espelho da
             vida de muitas mulheres negras que um dia passaram pela transição capilar. O
             processo de aceitação vai além de apenas "mudar o cabelo", é um processo que exige
@@ -112,7 +112,7 @@ export default function AutoestimaIdentidade() {
         </ScrollReveal>
 
         <ScrollReveal variant="fade-up">
-          <p style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.35rem)', lineHeight: 2, color: 'var(--text-muted)', marginBottom: '2rem' }}>
+          <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             Maria Luiza Pereira, trancista no Riacho Fundo 2, região administrativa de Brasília,
             conta como as tranças a auxiliaram a passar pela transição de forma mais leve.
           </p>
@@ -126,7 +126,7 @@ export default function AutoestimaIdentidade() {
         />
 
         <ScrollReveal variant="fade-up">
-          <p style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.35rem)', lineHeight: 2, color: 'var(--text-muted)', marginBottom: '2rem' }}>
+          <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             A trança, além do viés estético, é símbolo de autoestima, cultura e resistência
             negra. Sua rica herança histórica e cultural traz significado de ancestralidade
             aos fios trançados, sendo uma forma de comunicação e identidade entre mulheres
@@ -150,13 +150,13 @@ export default function AutoestimaIdentidade() {
               title="Podcast PI — Trancistas do Brasil"
               guest="Com Kamyla Santos e Dra. Aline Ferreira"
               episode="Episódio especial · PI 2026"
-              src="https://drive.google.com/uc?export=download&id=1D4-1m0rgmbQ-aWKnU8NSAlQE7awfpjRg"
+              src="/media/audio/podcast.mp3"
             />
           </div>
         </ScrollReveal>
 
         <ScrollReveal variant="fade-up">
-          <p style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.35rem)', lineHeight: 2, color: 'var(--text-muted)', marginBottom: '2rem' }}>
+          <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             Hoje, artistas negros com suas obras ascendem socialmente levando as tranças a
             lugares de poder e marcando uma nova era de representatividade a meninos e meninas
             negras. A rapper estadunidense Doechii, ganhadora de dois Grammys, fez uma
@@ -167,14 +167,14 @@ export default function AutoestimaIdentidade() {
 
         {/* Foto — Doechii */}
         <InlinePhoto
-          src="/media/photos/imagem 2.jpeg"
+          src="/media/photos/seq-3.jpg"
           alt="Doechii — performance musical com tranças"
           caption="DOECHII/ REPRODUÇÃO SCOTT KOWALCHYK"
           ratio="16/9"
         />
 
         <ScrollReveal variant="fade-up">
-          <p style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.35rem)', lineHeight: 2, color: 'var(--text-muted)', marginBottom: '2rem' }}>
+          <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             No Brasil não é diferente — as tranças e as características físicas e culturais
             afro-brasileiras são fortalecidas por artistas como Iza, Mano Brown, Bella Campos,
             Negra Li e Preta Gil. A cena do rap, abastecida por mulheres negras, criou uma
@@ -189,7 +189,7 @@ export default function AutoestimaIdentidade() {
 
         {/* Foto — Marcus Samuel clipe Nego */}
         <InlinePhoto
-          src="/media/photos/iamgem.jpeg"
+          src="/media/photos/seq-4.jpg"
           alt="Marcus Samuel — clipe Nego"
           caption="CLIPE 'NEGO'/ REPRODUÇÃO JOÃO GABRIEL ANDRADE"
           ratio="4/3"

@@ -35,7 +35,7 @@ export default function AprendizadoAncestral() {
 
         <ScrollReveal variant="fade-up">
           {/* Parágrafo da Layla — corpo */}
-          <p style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.35rem)', lineHeight: 2, color: 'var(--text-muted)', marginBottom: '2rem' }}>
+          <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             Segundo o artigo "Entre os fios da Ancestralidade", escrito pela pedagoga e
             trancista Layla Maryzandra, a construção das trancistas como profissionais se
             relaciona diretamente com a interação com seus pertencimentos, que se originam
@@ -48,13 +48,13 @@ export default function AprendizadoAncestral() {
         <ScrollReveal variant="fade-up">
           <figure style={{ margin: '0 0 3rem' }}>
             <img
-              src="/media/photos/moça.jpeg"
+              src="/media/photos/seq-1.jpg"
               alt="Layla Maryzandra"
               style={{ width: '100%', aspectRatio: '3/2', objectFit: 'cover', display: 'block' }}
             />
             <figcaption style={{
               paddingTop: '0.55rem',
-              fontSize: '0.85rem',
+              fontSize: '0.95rem',
               color: 'var(--text-muted)',
               fontStyle: 'italic',
               lineHeight: 1.6,
@@ -67,7 +67,7 @@ export default function AprendizadoAncestral() {
         </ScrollReveal>
 
         <ScrollReveal variant="fade-up">
-          <p style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.35rem)', lineHeight: 2, color: 'var(--text-muted)', marginBottom: '2rem' }}>
+          <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             Da mesma maneira, a falta de interesse público em gerar pesquisas não é um acaso.
             A história do Brasil constrói as possíveis causas que dificultam tais dados e
             desvalorizam a profissão. É necessário voltar no tempo e reconstruir a cultura
@@ -80,20 +80,20 @@ export default function AprendizadoAncestral() {
         <ScrollReveal variant="fade-up">
           <figure style={{ margin: '0 0 3rem' }}>
             <img
-              src="/media/photos/imagem 1.jpeg"
-              alt="Mapa da diáspora africana"
+              src="/media/photos/seq-2.jpeg"
+              alt="Livro da diáspora africana"
               style={{ width: '100%', aspectRatio: '3/2', objectFit: 'cover', display: 'block' }}
             />
             <figcaption style={{
               paddingTop: '0.55rem',
-              fontSize: '0.85rem',
+              fontSize: '0.95rem',
               color: 'var(--text-muted)',
               fontStyle: 'italic',
               lineHeight: 1.6,
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              LIVRO DA DIÁSPORA AFRICANA/ FOTO AUTORAL
+              LIVRO DE DIÁSPORA AFRICANA/ FOTO AUTORAL
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -101,46 +101,22 @@ export default function AprendizadoAncestral() {
         {/* Vídeo inline */}
         <ScrollReveal variant="fade-up">
           <div style={{ margin: '0 0 2.5rem' }}>
-            <p className="label-tag mb-2">Assista: história das tranças</p>
+            <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '1rem' }}>
+              Assista o vídeo a seguir sobre a história das tranças:
+            </p>
             <VideoPlayer
               src={VIDEO_SRC}
               title="Vídeo: história das tranças"
               className="aspect-video"
             />
-            <p style={{ paddingTop: '0.55rem', fontSize: '0.82rem', color: 'var(--text-muted)', fontStyle: 'italic', lineHeight: 1.5, borderTop: '1px solid var(--border)', marginTop: '0.5rem' }}>
-              Um recorte da trajetória histórica da trança como tecnologia de resistência,
-              identidade e mobilidade para mulheres negras no Brasil.
-            </p>
           </div>
         </ScrollReveal>
 
+        <BraidDivider className="mb-8" />
+
       </div>
 
-      {/* ── Carrossel de fotos — Arte feita de mãos ── */}
-      <div className="section-padding max-w-7xl mx-auto" style={{ paddingTop: '3rem' }}>
-        <ScrollReveal variant="fade-up">
-          <p className="label-tag mb-3">Ensaio Fotográfico · Processo e Técnica</p>
-          <h3
-            className="font-display font-black uppercase mb-6"
-            style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)', color: 'var(--text-primary)' }}
-          >
-            Arte feita de mãos
-          </h3>
-        </ScrollReveal>
-        <ImageCarousel images={CARROSSEL1_IMAGES} />
-      </div>
 
-      {/* ── Parágrafo de encerramento da seção ── */}
-      <div style={{ ...COL, paddingTop: '2.5rem', paddingBottom: '3rem' }}>
-        <BraidDivider className="mb-6" />
-        <p style={{ fontSize: '1.1rem', lineHeight: 1.85, color: 'var(--text-muted)' }}>
-          É necessário voltar no tempo e reconstruir a cultura miscigenada brasileira, que
-          carrega em suas veias latinas, a diáspora africana em direção ao "novo mundo".
-          O reconhecimento tardio da profissão demonstra como esse saber ainda é tratado
-          à margem — e quanto as trancistas sustentam, com a força de suas próprias mãos,
-          um legado que o Estado ainda não soube proteger.
-        </p>
-      </div>
 
     </section>
   )

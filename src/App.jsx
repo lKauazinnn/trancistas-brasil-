@@ -6,7 +6,6 @@ import AprendizadoAncestral from './components/sections/AprendizadoAncestral'
 import AutoestimaIdentidade from './components/sections/AutoestimaIdentidade'
 import GaleriaSection from './components/sections/GaleriaSection'
 import MercadoCredito from './components/sections/MercadoCredito'
-import MapaBrasilMosaico from './components/sections/MapaBrasilMosaico'
 import DesafiosRotina from './components/sections/DesafiosRotina'
 import SimulacaoCredito from './components/sections/SimulacaoCredito'
 import FuturoEncerramento from './components/sections/FuturoEncerramento'
@@ -41,8 +40,6 @@ export default function App() {
         <GaleriaSection />
         <KenteStripe height={50} />
         <MercadoCredito />
-        <KenteStripe height={50} />
-        <MapaBrasilMosaico />
         <KenteStripe height={50} />
         <DesafiosRotina />
         <KenteStripe height={50} />

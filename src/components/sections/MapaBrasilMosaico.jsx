@@ -289,7 +289,7 @@ export default function MapaBrasilMosaico() {
                 </div>
                 <div style={{
                   fontFamily: "'Barlow', sans-serif",
-                  fontSize: '0.65rem',
+                  fontSize: '0.8rem',
                   color: 'rgba(255, 255, 255, 0.7)',
                   lineHeight: 1,
                 }}>
@@ -305,7 +305,7 @@ export default function MapaBrasilMosaico() {
               <div style={{ position: 'relative' }}>
                 <p style={{
                   fontFamily: "'Syne', sans-serif",
-                  fontSize: '0.65rem',
+                  fontSize: '0.8rem',
                   fontWeight: 700,
                   letterSpacing: '0.2em',
                   textTransform: 'uppercase',
@@ -334,7 +334,7 @@ export default function MapaBrasilMosaico() {
                 
                 <p style={{
                   color: 'var(--text-primary)',
-                  fontSize: '1.05rem',
+                  fontSize: '1.2rem',
                   fontWeight: 700,
                   fontFamily: "'Barlow', sans-serif",
                   marginTop: '0.5rem',
@@ -369,7 +369,7 @@ export default function MapaBrasilMosaico() {
                     <div>
                       <span style={{
                         fontFamily: "'Syne', sans-serif",
-                        fontSize: '0.65rem',
+                        fontSize: '0.8rem',
                         fontWeight: 800,
                         letterSpacing: '0.15em',
                         textTransform: 'uppercase',
@@ -379,7 +379,7 @@ export default function MapaBrasilMosaico() {
                       </span>
                       <span style={{
                         fontFamily: "'Barlow', sans-serif",
-                        fontSize: '0.85rem',
+                        fontSize: '0.95rem',
                         color: 'var(--text-muted)',
                         paddingLeft: '0.75rem',
                       }}>
@@ -413,7 +413,7 @@ export default function MapaBrasilMosaico() {
                 </p>
                 <div style={{
                   marginTop: '1.2rem',
-                  fontSize: '0.65rem',
+                  fontSize: '0.8rem',
                   letterSpacing: '0.15em',
                   color: 'var(--terracota)',
                   fontWeight: 800,

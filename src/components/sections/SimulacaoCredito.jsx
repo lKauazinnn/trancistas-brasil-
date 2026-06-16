@@ -108,7 +108,7 @@ export default function SimulacaoCredito() {
               <p
                 style={{
                   fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: '0.65rem',
+                  fontSize: '0.8rem',
                   fontWeight: 700,
                   letterSpacing: '0.2em',
                   textTransform: 'uppercase',
@@ -171,7 +171,7 @@ export default function SimulacaoCredito() {
                   <span
                     style={{
                       fontFamily: "'Barlow Condensed', sans-serif",
-                      fontSize: '1.1rem',
+                      fontSize: '1.2rem',
                       fontWeight: 900,
                       letterSpacing: '0.1em',
                       textTransform: 'uppercase',
@@ -192,7 +192,7 @@ export default function SimulacaoCredito() {
                   </h3>
                 </div>
 
-                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
                   Pedido de R$ 8.000 reprovado. Motivos apresentados pela instituição financeira:
                 </p>
 
@@ -219,7 +219,7 @@ export default function SimulacaoCredito() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2 }}
-                style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '3rem', fontStyle: 'italic' }}
+                style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '3rem', fontStyle: 'italic' }}
               >
                 Mas a história não para aqui…
               </motion.p>
@@ -274,7 +274,7 @@ export default function SimulacaoCredito() {
                   <span
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: '0.6rem', fontWeight: 700,
+                      fontSize: '0.8rem', fontWeight: 700,
                       letterSpacing: '0.18em', textTransform: 'uppercase',
                       color: item.cor, background: `${item.cor}18`,
                       padding: '2px 10px', display: 'inline-block', marginBottom: '0.5rem',
@@ -285,7 +285,7 @@ export default function SimulacaoCredito() {
                   <h4 className="font-display font-bold uppercase" style={{ fontSize: '1rem', color: 'var(--text-primary)', marginBottom: '0.4rem' }}>
                     {item.titulo}
                   </h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.65 }}>
+                  <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: 1.65 }}>
                     {item.descricao}
                   </p>
                 </div>
@@ -332,7 +332,7 @@ export default function SimulacaoCredito() {
         {/* Fontes */}
         <ScrollReveal variant="fade-up">
           <div style={{ paddingTop: '1.5rem', borderTop: '1px solid var(--border)' }}>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.6rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: 700 }}>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.8rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: 700 }}>
               Fontes
             </p>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.72rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>

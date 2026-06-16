@@ -97,7 +97,7 @@ export default function HeroSection() {
           <p
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 'clamp(1.05rem, 2.2vw, 1.45rem)',
+              fontSize: 'clamp(1.25rem, 2vw, 1.5rem)',
               lineHeight: 1.6,
               color: 'rgba(255,255,255,0.92)',
               fontWeight: 400,
@@ -135,7 +135,7 @@ export default function HeroSection() {
           <p
             style={{
               fontFamily: "'Lora', Georgia, serif",
-              fontSize: 'clamp(1.35rem, 2.2vw, 1.55rem)',
+              fontSize: 'clamp(1.25rem, 2vw, 1.5rem)',
               lineHeight: 2,
               color: '#FFFFFF',
               marginBottom: '2rem',
@@ -151,7 +151,7 @@ export default function HeroSection() {
           <p
             style={{
               fontFamily: "'Lora', Georgia, serif",
-              fontSize: 'clamp(1.2rem, 1.8vw, 1.35rem)',
+              fontSize: 'clamp(1.25rem, 2vw, 1.5rem)',
               lineHeight: 2,
               color: '#FFFFFF',
               marginBottom: '2rem',
