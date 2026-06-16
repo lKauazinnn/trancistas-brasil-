@@ -3,11 +3,10 @@ import ClipReveal from '../ui/ClipReveal'
 import SectionLabel from '../ui/SectionLabel'
 import VideoPlayer from '../ui/VideoPlayer'
 import ImageCarousel from '../ui/ImageCarousel'
-import StarDivider from '../ui/StarDivider'
 import BraidDivider from '../ui/BraidDivider'
 import { CARROSSEL1_IMAGES } from '../../data/content'
 
-const VIDEO_SRC = import.meta.env.VITE_VIDEO_DOCUMENTARIO || '/media/videos/documentario-web.mp4'
+const VIDEO_SRC = 'https://youtu.be/mqJm0Y56rE8'
 
 // Largura máxima da coluna editorial — padrão matéria especial
 const COL = { maxWidth: '720px', margin: '0 auto', padding: '0 clamp(1.25rem, 5vw, 2rem)' }
@@ -62,7 +61,7 @@ export default function AprendizadoAncestral() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Foto autoral
+              LAYLA MARYZANDRA/ FOTO AUTORAL
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -94,33 +93,9 @@ export default function AprendizadoAncestral() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Foto autoral
+              LIVRO DA DIÁSPORA AFRICANA/ FOTO AUTORAL
             </figcaption>
           </figure>
-        </ScrollReveal>
-
-        {/* Stats inline */}
-        <ScrollReveal variant="fade-up">
-          <div className="flex gap-8 flex-wrap" style={{ margin: '0 0 2.5rem', paddingBottom: '2.5rem', borderBottom: '1px solid var(--border)' }}>
-            <div style={{ borderLeft: '2px solid var(--terracota)', paddingLeft: '1rem' }}>
-              <p className="font-display font-black text-3xl" style={{ color: 'var(--terracota)' }}>3.500 a.C.</p>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-muted)', marginTop: '4px' }}>
-                referência ancestral
-              </p>
-            </div>
-            <div style={{ borderLeft: '1px solid var(--border)', paddingLeft: '1rem' }}>
-              <p className="font-display font-black text-3xl" style={{ color: 'var(--text-primary)' }}>2025</p>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-muted)', marginTop: '4px' }}>
-                inclusão na CBO
-              </p>
-            </div>
-            <div style={{ borderLeft: '1px solid var(--border)', paddingLeft: '1rem' }}>
-              <p className="font-display font-black text-3xl" style={{ color: 'var(--text-primary)' }}>R$700bi</p>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-muted)', marginTop: '4px' }}>
-                negócios por mulheres negras/ano
-              </p>
-            </div>
-          </div>
         </ScrollReveal>
 
         {/* Vídeo inline */}

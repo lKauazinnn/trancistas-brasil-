@@ -2,7 +2,7 @@ import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
 import CenteredQuote from '../ui/CenteredQuote'
 import SectionLabel from '../ui/SectionLabel'
-import StarDivider from '../ui/StarDivider'
+import BraidDivider from '../ui/BraidDivider'
 
 const COL = { maxWidth: '720px', margin: '0 auto', padding: '0 clamp(1.25rem, 5vw, 2rem)' }
 
@@ -90,29 +90,29 @@ export default function DesafiosRotina() {
         <InlinePhoto
           src="/media/photos/Cópia de IMG_3844.jpg"
           alt="Encontro Tranças no Mapa"
-          caption="Foto autoral"
+          caption="ENCONTRO TRANÇAS NO MAPA/ FOTO AUTORAL"
           ratio="3/2"
         />
 
         <ScrollReveal variant="fade-up">
           <p style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.35rem)', lineHeight: 2, color: 'var(--text-muted)', marginBottom: '2rem' }}>
-            O caminho encontrado por Laodicéia é indicado por profissionais da saúde, como
-            o fisioterapeuta David Souza, que vê na atividade física um meio de prevenção
-            e tratamento das dores. O profissional alerta que movimentos repetitivos, horas
-            em pé e a falta de tempo para cuidar da saúde podem implicar diretamente na
-            saúde física:
+            O caminho encontrado pela trancista é indicado por profissionais da saúde, como
+            é o caso do fisioterapeuta David Souza, que vê na atividade física um meio de
+            prevenção e tratamento das dores. O profissional alerta que movimentos repetitivos,
+            horas em pé e a falta de tempo para cuidar da saúde podem implicar diretamente
+            na saúde física.
           </p>
         </ScrollReveal>
 
         <InlinePhoto
           src="/media/photos/rapaz.png"
           alt="David Souza, fisioterapeuta"
-          caption="Foto autoral"
+          caption="DAVID SOUZA/ FOTO AUTORAL"
           ratio="3/2"
         />
 
         <PullQuote
-          text='"Pensando a longo prazo para quem não pratica atividade física, pode-se perceber algumas degenerações, principalmente na coluna, como hérnias de disco, lombalgia de forma crônica e, em alguns casos, artrose e tendinite. A gente sempre recomenda, de alguma forma, procurar um tempo para se cuidar. Existem alongamentos ou cuidados simples que podem ajudar antes, durante ou depois do trabalho."'
+          text='"Pensando a longo prazo para quem não pratica atividade física, pode-se perceber algumas degenerações, principalmente na coluna, como hérnias de disco, lombalgia de forma crônica e em alguns casos, pode gerar também um pouco de artrose e tendinite. A gente sempre recomenda, de alguma forma, procurar um tempo para se cuidar. Existem alongamentos ou cuidados simples que podem ajudar antes, durante ou depois do trabalho."'
           author="David Souza"
           role="Fisioterapeuta"
           accentColor="var(--ouro)"
@@ -122,18 +122,19 @@ export default function DesafiosRotina() {
           <p style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.35rem)', lineHeight: 2, color: 'var(--text-muted)', marginBottom: '2rem' }}>
             Pensando além do corpo físico, a saúde mental também é um fator que traz dores.
             O desgaste físico diário e a falta de apoio e acompanhamento profissional pode
-            resultar no adoecimento mental dessas profissionais:
+            resultar no adoecimento mental dessas profissionais. Ainda segundo o profissional
+            da saúde, essas práticas a longo prazo podem acelerar esse diagnóstico.
           </p>
         </ScrollReveal>
 
         <PullQuote
-          text='"É comum você sentir uma dor ou outra, mas não é normal você viver com essa dor. Embora o corpo tenha a capacidade de se acostumar a se adaptar com aquilo que está sendo gerado nele. A longo prazo, isso começa a afetar tanto o desempenho quanto a própria saúde mental, porque ela vai acordar com dor, não vai conseguir descansar, vai diminuir o desempenho e consequentemente deságua na parte financeira."'
+          text='"É comum você sentir uma dor ou outra, mas não é normal você viver com essa dor. Embora o corpo tenha a capacidade de se acostumar a se adaptar com aquilo que está sendo gerado nele. A longo prazo, isso começa a afetar tanto o desempenho quanto a própria saúde mental, porque ela vai acordar com dor, não vai conseguir descansar, vai diminuir o desempenho e consequentemente desagua na parte financeira."'
           author="David Souza"
           role="Fisioterapeuta"
           accentColor="var(--terracota)"
         />
 
-        <StarDivider className="mb-8" />
+        <BraidDivider className="mb-8" />
 
         <ScrollReveal variant="fade-up">
           <p className="label-tag mb-3">Instrumento de escuta</p>
@@ -166,7 +167,7 @@ export default function DesafiosRotina() {
 
       </div>
 
-      {/* ── Bloco de impacto — fundo sempre escuro, texto sempre branco ── */}
+      {/* ── Bloco de impacto ── */}
       <div style={{
         background: '#0a0a0f',
         borderTop: '3px solid var(--terracota)',

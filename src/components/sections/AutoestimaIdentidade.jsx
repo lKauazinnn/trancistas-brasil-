@@ -3,10 +3,10 @@ import ClipReveal from '../ui/ClipReveal'
 import CenteredQuote from '../ui/CenteredQuote'
 import SectionLabel from '../ui/SectionLabel'
 import AudioPlayer from '../ui/AudioPlayer'
-import StarDivider from '../ui/StarDivider'
+import BraidDivider from '../ui/BraidDivider'
 import BeadDivider from '../ui/BeadDivider'
 import ImageCarousel from '../ui/ImageCarousel'
-import { CARROSSEL2_IMAGES } from '../../data/content'
+import { CARROSSEL1_IMAGES, CARROSSEL2_IMAGES } from '../../data/content'
 
 const COL = { maxWidth: '720px', margin: '0 auto', padding: '0 clamp(1.25rem, 5vw, 2rem)' }
 
@@ -149,8 +149,8 @@ export default function AutoestimaIdentidade() {
             <AudioPlayer
               title="Podcast PI — Trancistas do Brasil"
               guest="Com Kamyla Santos e Dra. Aline Ferreira"
-              episode="Episódio especial · PI 2025"
-              src={import.meta.env.VITE_PODCAST_URL || '/media/audio/podcast.mp3'}
+              episode="Episódio especial · PI 2026"
+              src="https://drive.google.com/uc?export=download&id=1D4-1m0rgmbQ-aWKnU8NSAlQE7awfpjRg"
             />
           </div>
         </ScrollReveal>
@@ -169,7 +169,7 @@ export default function AutoestimaIdentidade() {
         <InlinePhoto
           src="/media/photos/imagem 2.jpeg"
           alt="Doechii — performance musical com tranças"
-          caption="Doechii em performance: tranças ligam artista e dançarinas em símbolo de união · Reprodução"
+          caption="DOECHII/ REPRODUÇÃO SCOTT KOWALCHYK"
           ratio="16/9"
         />
 
@@ -191,11 +191,29 @@ export default function AutoestimaIdentidade() {
         <InlinePhoto
           src="/media/photos/iamgem.jpeg"
           alt="Marcus Samuel — clipe Nego"
-          caption="Clipe 'Nego', de Marcus Samuel · Reprodução"
+          caption="CLIPE 'NEGO'/ REPRODUÇÃO JOÃO GABRIEL ANDRADE"
           ratio="4/3"
         />
 
-        <StarDivider className="mb-8" />
+      </div>
+
+      {/* ── Carrossel 1 — ensaio fotográfico antes de Abrindo caminhos ── */}
+      <div className="section-padding max-w-7xl mx-auto" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
+        <ScrollReveal variant="fade-up">
+          <p className="label-tag mb-3">Ensaio Fotográfico · Arte e Cultura</p>
+          <h3
+            className="font-display font-black uppercase mb-6"
+            style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)', color: 'var(--text-primary)' }}
+          >
+            Fios que conectam gerações
+          </h3>
+        </ScrollReveal>
+        <ImageCarousel images={CARROSSEL1_IMAGES} />
+      </div>
+
+      <div style={COL}>
+
+        <BraidDivider className="mb-8" />
 
       </div>
 

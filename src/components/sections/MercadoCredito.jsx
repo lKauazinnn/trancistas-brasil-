@@ -6,8 +6,9 @@ import CenteredQuote from '../ui/CenteredQuote'
 import AfroPattern from '../ui/AfroPattern'
 import SectionLabel from '../ui/SectionLabel'
 import StatCard from '../ui/StatCard'
-import StarDivider from '../ui/StarDivider'
+import BraidDivider from '../ui/BraidDivider'
 import TiltCard from '../ui/TiltCard'
+import VideoPlayer from '../ui/VideoPlayer'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { MARKET_STATS, TIMELINE_EVENTS } from '../../data/content'
 
@@ -75,7 +76,7 @@ export default function MercadoCredito() {
         </div>
       </div>
 
-      <StarDivider className="mb-10" style={{ maxWidth: '720px', margin: '0 auto' }} />
+      <BraidDivider className="mb-10" style={{ maxWidth: '720px', margin: '0 auto' }} />
 
       {/* ── Perfil editorial: Laodicéia Nascimento ── */}
       <div style={COL}>
@@ -106,7 +107,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Foto autoral
+              LAODICÉIA NASCIMENTO/ FOTO AUTORAL
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -175,12 +176,12 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Foto autoral
+              LAODICÉIA E THANAN/ FOTO AUTORAL
             </figcaption>
           </figure>
         </ScrollReveal>
 
-        <StarDivider className="mb-8" />
+        <BraidDivider className="mb-8" />
 
         {/* Perfil — Kamyla Vieira */}
         <ScrollReveal variant="fade-up">
@@ -219,9 +220,24 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Foto autoral
+              KAMYLA VIEIRA/ FOTO AUTORAL
             </figcaption>
           </figure>
+        </ScrollReveal>
+
+        {/* Vídeo-entrevista — Kamyla Vieira */}
+        <ScrollReveal variant="fade-up">
+          <div style={{ margin: '0 0 3rem' }}>
+            <p className="label-tag mb-2">Assista: vídeo-entrevista</p>
+            <p style={{ fontSize: 'clamp(1.1rem, 1.6vw, 1.25rem)', lineHeight: 1.8, color: 'var(--text-muted)', marginBottom: '1.25rem' }}>
+              Assista o vídeo a seguir onde ela compartilha sua trajetória profissional.
+            </p>
+            <VideoPlayer
+              src="https://youtu.be/9MTglB1d_Jw"
+              title="Vídeo-entrevista · Kamyla Vieira"
+              className="aspect-video"
+            />
+          </div>
         </ScrollReveal>
       </div>
 
@@ -335,7 +351,7 @@ export default function MercadoCredito() {
       {/* ── Onde estão os dados — coluna editorial ── */}
       <div style={{ ...COL, paddingTop: '1rem', paddingBottom: '3rem' }}>
         <ScrollReveal variant="fade-up">
-          <StarDivider className="mb-8" />
+          <BraidDivider className="mb-8" />
           <p className="label-tag mb-4">Onde estão os dados?</p>
           <p style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.35rem)', lineHeight: 2, color: 'var(--text-muted)', marginBottom: '2rem' }}>
             De acordo com o Censo 2022 do Instituto Brasileiro de Geografia e Estatística,
@@ -410,7 +426,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Foto autoral
+              LAYLA MARYZANDRA NO ENCONTRO DO TRANÇAS NO MAPA/ FOTO AUTORAL
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -432,7 +448,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Foto autoral
+              EVENTO TRANÇAS NO MAPA/ FOTO AUTORAL
             </figcaption>
           </figure>
         </ScrollReveal>

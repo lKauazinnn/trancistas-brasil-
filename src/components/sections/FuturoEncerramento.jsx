@@ -3,7 +3,7 @@ import ClipReveal from '../ui/ClipReveal'
 import CenteredQuote from '../ui/CenteredQuote'
 import SectionLabel from '../ui/SectionLabel'
 import AudioPlayer from '../ui/AudioPlayer'
-import StarDivider from '../ui/StarDivider'
+import BraidDivider from '../ui/BraidDivider'
 import BeadDivider from '../ui/BeadDivider'
 import { CREDITS } from '../../data/content'
 
@@ -84,7 +84,7 @@ export default function FuturoEncerramento() {
         <InlinePhoto
           src="/media/photos/moça.jpeg"
           alt="Layla Maryzandra com materiais de pesquisa"
-          caption="Foto autoral"
+          caption="LAYLA MARYZANDRA/ FOTO AUTORAL"
           ratio="3/2"
         />
 
@@ -154,7 +154,7 @@ export default function FuturoEncerramento() {
           </p>
         </ScrollReveal>
 
-        <StarDivider className="mb-8" />
+        <BraidDivider className="mb-8" />
 
         {/* ── Encerramento editorial ── */}
         <ScrollReveal variant="fade-up">
@@ -202,7 +202,7 @@ export default function FuturoEncerramento() {
       <CenteredQuote
         quote="Entre fios que ligam passado e futuro, as trancistas seguem trançando caminhos."
         author="Encerramento da reportagem"
-        role="Trançando Caminhos · PI 2025"
+        role="Trançando Caminhos · PI 2026"
         dark
       />
 
@@ -253,7 +253,7 @@ export default function FuturoEncerramento() {
 
       {/* ── Créditos ── */}
       <div style={{ ...COL, paddingTop: '4rem', paddingBottom: '4rem' }}>
-        <StarDivider className="mb-10" />
+        <BraidDivider className="mb-10" />
         <ScrollReveal variant="fade-up">
           <p className="label-tag mb-6">Créditos da produção</p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">

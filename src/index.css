@@ -6,23 +6,23 @@
    THEME TOKENS
 ───────────────────────────────────────── */
 :root {
-  --bg-primary:   #FAF6EF;
-  --bg-secondary: #F0E6CC;
-  --bg-surface:   #FFFFFF;
-  --bg-deep:      #EDE0CC;
-  --text-primary: #1C1C1A;
-  --text-muted:   #7A6A58;
-  --text-dim:     #C0B0A0;
-  --border:       rgba(28,28,26,0.13);
+  --bg-primary:   #06050C;
+  --bg-secondary: #0C0B14;
+  --bg-surface:   #111118;
+  --bg-deep:      #080810;
+  --text-primary: #FFFFFF;
+  --text-muted:   rgba(255,255,255,0.78);
+  --text-dim:     #444440;
+  --border:       rgba(255,255,255,0.09);
 
-  --terracota: #C0522A;
-  --ouro:      #D4A030;
-  --verde:     #2D6A4F;
-  --vermelho:  #B83228;
+  --terracota: #D4622C;
+  --ouro:      #E6B835;
+  --verde:     #3A9870;
+  --vermelho:  #D44040;
   --bege:      #F0E6CC;
-  --afro-accent-a: #E4572E;
-  --afro-accent-b: #F3B61F;
-  --afro-accent-c: #0C7C59;
+  --afro-accent-a: #FF6E38;
+  --afro-accent-b: #FFD04A;
+  --afro-accent-c: #28B882;
 }
 
 .dark {
@@ -30,12 +30,11 @@
   --bg-secondary: #0C0B14;
   --bg-surface:   #111118;
   --bg-deep:      #080810;
-  --text-primary: #F5F0E8;
-  --text-muted:   #8A8480;
+  --text-primary: #FFFFFF;
+  --text-muted:   rgba(255,255,255,0.78);
   --text-dim:     #444440;
   --border:       rgba(255,255,255,0.09);
 
-  /* Cores mais vivas e saturadas no modo escuro */
   --ouro:      #E6B835;
   --terracota: #D4622C;
   --verde:     #3A9870;

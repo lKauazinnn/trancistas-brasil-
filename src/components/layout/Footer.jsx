@@ -26,7 +26,7 @@ export default function Footer() {
           </div>
           <div style={{ textAlign: 'right' }}>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>Publicado em</p>
-            <p className="font-display font-bold text-xl" style={{ color: 'var(--text-primary)' }}>2025</p>
+            <p className="font-display font-bold text-xl" style={{ color: 'var(--text-primary)' }}>2026</p>
           </div>
         </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
           style={{ borderTop: '1px solid var(--border)' }}
         >
           <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-            © 2025 PI — Todos os direitos reservados.
+            © 2026 PI — Todos os direitos reservados.
           </p>
           <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.72rem', color: 'var(--text-muted)' }}>
             Feito com respeito e memória para as trancistas do Brasil.
