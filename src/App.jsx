@@ -4,7 +4,6 @@ import Footer from './components/layout/Footer'
 import HeroSection from './components/sections/HeroSection'
 import AprendizadoAncestral from './components/sections/AprendizadoAncestral'
 import AutoestimaIdentidade from './components/sections/AutoestimaIdentidade'
-import GaleriaSection from './components/sections/GaleriaSection'
 import MercadoCredito from './components/sections/MercadoCredito'
 import DesafiosRotina from './components/sections/DesafiosRotina'
 import SimulacaoCredito from './components/sections/SimulacaoCredito'
@@ -36,8 +35,6 @@ export default function App() {
         <AprendizadoAncestral />
         <KenteStripe height={50} />
         <AutoestimaIdentidade />
-        <KenteStripe height={50} />
-        <GaleriaSection />
         <KenteStripe height={50} />
         <MercadoCredito />
         <KenteStripe height={50} />
