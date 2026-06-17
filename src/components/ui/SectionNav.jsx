@@ -4,10 +4,8 @@ const SECTIONS = [
   { id: 'hero',        label: 'Início',     color: 'var(--terracota)' },
   { id: 'aprendizado', label: 'História',   color: 'var(--terracota)' },
   { id: 'identidade',  label: 'Identidade', color: 'var(--ouro)'     },
-  { id: 'galeria',     label: 'Galeria',    color: 'var(--verde)'    },
   { id: 'mercado',     label: 'Mercado',    color: 'var(--verde)'    },
   { id: 'desafios',    label: 'Desafios',   color: 'var(--ouro)'     },
-  { id: 'simulacao',   label: 'Crédito',    color: 'var(--terracota)' },
   { id: 'futuro',      label: 'Futuro',     color: 'var(--terracota)' },
 ]
 

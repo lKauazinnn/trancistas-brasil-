@@ -1,7 +1,6 @@
 ﻿import { motion, AnimatePresence } from 'framer-motion'
 import { XCircle, AlertTriangle, CheckCircle } from 'lucide-react'
 import ScrollReveal from '../ui/ScrollReveal'
-import ClipReveal from '../ui/ClipReveal'
 import SectionLabel from '../ui/SectionLabel'
 import StarDivider from '../ui/StarDivider'
 import PerguntaWidget from '../ui/PerguntaWidget'
@@ -52,24 +51,13 @@ export default function SimulacaoCredito() {
   const { completo, totalRespondidas } = useSimulacao()
 
   return (
-    <section id="simulacao" style={{ background: 'var(--bg-secondary)', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ height: '3px', background: 'linear-gradient(90deg, var(--ouro), var(--terracota), var(--ouro))' }} />
+    <div id="simulacao" style={{ background: 'var(--bg-secondary)', position: 'relative', overflow: 'hidden' }}>
 
       <div className="section-padding max-w-7xl mx-auto">
 
         <ScrollReveal variant="fade-up">
-          <SectionLabel number="✦" text="Infográfico · Simulando o acesso a crédito" />
+          <SectionLabel text="Infográfico · Acesso a crédito" />
         </ScrollReveal>
-
-        <ClipReveal delay={60}>
-          <h2
-            className="font-display font-black uppercase leading-none mb-6"
-            style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: 'var(--text-primary)' }}
-          >
-            CRÉDITO NA PRÁTICA:<br />
-            <span className="wood-text">QUEM CONSEGUE</span> ENTRAR?
-          </h2>
-        </ClipReveal>
 
         <ScrollReveal variant="fade-up" delay={100}>
           <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--text-muted)', maxWidth: '600px', marginBottom: '2.5rem' }}>
@@ -344,8 +332,7 @@ export default function SimulacaoCredito() {
         </ScrollReveal>
 
       </div>
-      <div style={{ height: '1px', background: 'var(--border)' }} />
-    </section>
+    </div>
   )
 }
 

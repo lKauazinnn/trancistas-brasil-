@@ -149,8 +149,6 @@ export default function FuturoEncerramento() {
           </p>
         </ScrollReveal>
 
-        <BraidDivider className="mb-8" />
-
         {/* ── Encerramento editorial ── */}
         <ScrollReveal variant="fade-up">
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>

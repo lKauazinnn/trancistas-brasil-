@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion'
 import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
-import CenteredQuote from '../ui/CenteredQuote'
 import AfroPattern from '../ui/AfroPattern'
 import SectionLabel from '../ui/SectionLabel'
 import StatCard from '../ui/StatCard'
@@ -11,6 +10,7 @@ import TiltCard from '../ui/TiltCard'
 import VideoPlayer from '../ui/VideoPlayer'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { MARKET_STATS, TIMELINE_EVENTS } from '../../data/content'
+import SimulacaoCredito from './SimulacaoCredito'
 
 const ICON_MAP = { Globe, Link2, Scissors, Megaphone, Smartphone, FileText }
 const FASE_COLORS = { africa: '#D4A843', brasil: '#C0522A', resistencia: '#B8622A' }
@@ -61,6 +61,29 @@ export default function MercadoCredito() {
 
       {/* ── Laodicéia Nascimento ── */}
       <div style={COL}>
+
+        {/* Foto — meninas reunidas */}
+        <ScrollReveal variant="fade-up">
+          <figure style={{ margin: '0 0 3rem' }}>
+            <img
+              src="/media/carrossel1/c1-03.jpg"
+              alt="Trancistas reunidas"
+              style={{ width: '100%', aspectRatio: '3/2', objectFit: 'cover', display: 'block' }}
+            />
+            <figcaption style={{
+              paddingTop: '0.55rem',
+              fontSize: '0.95rem',
+              color: 'var(--text-muted)',
+              fontStyle: 'italic',
+              lineHeight: 1.6,
+              borderTop: '1px solid var(--border)',
+              marginTop: '0.5rem',
+            }}>
+              FOTO AUTORAL
+            </figcaption>
+          </figure>
+        </ScrollReveal>
+
         <ScrollReveal variant="fade-up">
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             O mercado das trancistas no Distrito Federal tem em sua biografia o nome de
@@ -203,6 +226,24 @@ export default function MercadoCredito() {
             />
           </div>
         </ScrollReveal>
+
+        <BraidDivider className="mb-8" />
+      </div>
+
+      {/* ── Onde estão os dados? — cabeçalho de retranca ── */}
+      <div className="section-padding max-w-7xl mx-auto" style={{ paddingBottom: '2rem' }}>
+        <ScrollReveal variant="fade-up">
+          <SectionLabel text="Onde estão os dados?" />
+        </ScrollReveal>
+        <ClipReveal delay={60}>
+          <h2
+            className="font-display font-black uppercase leading-none mb-2"
+            style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: 'var(--text-primary)' }}
+          >
+            ONDE ESTÃO<br />
+            <span className="wood-text-gold">OS DADOS?</span>
+          </h2>
+        </ClipReveal>
       </div>
 
       {/* ── Timeline ── */}
@@ -241,8 +282,6 @@ export default function MercadoCredito() {
       {/* ── Onde estão os dados — coluna editorial ── */}
       <div style={{ ...COL, paddingTop: '1rem', paddingBottom: '3rem' }}>
         <ScrollReveal variant="fade-up">
-          <BraidDivider className="mb-8" />
-          <p className="label-tag mb-4">Onde estão os dados?</p>
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             De acordo com o Censo 2022 do Instituto Brasileiro de Geografia e Estatística,
             72,9% da população preta e parda residem nas favelas e comunidades urbanas
@@ -275,13 +314,24 @@ export default function MercadoCredito() {
         </ScrollReveal>
       </div>
 
-      <CenteredQuote
-        quote="A maioria das trancistas opera sem o devido resguardo jurídico e econômico. A falta de políticas públicas específicas, o acesso restrito a linhas de crédito para a estruturação de salões e a ausência de uma regulamentação que valide a profissão como um saber técnico-cultural forçam essas trabalhadoras a jornadas duplas ou triplas."
-        author="José Fhanoel"
-        role="Artigo 'Tecendo histórias e caminhos: a trança como tecnologia de liberdade e identidade na diáspora'"
-        dark
-        accentColor="var(--verde)"
-      />
+      <div style={COL}>
+        <ScrollReveal variant="fade-up">
+          <blockquote style={{ margin: '0 0 2.5rem', paddingLeft: '1.5rem', borderLeft: '4px solid var(--verde)' }}>
+            <p style={{ fontSize: 'clamp(1.35rem, 2.2vw, 1.65rem)', lineHeight: 1.75, color: 'var(--text-primary)', fontStyle: 'italic', marginBottom: '0.75rem' }}>
+              "A maioria das trancistas opera sem o devido resguardo jurídico e econômico. A falta de políticas públicas específicas, o acesso restrito a linhas de crédito para a estruturação de salões e a ausência de uma regulamentação que valide a profissão como um saber técnico-cultural forçam essas trabalhadoras a jornadas duplas ou triplas."
+            </p>
+            <footer style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ width: '20px', height: '1px', background: 'var(--verde)', flexShrink: 0 }} />
+              <div>
+                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', display: 'block' }}>José Fhanoel</span>
+                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.9rem', color: 'var(--text-muted)' }}>Artigo "Tecendo histórias e caminhos: a trança como tecnologia de liberdade e identidade na diáspora"</span>
+              </div>
+            </footer>
+          </blockquote>
+        </ScrollReveal>
+      </div>
+
+      <SimulacaoCredito />
 
       {/* ── Layla e o Tranças no Mapa ── */}
       <div style={{ ...COL, paddingTop: '3rem', paddingBottom: '3rem' }}>

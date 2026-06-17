@@ -77,13 +77,7 @@ export default function AutoestimaIdentidade() {
       {/* ── Carrossel — ensaio fotográfico ── */}
       <div className="section-padding max-w-7xl mx-auto" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
         <ScrollReveal variant="fade-up">
-          <p className="label-tag mb-3">Ensaio Fotográfico · Identidade</p>
-          <h3
-            className="font-display font-black uppercase mb-6"
-            style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)', color: 'var(--text-primary)' }}
-          >
-            Tranças que contam histórias
-          </h3>
+          <p className="label-tag mb-3">Ensaio Fotográfico</p>
         </ScrollReveal>
         <ImageCarousel images={CARROSSEL2_IMAGES} />
       </div>
@@ -147,9 +141,9 @@ export default function AutoestimaIdentidade() {
           <div style={{ marginBottom: '3rem' }}>
             <p className="label-tag mb-3">Ouça o episódio</p>
             <AudioPlayer
-              title="Podcast PI — Trancistas do Brasil"
+              title="Trançando Caminhos"
               guest="Com Kamyla Santos e Dra. Aline Ferreira"
-              episode="Episódio especial · PI 2026"
+              episode="Fios da identidade · Autoestima"
               src="/media/audio/podcast.mp3"
             />
           </div>
@@ -200,13 +194,7 @@ export default function AutoestimaIdentidade() {
       {/* ── Carrossel 1 — ensaio fotográfico antes de Abrindo caminhos ── */}
       <div className="section-padding max-w-7xl mx-auto" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
         <ScrollReveal variant="fade-up">
-          <p className="label-tag mb-3">Ensaio Fotográfico · Arte e Cultura</p>
-          <h3
-            className="font-display font-black uppercase mb-6"
-            style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)', color: 'var(--text-primary)' }}
-          >
-            Fios que conectam gerações
-          </h3>
+          <p className="label-tag mb-3">Ensaio Fotográfico</p>
         </ScrollReveal>
         <ImageCarousel images={CARROSSEL1_IMAGES} />
       </div>
