@@ -61,7 +61,7 @@ export default function AutoestimaIdentidade() {
       {/* ── Cabeçalho ── */}
       <div className="section-padding max-w-7xl mx-auto" style={{ paddingBottom: '2rem' }}>
         <ScrollReveal variant="fade-up">
-          <SectionLabel number={2} text="Fios da identidade e autoestima" />
+          <SectionLabel number={2} text="AUTOESTIMA" />
         </ScrollReveal>
         <ClipReveal delay={60}>
           <h2
@@ -77,7 +77,7 @@ export default function AutoestimaIdentidade() {
       {/* ── Carrossel — ensaio fotográfico ── */}
       <div className="section-padding max-w-7xl mx-auto" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
         <ScrollReveal variant="fade-up">
-          <p className="label-tag mb-3">Ensaio Fotográfico</p>
+          <p className="label-tag mb-3">Galeria de Fotos</p>
         </ScrollReveal>
         <ImageCarousel images={CARROSSEL2_IMAGES} />
       </div>
@@ -141,9 +141,8 @@ export default function AutoestimaIdentidade() {
           <div style={{ marginBottom: '3rem' }}>
             <p className="label-tag mb-3">Ouça o episódio</p>
             <AudioPlayer
-              title="Trançando Caminhos"
-              guest="Com Kamyla Santos e Dra. Aline Ferreira"
-              episode="Fios da identidade · Autoestima"
+              title="Fios de Identidade e Autoestima"
+              episode="PI 1/2026"
               src="/media/audio/podcast.mp3"
             />
           </div>
@@ -153,8 +152,7 @@ export default function AutoestimaIdentidade() {
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             Hoje, artistas negros com suas obras ascendem socialmente levando as tranças a
             lugares de poder e marcando uma nova era de representatividade a meninos e meninas
-            negras. A rapper estadunidense Doechii, ganhadora de dois Grammys, fez uma
-            performance musical em que ela e suas dançarinas estavam ligadas por tranças que
+            negras. A rapper estadunidense Doechii, ganhadora de dois Grammys, fez uma <a href="https://youtu.be/Ggg45-e4oj0" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--terracota)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>performance musical</a> em que ela e suas dançarinas estavam ligadas por tranças que
             simbolizavam a conexão da artista com as mulheres negras através do Hip-Hop.
           </p>
         </ScrollReveal>
@@ -163,19 +161,19 @@ export default function AutoestimaIdentidade() {
         <InlinePhoto
           src="/media/photos/seq-3.jpg"
           alt="Doechii — performance musical com tranças"
-          caption="DOECHII/ REPRODUÇÃO SCOTT KOWALCHYK"
+          caption="DOECHII, rapper estadunidense, performando ligada por tranças com suas bailarinas/ foto: Scott Kowalchyk"
           ratio="16/9"
         />
 
         <ScrollReveal variant="fade-up">
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
-            No Brasil não é diferente — as tranças e as características físicas e culturais
+            No Brasil não é diferente, as tranças e as características físicas e culturais
             afro-brasileiras são fortalecidas por artistas como Iza, Mano Brown, Bella Campos,
             Negra Li e Preta Gil. A cena do rap, abastecida por mulheres negras, criou uma
             identidade visual onde os elementos e as letras exaltam e lutam por um futuro onde
             características antes oprimidas se tornam base de um empoderamento coletivo. Esse
             movimento chega ao Distrito Federal por meio de multiartistas como Marcus Samuel
-            Cunha, que escolheu usar tranças no primeiro clipe de sua carreira chamado "Nego".
+            Cunha, que escolheu usar tranças no primeiro clipe de sua carreira chamado <a href="https://youtu.be/jSEBLaJckVo" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--terracota)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>"NEGO"</a>.
             Marcus conta que a primeira vez que conseguiu se enxergar como uma pessoa bonita
             foi através das tranças.
           </p>
@@ -185,7 +183,7 @@ export default function AutoestimaIdentidade() {
         <InlinePhoto
           src="/media/photos/seq-4.jpg"
           alt="Marcus Samuel — clipe Nego"
-          caption="CLIPE 'NEGO'/ REPRODUÇÃO JOÃO GABRIEL ANDRADE"
+          caption="Markus no clipe 'NEGO'/ Foto: João Gabriel Andrade"
           ratio="4/3"
         />
 
@@ -194,7 +192,7 @@ export default function AutoestimaIdentidade() {
       {/* ── Carrossel 1 — ensaio fotográfico antes de Abrindo caminhos ── */}
       <div className="section-padding max-w-7xl mx-auto" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
         <ScrollReveal variant="fade-up">
-          <p className="label-tag mb-3">Ensaio Fotográfico</p>
+          <p className="label-tag mb-3">Galeria de Fotos</p>
         </ScrollReveal>
         <ImageCarousel images={CARROSSEL1_IMAGES} />
       </div>
@@ -208,9 +206,9 @@ export default function AutoestimaIdentidade() {
       <BeadDivider className="my-8" />
 
       <CenteredQuote
-        quote="A trança, além do viés estético, é símbolo de autoestima, cultura e resistência negra."
-        author="Síntese da reportagem"
-        role="Fios da identidade e autoestima"
+        quote="Falar de trança é falar de território, é falar de história de vida"
+        author="Layla Maryzandra"
+        role=""
         dark
         accentColor="var(--ouro)"
       />

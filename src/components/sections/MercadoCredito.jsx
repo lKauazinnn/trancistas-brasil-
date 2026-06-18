@@ -25,7 +25,7 @@ export default function MercadoCredito() {
       {/* ── Cabeçalho ── */}
       <div className="section-padding max-w-7xl mx-auto" style={{ paddingBottom: '2rem' }}>
         <ScrollReveal variant="fade-up">
-          <SectionLabel number={3} text="Abrindo caminhos · Onde estão os dados?" />
+          <SectionLabel number={3} text="MERCADO DE TRANCISTAS" />
         </ScrollReveal>
         <ClipReveal delay={60}>
           <h2
@@ -62,28 +62,6 @@ export default function MercadoCredito() {
       {/* ── Laodicéia Nascimento ── */}
       <div style={COL}>
 
-        {/* Foto — meninas reunidas */}
-        <ScrollReveal variant="fade-up">
-          <figure style={{ margin: '0 0 3rem' }}>
-            <img
-              src="/media/carrossel1/c1-03.jpg"
-              alt="Trancistas reunidas"
-              style={{ width: '100%', aspectRatio: '3/2', objectFit: 'cover', display: 'block' }}
-            />
-            <figcaption style={{
-              paddingTop: '0.55rem',
-              fontSize: '0.95rem',
-              color: 'var(--text-muted)',
-              fontStyle: 'italic',
-              lineHeight: 1.6,
-              borderTop: '1px solid var(--border)',
-              marginTop: '0.5rem',
-            }}>
-              FOTO AUTORAL
-            </figcaption>
-          </figure>
-        </ScrollReveal>
-
         <ScrollReveal variant="fade-up">
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             O mercado das trancistas no Distrito Federal tem em sua biografia o nome de
@@ -115,7 +93,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              LAODICÉIA NASCIMENTO/ FOTO AUTORAL
+              Laodicéia Nascimento, trancista há mais de 48 anos/ Foto: reportagem Trançando caminhos
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -173,7 +151,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              LAODICÉIA E THANAN/ FOTO AUTORAL
+              Trancista Thanan Barreto com sua mãe Laodicéia/ Foto: reportagem Trançando caminhos
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -208,7 +186,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              KAMYLA VIEIRA/ FOTO AUTORAL
+              Kamyla Vieira, trancista na Cidade Estrutural/ Foto: reportagem Trançando caminhos
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -217,7 +195,7 @@ export default function MercadoCredito() {
         <ScrollReveal variant="fade-up">
           <div style={{ margin: '0 0 3rem' }}>
             <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 1.8, color: 'var(--text-primary)', marginBottom: '1.25rem' }}>
-              Assista o vídeo a seguir onde ela compartilha sua trajetória profissional.
+              Assista ao vídeo a seguir onde ela compartilha sua trajetória profissional.
             </p>
             <VideoPlayer
               src="https://youtu.be/9MTglB1d_Jw"
@@ -233,7 +211,7 @@ export default function MercadoCredito() {
       {/* ── Onde estão os dados? — cabeçalho de retranca ── */}
       <div className="section-padding max-w-7xl mx-auto" style={{ paddingBottom: '2rem' }}>
         <ScrollReveal variant="fade-up">
-          <SectionLabel text="Onde estão os dados?" />
+          <SectionLabel number={4} text="INVISIBILIDADE" />
         </ScrollReveal>
         <ClipReveal delay={60}>
           <h2
@@ -283,7 +261,7 @@ export default function MercadoCredito() {
       <div style={{ ...COL, paddingTop: '1rem', paddingBottom: '3rem' }}>
         <ScrollReveal variant="fade-up">
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
-            De acordo com o Censo 2022 do Instituto Brasileiro de Geografia e Estatística,
+            De acordo com o <a href="https://censo2022.ibge.gov.br/panorama/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--terracota)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Censo 2022 do Instituto Brasileiro de Geografia e Estatística</a>,
             72,9% da população preta e parda residem nas favelas e comunidades urbanas
             brasileiras. A geografia em que as trancistas e o público que utilizam as tranças,
             em sua maioria pessoas negras, estão localizados contribui severamente para a
@@ -291,7 +269,7 @@ export default function MercadoCredito() {
           </p>
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             Gabriella Siqueira dos Santos, em seu Trabalho de Conclusão de Curso em
-            Pedagogia, "Do Trançar ao Trançado", reflete sobre o livro "Memórias da
+            Pedagogia, <a href="https://drive.google.com/file/d/1kVqih_fZTlS1Hq3EJjdrUVJOJgxGTc_P/view" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--terracota)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>"Do Trançar ao Trançado"</a>, reflete sobre o livro "Memórias da
             plantação: episódios de racismo cotidiano" de Grada Kilomba. A escritora da
             obra alerta sobre como a potência do racismo se insere nas estruturas sociais
             de forma intensa e acentuada que as pessoas negras são, em sua maioria,
@@ -302,7 +280,7 @@ export default function MercadoCredito() {
             Viver uma profissão onde o reconhecimento vive às margens de uma história é
             conter em si as dores dessa marginalização. Apesar de ser uma prática ancestral,
             apenas no ano passado, em junho de 2025, que a profissão trancista foi
-            denominada como ofício pela Classificação Brasileira de Ocupações.
+            denominada como ofício pela <a href="https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2025/novembro/governo-federal-reconhece-oficialmente-a-atividade-de-trancistas-na-cbo" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--terracota)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Classificação Brasileira de Ocupações (CBO)</a>.
           </p>
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             A invisibilidade dessas mulheres permeia ainda mais quando falamos de dados e
@@ -324,7 +302,7 @@ export default function MercadoCredito() {
               <span style={{ width: '20px', height: '1px', background: 'var(--verde)', flexShrink: 0 }} />
               <div>
                 <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', display: 'block' }}>José Fhanoel</span>
-                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.9rem', color: 'var(--text-muted)' }}>Artigo "Tecendo histórias e caminhos: a trança como tecnologia de liberdade e identidade na diáspora"</span>
+                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.9rem', color: 'var(--text-muted)' }}>Artigo <a href="https://drive.google.com/file/d/1ltpI3xHjN-3OjQXfeH9Jd0Xi0ecbYIiH/view" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--terracota)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>"Tecendo histórias e caminhos: a trança como tecnologia de liberdade e identidade na diáspora"</a></span>
               </div>
             </footer>
           </blockquote>
@@ -340,7 +318,7 @@ export default function MercadoCredito() {
             Pensando nessa exclusão social, a pesquisadora e trancista Layla Maryzandra
             criou o Tranças no Mapa, projeto que mapeia tranças no Distrito Federal,
             promovendo pesquisas e oficinas voltadas à essa temática profissional. A mesma
-            mapeou, entre abril e julho de 2023, 122 trancistas no DF e Entorno, que vieram
+            mapeou, <a href="https://www.enecult.ufba.br/modulos/submissao/Upload-751/161849.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--terracota)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>entre abril e julho de 2023, 122 trancistas no DF e Entorno</a>, que vieram
             de diferentes regiões do país, sendo 1 chilena. Também evidenciou a atuação em
             sua maioria em Ceilândia, Taguatinga e Santa Maria, regiões administrativas da
             capital. Outros projetos como Fios da Ancestralidade e Mapa Afetivo também foram
@@ -366,7 +344,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              LAYLA MARYZANDRA NO ENCONTRO DO TRANÇAS NO MAPA/ FOTO AUTORAL
+              Layla Maryzandra no Mapa Afetivo com outras trancistas/ Foto: reportagem Trançando caminhos
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -388,7 +366,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              EVENTO TRANÇAS NO MAPA/ FOTO AUTORAL
+              Panfleto Tranças no Mapa/ Foto: reportagem Trançando caminhos
             </figcaption>
           </figure>
         </ScrollReveal>

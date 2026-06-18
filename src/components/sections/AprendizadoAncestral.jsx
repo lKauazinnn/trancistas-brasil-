@@ -17,7 +17,7 @@ export default function AprendizadoAncestral() {
       {/* ── Cabeçalho da seção ── */}
       <div className="section-padding max-w-7xl mx-auto" style={{ paddingBottom: '2rem' }}>
         <ScrollReveal variant="fade-up">
-          <SectionLabel number={1} text="O Aprendizado Ancestral" />
+          <SectionLabel number={1} text="APRENDIZADO ANCESTRAL" />
         </ScrollReveal>
         <ClipReveal delay={60}>
           <h2
@@ -34,13 +34,12 @@ export default function AprendizadoAncestral() {
       <div style={COL}>
 
         <ScrollReveal variant="fade-up">
-          {/* Parágrafo da Layla — corpo */}
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
-            Segundo o artigo "Entre os fios da Ancestralidade", escrito pela pedagoga e
+            Segundo o artigo <a href="https://drive.google.com/file/d/1I3jThYAJY6UQxD0xI-l5UaZ22l0QKUuI/view" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--terracota)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>"Entre os fios da Ancestralidade"</a>, escrito pela pedagoga e
             trancista Layla Maryzandra, a construção das trancistas como profissionais se
-            relaciona diretamente com a interação com seus pertencimentos, que se originam
+            relaciona diretamente com "a interação com seus pertencimentos, que se originam
             dos seus territórios, de suas migrações, suas práticas socioculturais cotidianas,
-            desenvolvendo vínculos entre os fios do passado e do presente.
+            desenvolvendo vínculos entre os fios do passado e do presente".
           </p>
         </ScrollReveal>
 
@@ -61,7 +60,7 @@ export default function AprendizadoAncestral() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              LAYLA MARYZANDRA/ FOTO AUTORAL
+              Layla Maryzandra, pesquisadora e trancista/ Foto: reportagem Trançando caminhos
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -93,7 +92,7 @@ export default function AprendizadoAncestral() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              LIVRO DE DIÁSPORA AFRICANA/ FOTO AUTORAL
+              Livro de diáspora africana - Foto: reportagem Trançando caminhos
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -102,7 +101,7 @@ export default function AprendizadoAncestral() {
         <ScrollReveal variant="fade-up">
           <div style={{ margin: '0 0 2.5rem' }}>
             <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '1rem' }}>
-              Assista o vídeo a seguir sobre a história das tranças:
+              Assista ao vídeo a seguir sobre a história das tranças:
             </p>
             <VideoPlayer
               src={VIDEO_SRC}

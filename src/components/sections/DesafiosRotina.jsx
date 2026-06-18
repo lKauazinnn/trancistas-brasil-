@@ -46,7 +46,7 @@ export default function DesafiosRotina() {
       {/* ── Cabeçalho ── */}
       <div className="section-padding max-w-7xl mx-auto" style={{ paddingBottom: '2rem' }}>
         <ScrollReveal variant="fade-right">
-          <SectionLabel number={4} text="As dores do ofício" />
+          <SectionLabel number={5} text="SAÚDE" />
         </ScrollReveal>
         <ClipReveal delay={60}>
           <h2
@@ -64,7 +64,7 @@ export default function DesafiosRotina() {
 
         <ScrollReveal variant="fade-up">
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
-            Um trabalho que demorou para ser reconhecido como ocupação traz consequências
+            Um trabalho que demorou para ser reconhecido como ocupação, traz consequências
             nas dores das mãos, pés, costas e nos problemas de saúde que podem virar crônicos.
             A maioria das mulheres que estão nesta reportagem sofre com a falta de apoio
             financeiro — sem acesso a créditos e conhecimentos que englobam essa área
@@ -90,7 +90,7 @@ export default function DesafiosRotina() {
         <InlinePhoto
           src="/media/photos/seq-9.jpeg"
           alt="Encontro Tranças no Mapa"
-          caption="ENCONTRO TRANÇAS NO MAPA/ FOTO AUTORAL"
+          caption="Oficina no Tranças no Mapa/ Foto: reportagem Trançando caminhos"
           ratio="3/2"
         />
 
@@ -107,7 +107,7 @@ export default function DesafiosRotina() {
         <InlinePhoto
           src="/media/photos/rapaz.png"
           alt="David Souza, fisioterapeuta"
-          caption="DAVID SOUZA/ FOTO AUTORAL"
+          caption="Fisioterapeuta David Souza/ Foto: reportagem Trançando caminhos"
           ratio="3/2"
         />
 
@@ -120,7 +120,7 @@ export default function DesafiosRotina() {
 
         <ScrollReveal variant="fade-up">
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
-            Pensando além do corpo físico, a saúde mental também é um fator que traz dores.
+            Além do corpo físico, a saúde mental também é um fator que traz dores.
             O desgaste físico diário e a falta de apoio e acompanhamento profissional pode
             resultar no adoecimento mental dessas profissionais. Ainda segundo o profissional
             da saúde, essas práticas a longo prazo podem acelerar esse diagnóstico.

@@ -221,12 +221,6 @@ export default function ImageCarousel({ images }) {
             </div>
           )}
 
-          {active > 0 && active < images.length - 1 && (
-            <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.65rem', color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
-              {images[active]?.alt}
-            </span>
-          )}
-
           {active === images.length - 1 && (
             <div className="flex items-center gap-1.5" style={{ color: 'var(--text-muted)' }}>
               <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase' }}>

@@ -95,7 +95,7 @@ export default function AudioPlayer({ src, title, guest, episode, cover = '/medi
               fontWeight: 700,
             }}
           >
-            Documentário sonoro
+            Podcast
           </p>
         </div>
 

@@ -107,8 +107,8 @@ export default function HeroSection() {
             }}
           >
             Da rota de fuga à independência financeira, trancistas
-            sustentam lares e movem a economia invisibilizada pela
-            falta de políticas públicas e crédito.
+            sustentam lares e movem a economia, invisibilizada pela
+            falta de crédito e de políticas públicas.
           </p>
 
         </div>
@@ -146,7 +146,7 @@ export default function HeroSection() {
             se adaptou a cada desafio histórico apresentado ao povo negro. Hoje, meninas
             e mulheres negras buscam independência e tornam-se empreendedoras através do
             ofício milenar, mas foi apenas em junho de 2025 que a profissão começou a
-            constar oficialmente na Classificação Brasileira de Ocupações.
+            constar oficialmente na Classificação Brasileira de Ocupações (CBO).
           </p>
           <p
             style={{
@@ -159,7 +159,7 @@ export default function HeroSection() {
           >
             O reconhecimento tardio também é demonstrado pelo raso aprofundamento de
             pesquisas e dados sobre a profissão de trancistas, gerando consequências como
-            a dificuldade de acesso a créditos, políticas públicas que entendam as
+            a dificuldade de acesso ao crédito, políticas públicas que entendam as
             individualidades dessa profissão e possam garantir uma carreira mais longeva
             e saudável. Mesmo com pouco apoio, as trancistas seguem trabalhando em sonhos
             abastecidos pelos esforços de suas próprias mãos, reconstruindo autoestima,

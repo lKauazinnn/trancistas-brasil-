@@ -1,6 +1,6 @@
 ﻿import ScrollReveal from '../ui/ScrollReveal'
 import ClipReveal from '../ui/ClipReveal'
-import CenteredQuote from '../ui/CenteredQuote'
+
 import SectionLabel from '../ui/SectionLabel'
 import BraidDivider from '../ui/BraidDivider'
 import { CREDITS } from '../../data/content'
@@ -60,7 +60,7 @@ export default function FuturoEncerramento() {
       {/* ── Cabeçalho ── */}
       <div className="section-padding max-w-7xl mx-auto" style={{ paddingBottom: '2rem', position: 'relative' }}>
         <ScrollReveal variant="fade-up">
-          <SectionLabel number={5} text="O futuro da profissão" />
+          <SectionLabel number={6} text="RUMO DAS TRANCISTAS" />
         </ScrollReveal>
         <ClipReveal delay={60}>
           <h2
@@ -79,7 +79,7 @@ export default function FuturoEncerramento() {
         <InlinePhoto
           src="/media/photos/seq-11.jpeg"
           alt="Livros e materiais sobre a diáspora africana e tranças"
-          caption="FOTO AUTORAL"
+          caption="Livros históricos mostrando diferentes tipos de tranças/ Foto: reportagem Trançando caminhos"
           ratio="3/2"
         />
 
@@ -125,18 +125,18 @@ export default function FuturoEncerramento() {
 
         <ScrollReveal variant="fade-up">
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
-            A inclusão da ocupação de trancista na Classificação Brasileira de Ocupações,
+            A inclusão da ocupação de trancista na Classificação Brasileira de Ocupações (CBO),
             em 2025, representa um marco importante. No entanto, para muitas profissionais,
             esse reconhecimento institucional é apenas o primeiro passo de uma trajetória
             que ainda envolve desafios relacionados à valorização.
           </p>
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
             Nesse cenário, um dos poucos debates em tramitação no Congresso Nacional é o
-            Projeto de Lei nº 1.747/2024, de autoria da deputada federal Dandara Tonantzin,
+            <a href="https://share.google/cHDh7ueDx5DVMti0T" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--terracota)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Projeto de Lei nº 1.747/2024</a>, de autoria da deputada federal Dandara Tonantzin (PT),
             que propõe a regulamentação da profissão de trancista. A proposta foi aprovada
-            pela Comissão de Trabalho em dezembro de 2025 e aguarda análise da Comissão de
+                pela Comissão de Trabalho (CTRAB) em dezembro de 2025 e aguarda análise da Comissão de
             Constituição e Justiça e de Cidadania. O projeto tramita em conjunto com o PL
-            nº 2.831/2024, apresentado pela deputada Rogéria Santos, que também trata da
+            nº 2.831/2024, apresentado pela deputada Rogéria Santos (Republicanos-BA), que também trata da
             regulamentação da atividade.
           </p>
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
@@ -145,7 +145,7 @@ export default function FuturoEncerramento() {
             para trancistas que aprenderam o ofício por meio da transmissão familiar e
             comunitária, sem formação formal. Além disso, em uma atividade historicamente
             marcada pela informalidade e pelo empreendedorismo autônomo, a criação de
-            exigências legais pode resultar em aumento de custos e burocracias.
+            exigências legais pode resultar em aumento de custos, burocracias e mecanismos de fiscalização.
           </p>
         </ScrollReveal>
 
@@ -155,7 +155,7 @@ export default function FuturoEncerramento() {
             Ao longo desta reportagem, uma ausência apareceu repetidamente: a falta de dados,
             de políticas públicas e de reconhecimento compatíveis com a importância social,
             econômica e cultural das trancistas. Ainda assim, essas mulheres seguem fazendo
-            o que sempre fizeram — transformando memória em trabalho, ancestralidade em
+            o que sempre fizeram: transformando memória em trabalho, ancestralidade em
             identidade e cuidado em sustento.
           </p>
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '3rem' }}>
@@ -168,12 +168,46 @@ export default function FuturoEncerramento() {
 
       </div>
 
-      <CenteredQuote
-        quote="Entre fios que ligam passado e futuro, as trancistas seguem trançando caminhos."
-        author="Encerramento da reportagem"
-        role="Trançando Caminhos · PI 2026"
-        dark
-      />
+      {/* ── Documentário ── */}
+      <div style={COL}>
+        <ScrollReveal variant="fade-up">
+          <div style={{ margin: '0 0 3rem' }}>
+            <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '1rem' }}>
+              Assista ao documentário completo:
+            </p>
+            <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '8px' }}>
+              <iframe
+                src="https://www.youtube.com/embed/xQg9-47JC0k"
+                title="Documentário Trançando Caminhos"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+              />
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+
+      <div style={{
+        background: 'var(--bg-deep)',
+        padding: 'clamp(3rem, 8vw, 5rem) clamp(1rem, 5vw, 14rem)',
+        textAlign: 'center',
+        borderTop: '1px solid var(--border)',
+        borderBottom: '1px solid var(--border)',
+      }}>
+        <p style={{
+          fontFamily: "'Barlow Condensed', sans-serif",
+          fontSize: 'clamp(1.5rem, 3.5vw, 3rem)',
+          fontWeight: 700,
+          fontStyle: 'italic',
+          lineHeight: 1.25,
+          color: 'var(--text-primary)',
+          maxWidth: '860px',
+          margin: '0 auto',
+        }}>
+          Entre fios que ligam passado e futuro, as trancistas seguem trançando caminhos.
+        </p>
+      </div>
 
       {/* ── Encerramento tipográfico ── */}
       <div style={{ textAlign: 'center', marginTop: '5rem', marginBottom: '5rem' }}>
