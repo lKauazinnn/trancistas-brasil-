@@ -70,8 +70,8 @@ export default function MercadoCredito() {
             com cabelos crespos, não tentava se enquadrar nos padrões de beleza eurocêntricos
             impostos na época. Em sua adolescência, buscava formas de fortalecer sua autoestima
             e foi observando Dona Lourdes, trancista no Guará, região administrativa de
-            Brasília, que nasceu uma proposta: ela ajudaria Lourdes como trançadeira — ofício
-            de fazer trança sem cobrar pelo serviço — como forma de pagar por suas tranças,
+            Brasília, que nasceu uma proposta: ela ajudaria Lourdes como trançadeira, ofício
+            de fazer trança sem cobrar pelo serviço, como forma de pagar por suas tranças,
             já que seus pais não tinham condições financeiras.
           </p>
         </ScrollReveal>
@@ -167,28 +167,6 @@ export default function MercadoCredito() {
             que exalta a cultura da Mulher Afro-Latino Americana, Caribenha e da Diáspora
             há 19 anos.
           </p>
-        </ScrollReveal>
-
-        {/* Foto Kamyla */}
-        <ScrollReveal variant="fade-up">
-          <figure style={{ margin: '0 0 3rem' }}>
-            <img
-              src="/media/photos/seq-7.jpeg"
-              alt="Kamyla Vieira em seu salão na Cidade Estrutural"
-              style={{ width: '100%', aspectRatio: '3/2', objectFit: 'cover', display: 'block' }}
-            />
-            <figcaption style={{
-              paddingTop: '0.55rem',
-              fontSize: '0.95rem',
-              color: 'var(--text-muted)',
-              fontStyle: 'italic',
-              lineHeight: 1.6,
-              borderTop: '1px solid var(--border)',
-              marginTop: '0.5rem',
-            }}>
-              Kamyla Vieira, trancista na Cidade Estrutural/ Foto: reportagem Trançando caminhos
-            </figcaption>
-          </figure>
         </ScrollReveal>
 
         {/* Vídeo-entrevista — Kamyla Vieira */}
@@ -331,7 +309,7 @@ export default function MercadoCredito() {
         <ScrollReveal variant="fade-up">
           <figure style={{ margin: '0 0 3rem' }}>
             <img
-              src="/media/photos/imagem.jpeg"
+              src="/media/photos/seq-7.jpeg"
               alt="Layla Maryzandra no encontro do Tranças no Mapa"
               style={{ width: '100%', aspectRatio: '3/2', objectFit: 'cover', display: 'block' }}
             />

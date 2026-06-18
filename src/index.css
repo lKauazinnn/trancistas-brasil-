@@ -5,26 +5,29 @@
 /* ─────────────────────────────────────────
    THEME TOKENS
 ───────────────────────────────────────── */
-:root {
-  --bg-primary:   #06050C;
-  --bg-secondary: #0C0B14;
-  --bg-surface:   #111118;
-  --bg-deep:      #080810;
-  --text-primary: #FFFFFF;
-  --text-muted:   rgba(255,255,255,0.78);
-  --text-dim:     #444440;
-  --border:       rgba(255,255,255,0.09);
 
-  --terracota: #D4622C;
-  --ouro:      #E6B835;
-  --verde:     #3A9870;
-  --vermelho:  #D44040;
+/* ── Tema CLARO (padrão quando .dark não está presente) ── */
+:root {
+  --bg-primary:   #FAF8F3;
+  --bg-secondary: #F3EFE6;
+  --bg-surface:   #EDE8DE;
+  --bg-deep:      #E8E2D6;
+  --text-primary: #1C1917;
+  --text-muted:   rgba(28,25,23,0.68);
+  --text-dim:     #8A8A86;
+  --border:       rgba(28,25,23,0.14);
+
+  --terracota: #C0522A;
+  --ouro:      #B8820E;
+  --verde:     #2A7A5A;
+  --vermelho:  #C44040;
   --bege:      #F0E6CC;
-  --afro-accent-a: #FF6E38;
-  --afro-accent-b: #FFD04A;
-  --afro-accent-c: #28B882;
+  --afro-accent-a: #D45820;
+  --afro-accent-b: #C89020;
+  --afro-accent-c: #2A7A5A;
 }
 
+/* ── Tema ESCURO ── */
 .dark {
   --bg-primary:   #06050C;
   --bg-secondary: #0C0B14;
@@ -55,10 +58,10 @@
   body {
     background-color: var(--bg-primary);
     background-image:
-      radial-gradient(circle at 12% 18%, rgba(212,98,44,0.14) 0 160px, transparent 161px),
-      radial-gradient(circle at 85% 9%,  rgba(230,184,53,0.11) 0 150px, transparent 151px),
-      radial-gradient(circle at 88% 80%, rgba(58,152,112,0.11) 0 140px, transparent 141px),
-      radial-gradient(circle at 40% 60%, rgba(184,50,40,0.07)  0 100px, transparent 101px);
+      radial-gradient(circle at 12% 18%, rgba(192,82,42,0.10) 0 160px, transparent 161px),
+      radial-gradient(circle at 85% 9%,  rgba(184,130,14,0.08) 0 150px, transparent 151px),
+      radial-gradient(circle at 88% 80%, rgba(42,122,90,0.08) 0 140px, transparent 141px),
+      radial-gradient(circle at 40% 60%, rgba(184,50,40,0.05)  0 100px, transparent 101px);
     color: var(--text-primary);
     font-family: 'Lora', Georgia, serif;
     font-size: 18px;

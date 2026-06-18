@@ -73,7 +73,7 @@ export default function HeroSection() {
               fontSize: 'clamp(3.5rem, 10vw, 9rem)',
               lineHeight: 1,
               letterSpacing: '-0.02em',
-              color: '#FFFFFF',
+              color: 'var(--text-primary)',
               marginBottom: '2rem',
               textShadow: '0 2px 30px rgba(0,0,0,0.4)',
             }}
@@ -120,7 +120,7 @@ export default function HeroSection() {
       ══════════════════════════════════════════ */}
       <div
         style={{
-          background: '#0a0a0f',
+          background: 'var(--bg-primary)',
           borderTop: '4px solid var(--terracota)',
         }}
       >
@@ -137,7 +137,7 @@ export default function HeroSection() {
               fontFamily: "'Lora', Georgia, serif",
               fontSize: 'clamp(1.25rem, 2vw, 1.5rem)',
               lineHeight: 2,
-              color: '#FFFFFF',
+              color: 'var(--text-primary)',
               marginBottom: '2rem',
             }}
           >
@@ -153,7 +153,7 @@ export default function HeroSection() {
               fontFamily: "'Lora', Georgia, serif",
               fontSize: 'clamp(1.25rem, 2vw, 1.5rem)',
               lineHeight: 2,
-              color: '#FFFFFF',
+              color: 'var(--text-primary)',
               marginBottom: '2rem',
             }}
           >

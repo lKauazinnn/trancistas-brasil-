@@ -120,7 +120,7 @@ export default function DesafiosRotina() {
 
         <ScrollReveal variant="fade-up">
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
-            Além do corpo físico, a saúde mental também é um fator que traz dores.
+            Pensando além do corpo físico, a saúde mental também é um fator que traz dores.
             O desgaste físico diário e a falta de apoio e acompanhamento profissional pode
             resultar no adoecimento mental dessas profissionais. Ainda segundo o profissional
             da saúde, essas práticas a longo prazo podem acelerar esse diagnóstico.
