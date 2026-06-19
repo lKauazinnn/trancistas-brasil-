@@ -131,7 +131,7 @@ export default function FuturoEncerramento() {
             que ainda envolve desafios relacionados à valorização.
           </p>
           <p style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 2, color: 'var(--text-primary)', marginBottom: '2rem' }}>
-            Nesse cenário, um dos poucos debates em tramitação no Congresso Nacional é o
+            Nesse cenário, um dos poucos debates em tramitação no Congresso Nacional é o{' '}
             <a href="https://share.google/cHDh7ueDx5DVMti0T" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--terracota)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Projeto de Lei nº 1.747/2024</a>, de autoria da deputada federal Dandara Tonantzin (PT),
             que propõe a regulamentação da profissão de trancista. A proposta foi aprovada
                 pela Comissão de Trabalho (CTRAB) em dezembro de 2025 e aguarda análise da Comissão de
