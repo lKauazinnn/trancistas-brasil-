@@ -13,7 +13,6 @@ export default function Footer() {
         {/* Top */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <p className="label-tag mb-2">Uma reportagem especial</p>
             <h2
               className="font-display font-black uppercase leading-none"
               style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--text-primary)' }}

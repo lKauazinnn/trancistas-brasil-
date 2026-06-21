@@ -60,7 +60,7 @@ export default function AprendizadoAncestral() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Layla Maryzandra, pesquisadora e trancista/ Foto: reportagem Trançando caminhos
+              Layla Maryzandra, pesquisadora e trancista/ Foto: reportagem Trançando Caminhos
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -92,7 +92,7 @@ export default function AprendizadoAncestral() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Livro de diáspora africana - Foto: reportagem Trançando caminhos
+              Livro de diáspora africana - Foto: reportagem Trançando Caminhos
             </figcaption>
           </figure>
         </ScrollReveal>

@@ -3,7 +3,6 @@ import ClipReveal from '../ui/ClipReveal'
 
 import SectionLabel from '../ui/SectionLabel'
 import BraidDivider from '../ui/BraidDivider'
-import { CREDITS } from '../../data/content'
 
 // Coluna editorial central
 const COL = { maxWidth: '720px', margin: '0 auto', padding: '0 clamp(1.25rem, 5vw, 2rem)' }
@@ -79,7 +78,7 @@ export default function FuturoEncerramento() {
         <InlinePhoto
           src="/media/photos/seq-11.jpeg"
           alt="Livros e materiais sobre a diáspora africana e tranças"
-          caption="Livros históricos mostrando diferentes tipos de tranças/ Foto: reportagem Trançando caminhos"
+          caption="Livros históricos mostrando diferentes tipos de tranças/ Foto: reportagem Trançando Caminhos"
           ratio="3/2"
         />
 
@@ -177,7 +176,7 @@ export default function FuturoEncerramento() {
             </p>
             <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '8px' }}>
               <iframe
-                src="https://www.youtube.com/embed/xQg9-47JC0k"
+                src="https://www.youtube.com/embed/4znyJkNNKig"
                 title="Documentário Trançando Caminhos"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -231,26 +230,6 @@ export default function FuturoEncerramento() {
             É Arte
           </p>
         </ClipReveal>
-      </div>
-
-      {/* ── Créditos ── */}
-      <div style={{ ...COL, paddingTop: '4rem', paddingBottom: '4rem' }}>
-        <BraidDivider className="mb-10" />
-        <ScrollReveal variant="fade-up">
-          <p className="label-tag mb-6">Créditos da produção</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {CREDITS.map((c, i) => (
-              <div key={i}>
-                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.8rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '4px' }}>
-                  {c.role}
-                </p>
-                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.1rem', color: 'var(--text-primary)' }}>
-                  {c.name}
-                </p>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
       </div>
 
     </section>

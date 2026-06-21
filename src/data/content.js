@@ -101,10 +101,10 @@ export const QUOTES = [
 ]
 
 export const CREDITS = [
-  { role: 'Reportagem e Texto', name: 'Amanda Ferreira, Matheus Marques e Ana Maria Rayol' },
-  { role: 'Produção, Entrevistas e Roteiro', name: 'Amanda Ferreira, Matheus Marques e Ana Maria Rayol' },
-  { role: 'Captação de Áudio e Imagem', name: 'Amanda Ferreira, Matheus Marques e Ana Maria Rayol' },
-  { role: 'Edição', name: 'Amanda Ferreira, Matheus Marques e Ana Maria Rayol' },
+  { role: 'Reportagem e Texto', name: 'Amanda Ferreira, Ana Maria Rayol e Matheus Marques' },
+  { role: 'Produção, Entrevistas e Roteiro', name: 'Amanda Ferreira, Ana Maria Rayol e Matheus Marques' },
+  { role: 'Captação de Áudio e Imagem', name: 'Amanda Ferreira, Ana Maria Rayol e Matheus Marques' },
+  { role: 'Edição', name: 'Amanda Ferreira, Ana Maria Rayol e Matheus Marques' },
   { role: 'Desenvolvimento do Site', name: 'kaka_lopexzz' },
   { role: 'Orientação', name: 'Candida Lemos' },
 ]

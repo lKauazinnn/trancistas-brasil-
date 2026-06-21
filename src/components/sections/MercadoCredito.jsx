@@ -93,7 +93,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Laodicéia Nascimento, trancista há mais de 48 anos/ Foto: reportagem Trançando caminhos
+              Laodicéia Nascimento, trancista há mais de 48 anos/ Foto: reportagem Trançando Caminhos
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -151,7 +151,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Trancista Thanan Barreto com sua mãe Laodicéia/ Foto: reportagem Trançando caminhos
+              Trancista Thanan Barreto com sua mãe Laodicéia/ Foto: reportagem Trançando Caminhos
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -322,7 +322,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Layla Maryzandra no Mapa Afetivo com outras trancistas/ Foto: reportagem Trançando caminhos
+              Layla Maryzandra no Mapa Afetivo com outras trancistas/ Foto: reportagem Trançando Caminhos
             </figcaption>
           </figure>
         </ScrollReveal>
@@ -344,7 +344,7 @@ export default function MercadoCredito() {
               borderTop: '1px solid var(--border)',
               marginTop: '0.5rem',
             }}>
-              Panfleto Tranças no Mapa/ Foto: reportagem Trançando caminhos
+              Panfleto Tranças no Mapa/ Foto: reportagem Trançando Caminhos
             </figcaption>
           </figure>
         </ScrollReveal>

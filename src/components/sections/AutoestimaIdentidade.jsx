@@ -161,7 +161,7 @@ export default function AutoestimaIdentidade() {
         <InlinePhoto
           src="/media/photos/seq-3.jpg"
           alt="Doechii — performance musical com tranças"
-          caption="DOECHII, rapper estadunidense, performando ligada por tranças com suas bailarinas/ foto: Scott Kowalchyk"
+          caption="Doechii, rapper estadunidense, performando ligada por tranças com suas bailarinas/ foto: Scott Kowalchyk"
           ratio="16/9"
         />
 

@@ -90,7 +90,7 @@ export default function DesafiosRotina() {
         <InlinePhoto
           src="/media/photos/seq-9.jpeg"
           alt="Encontro Tranças no Mapa"
-          caption="Oficina no Tranças no Mapa/ Foto: reportagem Trançando caminhos"
+          caption="Oficina no Tranças no Mapa/ Foto: reportagem Trançando Caminhos"
           ratio="3/2"
         />
 
@@ -107,7 +107,7 @@ export default function DesafiosRotina() {
         <InlinePhoto
           src="/media/photos/rapaz.png"
           alt="David Souza, fisioterapeuta"
-          caption="Fisioterapeuta David Souza/ Foto: reportagem Trançando caminhos"
+          caption="Fisioterapeuta David Souza/ Foto: reportagem Trançando Caminhos"
           ratio="3/2"
         />
 
